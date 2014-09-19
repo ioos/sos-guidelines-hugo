@@ -28,7 +28,7 @@ The interface is comprised of some operations, parameters and attributes, which 
 
 As the SOS 2.0 standard has been approved as an official OGC standard while Milestone 1.0 has already been in development, the use of this new and updated version was postponed to the Milestone 2.0, and at present, the SOS v1.0.0 is used for operations.
 
-![](../images/image18.png)
+![](./images/image18.png)
 
 
 <a name="Fig_1"></a> **Figure 1: Core Model Diagram for Observations and Measurements (O&M)**
@@ -123,7 +123,7 @@ The OGC SOS interface is based on the OGC Web Service Common specification, thus
 
 The Core Profile has been identified as relevant to IOOS DMAC; the implementation of the Core Profile operations within the Mileastone 1.0 framework is described hereinafter. The Core Profile operations are based on the stateless HTTP request/response model. A diagram illustrating the basic message sequence is shown in [**Figure 2**](#Fig_2).
 
-![](../images/image00.png)
+![](./images/image00.png)
 
 <a name="Fig_2"></a> **Figure 2: SOS Request/Response Pattern**
 
@@ -146,7 +146,7 @@ Please note, that SOS in version 1.0 does not restrict creation of observation o
 
 GetCapabilities request may be sent to the server as HTTP/GET or HTTP/POST. HTTP/GET request passes parameters to the server in the HTTP URL with a number of key-value pairs (KVP) of input parameters, and HTTP/POST request sends an XML document to the server, that may also be KVP-encoded. A request to perform GetCapabilities should follow the structure as depicted in the [**Figure 3**](#Fig_3) and table below.
 
-![](../images/image19.png)
+![](./images/image19.png)
 
 <a name="Fig_3"></a> **Figure 3: GetCapabilities request schema**<br><br>
 
@@ -191,7 +191,7 @@ service="SOS" updateSequence="">
 
 The response to a GetCapabilities request is an XML encoded document that conforms to the [SOS 1.0.0 Implementation Specification [OGC 06-009r6]](http://portal.opengeospatial.org/files/?artifact_id=26667), and illustrates the characteristics of the SOS system by providing a comprehensive information about coordinate reference system (CRS), spatial or temporal filtering and other information about sensors, feature of interest, and response format. The OGC specification is constrained by the IOOS Convention that on one hand prescribes a certain way of use for some optional components, and on the other hand – facilitates the future acceptance of the SOS 2.0. At any rate, the IOOS Convention does not violate OGC specification’s requirements.
 
-![](../images/image20.png)
+![](./images/image20.png)
 <a name="Fig_4"></a> **Figure 4: GetCapabilities response schema**
 
 
@@ -599,7 +599,7 @@ A DescribeSensor request may be sent to the server as HTTP/GET or HTTP/POST. Whi
 The UML diagram of the DescribeSensor request is presented in [**Figure 5**](#Fig_5).
 
 
-![](../images/image21.png)
+![](./images/image21.png)
 
 <a name="Fig_5"></a> **Figure 5: DescribeSensor request schema**<br><br>
 
@@ -637,7 +637,7 @@ http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?request=DescribeSensor&service=SOS&ve
 
 The response to a DescribeSensor request is a [Sensor Model Language (SensorML](http://www.opengeospatial.org/standards/sensorml)) document that describes the sensor system. In some cases, a DescribeSensor response may be quite voluminous; for example, if description of the network has been requested, and the response returns the document that contains detailed information not just about the network itself, but all network platforms and all sensors installed on each platform. A UML diagram  of such an all-inclusive DescribeSensor document is depicted in [**Figure 6**](#Fig_6) followed by the annotated outline of the document.
 
-![](../images/image22.png)
+![](./images/image22.png)
 
 <a name="Fig_6"></a> **Figure 6: DescribeSensor response schema**<br><br>
 
@@ -1304,7 +1304,7 @@ A **GetObservation** request contains one or more elements that constrain the ob
 
 The UML diagram of the GetObservation request is presented in [**Figure 7**](#Fig_7), and input parameters are elaborated in the following table.
 
-![](../images/image23.png)
+![](./images/image23.png)
 
 <a name="Fig_7"></a> **Figure 7: GetObservation request schema**<br><br>
 
@@ -1515,7 +1515,7 @@ In a similar manner, an abbreviated station ID is composed of the authority and
 
 The static information for all stations and sensors in GetObservation response is encompassed within the field “stations” of the root DataRecord element. Each DataRecord’s field may recursively enclose an unlimited number of DataRecords, which makes the static data block a pretty complex structure of nested DataRecords in case of multiple stations and/or sensors, as shown in [**Figure 8**](#Fig_8).
 
-![](../images/image99.png)
+![](./images/image99.png)
 
 <a name="Fig_8"></a> **Figure 8: GetObservation static data block outline**<br><br>
 
@@ -1711,7 +1711,7 @@ The IOOS Convention specifies a position of a profiling sensor in reference to a
 ```
 The sensor’s orientation is reported in terms of the pitch, roll, and yaw angles using the CF Conventions standard names: platform_pitch_angle, platform_roll_angle, and platform_orientation for yaw angle; the [**Figure 9**](#Fig_9) depicts a relation of the directional vectors and orientation angles.
 
-![](../images/image28c.png)
+![](./images/image28c.png)
 
 <a name="Fig_9"></a> **Figure 9: Directions, Yaw, Pitch and Roll Angles** _(copied from [Wikipedia](http://en.wikipedia.org/wiki/Six_degrees_of_freedom))_<br /><br />
 
