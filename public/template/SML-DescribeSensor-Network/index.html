@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> IOOS SOS v1.0 SML DescribeSensor-Network Template &middot; SOS v1.0 </title>
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/sos-guidelines/css/poole.css">
+  <link rel="stylesheet" href="http://localhost:1313/sos-guidelines/css/syntax.css">
+  <link rel="stylesheet" href="http://localhost:1313/sos-guidelines/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="SOS v1.0" />
+</head>
+
+<body>
+
+<div class="sidebar">
+   	<p>  <img src="./images/ioos_blue2.png" alt="ho-ho-ho"> </p> 
+
+	<div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>SOS v1.0</h1>
+      <p class="lead">
+       Docs, codes, scripts, templates 
+      </p>
+    </div>
+
+
+    <ul class="sidebar-nav">
+      <li><a href="http://ioos.github.io">IOOS Home</a> </li>
+	  <li><a href="/sos-guidelines/">SOS Guidelines Home</a> </li>
+      
+    </ul>
+
+	
+
+	
+  
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+
+  <h1>IOOS SOS v1.0 SML DescribeSensor-Network Template</h1>
+
+    <div id="toc" class="well col-md-4 col-sm-6">
+    
+    </div>
+
+      <p><em>Template for a generic (independent of feature type) SensorML DescribeSensor response for Network of Stations</em></p>
+
+<pre><code class="language-XML">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- Template document for a generic (independant of feature type) Describe Sensor Network --&gt;
+&lt;!-- Each member system in the template includes: --&gt;
+&lt;!--    Name &amp; Description --&gt;
+&lt;!--    Temporal &amp; Spatial Bounds --&gt;
+&lt;!--    Identifiers --&gt;
+&lt;!--    Classifiers --&gt;
+&lt;!--    Contacts --&gt;
+&lt;!--    Components --&gt;
+&lt;!--  --&gt;
+&lt;!-- The SML document is designed to present useful metadata about the sensor network --&gt;
+&lt;!-- sufficient to determine which additional descriptions or observations are needed. --&gt;
+&lt;!--  --&gt;
+&lt;sml:SensorML 
+  xmlns:sml=&quot;http://www.opengis.net/sensorML/1.0.1&quot; 
+  xmlns:gml=&quot;http://www.opengis.net/gml&quot; 
+  xmlns:swe=&quot;http://www.opengis.net/swe/1.0.1&quot; 
+  xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; 
+  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
+  xsi:schemaLocation=&quot;http://www.opengis.net/sensorML/1.0.1 http://schemas.opengis.net/sensorML/1.0.1/sensorML.xsd&quot; 
+  version=&quot;1.0.1&quot;&gt;
+  
+  &lt;!-- SERVICE VERSION METADATA --&gt;
+  &lt;sml:capabilities name=&quot;ioosServiceMetadata&quot;&gt;
+    &lt;swe:SimpleDataRecord&gt;
+      &lt;swe:field name=&quot;ioosTemplateVersion&quot;&gt;
+        &lt;swe:Text definition=&quot;http://code.google.com/p/ioostech/source/browse/#svn%2Ftrunk%2Ftemplates%2FMilestone1.0&quot;&gt;
+          &lt;swe:value&gt;1.0&lt;/swe:value&gt;
+        &lt;/swe:Text&gt;
+      &lt;/swe:field&gt;
+    &lt;/swe:SimpleDataRecord&gt;
+  &lt;/sml:capabilities&gt; 
+  
+  &lt;sml:member&gt;
+    &lt;sml:System&gt;
+      &lt;gml:description&gt;Collection of all station assets available via the NANOOS SOS service&lt;/gml:description&gt;
+      &lt;gml:name&gt;urn:ioos:network:nanoos:all&lt;/gml:name&gt;
+            
+      &lt;!-- Spatial bounds of the content described by this network --&gt;
+      &lt;gml:boundedBy&gt;
+          &lt;gml:Envelope srsName=&quot;http://www.opengis.net/def/crs/EPSG/0/4326&quot;&gt;
+              &lt;gml:lowerCorner&gt;32.7 -75.0&lt;/gml:lowerCorner&gt;
+              &lt;gml:upperCorner&gt;34.7 -72.0&lt;/gml:upperCorner&gt;
+          &lt;/gml:Envelope&gt;
+      &lt;/gml:boundedBy&gt; 
+      
+      &lt;!-- =============================================================== --&gt;
+      &lt;!-- IDENTIFIERS                                                     --&gt;
+      &lt;!-- The networkID, shortName and longName are manditory             --&gt;
+      &lt;!-- list all that are appropriate                                   --&gt;
+      &lt;!-- =============================================================== --&gt;
+      &lt;sml:identification&gt;
+        &lt;sml:IdentifierList&gt;
+          &lt;sml:identifier name=&quot;networkID&quot;&gt;
+            &lt;sml:Term definition=&quot;http://mmisw.org/ont/ioos/definition/networkID&quot;&gt;
+              &lt;sml:value&gt;urn:ioos:network:nanoos:all&lt;/sml:value&gt;
+            &lt;/sml:Term&gt;
+          &lt;/sml:identifier&gt;
+          &lt;sml:identifier name=&quot;shortName&quot;&gt;
+            &lt;sml:Term definition=&quot;http://mmisw.org/ont/ioos/definition/shortName&quot;&gt;
+              &lt;sml:value&gt;NANOOS SOS station assets collection&lt;/sml:value&gt;
+            &lt;/sml:Term&gt;
+          &lt;/sml:identifier&gt;
+          &lt;sml:identifier name=&quot;longName&quot;&gt;
+            &lt;sml:Term definition=&quot;http://mmisw.org/ont/ioos/definition/longName&quot;&gt;
+              &lt;sml:value&gt;Collection of all station assets available via the NANOOS SOS service&lt;/sml:value&gt;
+            &lt;/sml:Term&gt;
+          &lt;/sml:identifier&gt;
+        &lt;/sml:IdentifierList&gt;
+      &lt;/sml:identification&gt;
+      
+      &lt;!-- =============================================================== --&gt;
+      &lt;!-- CLASSIFIERS                                                     --&gt;
+      &lt;!-- List any classifiers that apply to this network offering        --&gt;
+      &lt;!-- =============================================================== --&gt;
+      &lt;sml:classification&gt;
+        &lt;sml:ClassifierList&gt;
+          &lt;!-- List as many as needed to describe the content of the network offering --&gt;   
+          &lt;sml:classifier name=&quot;publisher&quot;&gt;
+            &lt;sml:Term definition=&quot;http://mmisw.org/ont/ioos/definition/publisher&quot;&gt;
+              &lt;sml:codeSpace xlink:href=&quot;http://mmisw.org/ont/ioos/organization&quot;/&gt;
+              &lt;sml:value&gt;NANOOS&lt;/sml:value&gt;
+            &lt;/sml:Term&gt;
+          &lt;/sml:classifier&gt;
+          &lt;!-- At least one parent network must reference an IOOS codespace and list the RA Acronym --&gt;
+          &lt;sml:classifier name=&quot;parentNetwork&quot;&gt;
+            &lt;sml:Term definition=&quot;http://mmisw.org/ont/ioos/definition/parentNetwork&quot;&gt;
+              &lt;sml:codeSpace xlink:href=&quot;http://mmisw.org/ont/ioos/organization&quot;/&gt;
+              &lt;sml:value&gt;NANOOS&lt;/sml:value&gt;
+            &lt;/sml:Term&gt;
+          &lt;/sml:classifier&gt;
+        &lt;/sml:ClassifierList&gt;
+      &lt;/sml:classification&gt;
+
+      &lt;!-- sml:validTime represents the date range of the validity of this document --&gt;
+      &lt;sml:capabilities name=&quot;observationTimeRange&quot;&gt;
+        &lt;swe:DataRecord&gt;
+          &lt;swe:field name=&quot;observationTimeRange&quot;&gt;
+            &lt;swe:TimeRange definition=&quot;http://mmisw.org/ont/ioos/swe_element_type/observationTimeRange&quot;&gt;
+              &lt;swe:value&gt;2008-04-28T08:00:00.000Z 2012-12-27T19:00:00.000Z&lt;/swe:value&gt;
+            &lt;/swe:TimeRange&gt;
+          &lt;/swe:field&gt;
+        &lt;/swe:DataRecord&gt;
+      &lt;/sml:capabilities&gt;     
+
+      &lt;!-- =============================================================== --&gt;
+      &lt;!-- CONTACTS                                                        --&gt;
+      &lt;!-- List all publisher and operator contacts that apply to this     --&gt;
+      &lt;!-- network offering.                                               --&gt;
+      &lt;!-- Consider using xlink:href to external document for concision    --&gt;
+      &lt;!-- =============================================================== --&gt;
+      &lt;sml:contact&gt;
+        &lt;sml:ContactList&gt;
+          &lt;sml:member xlink:role=&quot;http://mmisw.org/ont/ioos/definition/operator&quot;&gt;
+            &lt;sml:ResponsibleParty&gt;
+              &lt;sml:organizationName&gt;PNW Buoys&lt;/sml:organizationName&gt;
+              &lt;sml:contactInfo&gt;
+                &lt;sml:address&gt;
+                  &lt;sml:deliveryPoint&gt;1007 Balch Blvd.&lt;/sml:deliveryPoint&gt;
+                  &lt;!-- Optional: City; but strongly encouraged  --&gt;
+                  &lt;sml:city&gt;Fremont&lt;/sml:city&gt;
+                  &lt;sml:administrativeArea&gt;WA&lt;/sml:administrativeArea&gt;
+                  &lt;sml:postalCode&gt;98195&lt;/sml:postalCode&gt;
+                  &lt;!-- Required: country [Values: USA|&lt;COUNTRY NAME&gt;|NON-USA] --&gt;
+                  &lt;sml:country&gt;USA&lt;/sml:country&gt;
+                  &lt;!-- Required: electronicMailAddress --&gt;
+                  &lt;sml:electronicMailAddress&gt;contact@buoys.com&lt;/sml:electronicMailAddress&gt;
+                &lt;/sml:address&gt;
+                &lt;!-- Optional: onlineResource; but strongly encouraged for operator --&gt; 
+                &lt;sml:onlineResource xlink:href=&quot;http://pnw.buoyoperator.org&quot;/&gt;
+              &lt;/sml:contactInfo&gt;
+            &lt;/sml:ResponsibleParty&gt;
+          &lt;/sml:member&gt;
+          &lt;sml:member xlink:role=&quot;http://mmisw.org/ont/ioos/definition/publisher&quot;&gt;
+            &lt;sml:ResponsibleParty&gt;
+              &lt;sml:organizationName&gt;NANOOS&lt;/sml:organizationName&gt;
+              &lt;sml:contactInfo&gt;
+                &lt;sml:address&gt;
+                  &lt;sml:country&gt;USA&lt;/sml:country&gt;
+                  &lt;sml:electronicMailAddress&gt;mayorga@apl.washington.edu&lt;/sml:electronicMailAddress&gt;
+                &lt;/sml:address&gt;
+                &lt;sml:onlineResource xlink:href=&quot;http://nanoos.org&quot;/&gt;
+              &lt;/sml:contactInfo&gt;
+            &lt;/sml:ResponsibleParty&gt;
+          &lt;/sml:member&gt;
+        &lt;/sml:ContactList&gt;
+      &lt;/sml:contact&gt;
+          
+      &lt;!-- =============================================================== --&gt;
+      &lt;!-- COMPONENTS                                                      --&gt;
+      &lt;!-- List all component platforms in the network offering            --&gt;
+      &lt;!-- Manditory Elements:                                             --&gt;
+      &lt;!--   identification - the names by with the platform is called     --&gt;
+      &lt;!--   capabilities   - observation time range                       --&gt;
+      &lt;!--   location*      - the location of the platform                 --&gt;
+      &lt;!--   outputs        - the quantities observed by this platform     --&gt;
+      &lt;!-- *location may be large but useful for platforms which move      --&gt;
+      &lt;!-- =============================================================== --&gt;
+      &lt;sml:components&gt;
+        &lt;sml:ComponentList&gt;          
+          &lt;sml:component name='wmo_41001'&gt;
+            &lt;sml:System&gt;
+            &lt;!-- Include name &amp; description only if they have some useful human readable purpose --&gt;
+
+              &lt;!-- ==================================================================== --&gt;
+              &lt;!-- PLATFORM IDENTIFIERS                                                 --&gt;
+              &lt;!-- Gives ability to platforms by name                                   --&gt;
+              &lt;!-- ==================================================================== --&gt;
+              &lt;sml:identification&gt;
+                &lt;sml:IdentifierList&gt;
+                  &lt;!-- The 3 identifiers listed below are MANDATORY --&gt;
+                  &lt;sml:identifier name=&quot;stationID&quot;&gt;
+                    &lt;sml:Term definition=&quot;http://mmisw.org/ont/ioos/definition/stationID&quot;&gt;
+                      &lt;sml:value&gt;urn:ioos:station:wmo:41001&lt;/sml:value&gt;
+                    &lt;/sml:Term&gt;
+                  &lt;/sml:identifier&gt;
+                  &lt;sml:identifier name=&quot;shortName&quot;&gt;
+                    &lt;sml:Term definition=&quot;http://mmisw.org/ont/ioos/definition/shortName&quot;&gt;
+                      &lt;sml:value&gt;WMO 41001 Buoy, Cape Hatteras&lt;/sml:value&gt;
+                    &lt;/sml:Term&gt;
+                  &lt;/sml:identifier&gt;
+                &lt;/sml:IdentifierList&gt;
+              &lt;/sml:identification&gt;
+   
+              &lt;!-- Time range for this platform --&gt;
+              &lt;sml:capabilities name=&quot;observationTimeRange&quot;&gt;
+                &lt;swe:DataRecord&gt;
+                  &lt;swe:field name=&quot;observationTimeRange&quot;&gt;
+                    &lt;swe:TimeRange definition=&quot;http://mmisw.org/ont/ioos/swe_element_type/observationTimeRange&quot;&gt;
+                      &lt;swe:value&gt;2006-02-12T00:00:00.000Z 2013-04-21T00:00:00.000Z&lt;/swe:value&gt;
+                    &lt;/swe:TimeRange&gt;
+                  &lt;/swe:field&gt;
+                &lt;/swe:DataRecord&gt;
+              &lt;/sml:capabilities&gt;
+              
+              
+              &lt;!-- =============================================================== --&gt;
+              &lt;!-- LOCATION                                                        --&gt;
+              &lt;!-- Station geographic location (lat &amp; lon only, no z)              --&gt;
+              &lt;!-- Always use epsg 4326.                                           --&gt;
+              &lt;!-- For moving platforms use &lt;gml:LineString&gt;                       --&gt;
+              &lt;!-- =============================================================== --&gt;
+              &lt;sml:location&gt;
+                &lt;gml:Point srsName=&quot;http://www.opengis.net/def/crs/EPSG/0/4326&quot;&gt;
+                  &lt;gml:pos&gt;34.7 -72.73&lt;/gml:pos&gt;
+                &lt;/gml:Point&gt;
+              &lt;/sml:location&gt;
+              
+              
+              &lt;!-- =============================================================== --&gt;
+              &lt;!-- OUTPUTS                                                         --&gt;
+              &lt;!-- A list of the quantities observed by this platform              --&gt;
+              &lt;!-- =============================================================== --&gt;
+              &lt;sml:outputs&gt;
+                &lt;sml:OutputList&gt;
+                  &lt;sml:output name=&quot;Sea Water Temperature&quot;&gt;
+                    &lt;swe:Quantity definition=&quot;http://mmisw.org/ont/cf/parameter/sea_water_temperature&quot;/&gt;
+                  &lt;/sml:output&gt;
+                  &lt;sml:output name=&quot;Dissolved Oxygen&quot;&gt;
+                    &lt;swe:Quantity definition=&quot;http://mmisw.org/ont/cf/parameter/dissolved_oxygen&quot;/&gt;
+                  &lt;/sml:output&gt;
+                &lt;/sml:OutputList&gt;
+              &lt;/sml:outputs&gt;
+
+            &lt;/sml:System&gt;
+          &lt;/sml:component&gt;
+          
+          &lt;!-- Compact form --&gt;
+          &lt;sml:component name='wmo_41002'&gt;
+            &lt;sml:System&gt;
+              &lt;sml:identification&gt;
+                &lt;sml:IdentifierList&gt;
+                  &lt;!-- The 2 identifiers listed below are MANDATORY --&gt;
+                  &lt;sml:identifier name=&quot;stationID&quot;&gt;
+                    &lt;sml:Term definition=&quot;http://mmisw.org/ont/ioos/definition/stationID&quot;&gt;
+                      &lt;sml:value&gt;urn:ioos:station:wmo:41002&lt;/sml:value&gt;
+                    &lt;/sml:Term&gt;
+                  &lt;/sml:identifier&gt;
+                  &lt;sml:identifier name=&quot;shortName&quot;&gt;
+                    &lt;sml:Term definition=&quot;http://mmisw.org/ont/ioos/definition/shortName&quot;&gt;
+                      &lt;sml:value&gt;WMO 41002 Buoy, Cape Hatteras&lt;/sml:value&gt;
+                    &lt;/sml:Term&gt;
+                  &lt;/sml:identifier&gt;
+                &lt;/sml:IdentifierList&gt;
+              &lt;/sml:identification&gt;
+              
+              &lt;sml:capabilities name=&quot;observationTimeRange&quot;&gt;
+                &lt;swe:DataRecord&gt;
+                  &lt;swe:field name=&quot;observationTimeRange&quot;&gt;
+                    &lt;swe:TimeRange definition=&quot;http://mmisw.org/ont/ioos/swe_element_type/observationTimeRange&quot;&gt;
+                      &lt;swe:value&gt;2006-02-12T00:00:00.000Z 2013-04-21T00:00:00.000Z&lt;/swe:value&gt;
+                    &lt;/swe:TimeRange&gt;
+                  &lt;/swe:field&gt;
+                &lt;/swe:DataRecord&gt;
+              &lt;/sml:capabilities&gt;
+              
+              &lt;sml:location&gt;
+                &lt;gml:Point srsName=&quot;http://www.opengis.net/def/crs/EPSG/0/4326&quot;&gt;
+                  &lt;gml:pos&gt;34.7 -72.73&lt;/gml:pos&gt;
+                &lt;/gml:Point&gt;
+              &lt;/sml:location&gt;
+              
+              &lt;sml:outputs&gt;
+                &lt;sml:OutputList&gt;
+                  &lt;sml:output name=&quot;Sea Water Temperature&quot;&gt;
+                    &lt;swe:Quantity definition=&quot;http://mmisw.org/ont/cf/parameter/sea_water_temperature&quot;/&gt;
+                  &lt;/sml:output&gt;
+                  &lt;sml:output name=&quot;Dissolved Oxygen&quot;&gt;
+                    &lt;swe:Quantity definition=&quot;http://mmisw.org/ont/cf/parameter/dissolved_oxygen&quot;/&gt;
+                  &lt;/sml:output&gt;
+                &lt;/sml:OutputList&gt;
+              &lt;/sml:outputs&gt;
+            &lt;/sml:System&gt;
+          &lt;/sml:component&gt;
+        
+        &lt;/sml:ComponentList&gt;
+        
+      &lt;/sml:components&gt;
+    
+    &lt;/sml:System&gt;
+  &lt;/sml:member&gt;
+  &lt;!-- No additional members are expected because SOS DescribeSensor only allows a request for a single procedure--&gt;
+&lt;/sml:SensorML&gt;
+</code></pre>
+
+</div>
+</div>
+
+  </body>
+</html>

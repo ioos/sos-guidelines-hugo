@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> List of SOS Tests &middot; SOS v1.0 </title>
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/sos-guidelines/css/poole.css">
+  <link rel="stylesheet" href="http://localhost:1313/sos-guidelines/css/syntax.css">
+  <link rel="stylesheet" href="http://localhost:1313/sos-guidelines/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="SOS v1.0" />
+</head>
+
+<body>
+
+<div class="sidebar">
+   	<p>  <img src="./images/ioos_blue2.png" alt="ho-ho-ho"> </p> 
+
+	<div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>SOS v1.0</h1>
+      <p class="lead">
+       Docs, codes, scripts, templates 
+      </p>
+    </div>
+
+
+    <ul class="sidebar-nav">
+      <li><a href="http://ioos.github.io">IOOS Home</a> </li>
+	  <li><a href="/sos-guidelines/">SOS Guidelines Home</a> </li>
+      
+    </ul>
+
+	
+
+	
+  
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+
+  <h1>List of SOS Tests</h1>
+
+    <div id="toc" class="well col-md-4 col-sm-6">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#toc_0">OWS Common Tests</a>
+<ul>
+<li><a href="#toc_1">owsTests:ows-main</a></li>
+</ul></li>
+<li><a href="#toc_2">General SOS Tests</a></li>
+<li><a href="#toc_3">Core SOS Tests</a>
+<ul>
+<li><a href="#toc_4">GetCapabilities Tests</a>
+<ul>
+<li><a href="#toc_5">OGC General Tests</a></li>
+<li><a href="#toc_6">IOOS-specific Tests</a></li>
+</ul></li>
+<li><a href="#toc_7">DescribeSensor Tests</a>
+<ul>
+<li><a href="#toc_8">OGC General Tests</a></li>
+<li><a href="#toc_9">IOOS-specific Tests</a></li>
+</ul></li>
+<li><a href="#toc_10">GetObservation Tests</a>
+<ul>
+<li><a href="#toc_11">OGC General Tests</a></li>
+<li><a href="#toc_12">IOOS-specific Tests</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+
+      
+
+<p><em>This document contains a list of required and optional tests that have to be run in order to ensure full compliance with IOOS SOS Profile 1.0 (Milestone 1.0), and currently sufficient level of compliance with the OGC SOS 1.0.0 specification.</em></p>
+
+<h2 id="toc_0">OWS Common Tests</h2>
+
+<h3 id="toc_1">owsTests:ows-main</h3>
+
+<p><strong>(<em>Run test group for GetCapabilities requests using the GET method.</em>)</strong></p>
+
+<table>
+<thead>
+<tr>
+<th><strong>TESTS</strong></th>
+<th><strong>ASSERTIONS</strong></th>
+<th align="center"><strong>IOOS Rq&rsquo;d/Opt</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>owsTests:ows-OWS.GetCapabilities.1</strong></td>
+<td>The GET method request must be supported (using HTTP GET).  Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root element matches the provided root element.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>owsTests:ows-OWS.ContentType.1</strong></td>
+<td>A response message containing an entity body must contain a Content-Type entity header field that correctly indicates the media type of the message body.  Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document matches the root element name; (3) the response Content-Type header must be “text/xml” for XML entities.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>owsTests:ows-OWS.GetCapabilities-Exceptions.1</strong></td>
+<td>In the event that a GetCapabilities request cannot be processed for any reason, the response entity shall include an exception report. The exception code must be one of those listed in Table 5 in the specification document.  GetCapabilities with no <em>service</em> parameter and <em>AcceptVersions</em> parameter equal to 1.0.0.  Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “MissingParameterValue” exception code; (4) theExceptionReport @locator value shall be that of the missing parameter.</td>
+<td align="center"><strong>(1) R<br />(2) R<br />(3) O<br />  (4) O</strong></td>
+</tr>
+
+<tr>
+<td><strong>owsTests:ows-OWS.GetCapabilities-Exceptions.2</strong></td>
+<td>In the event that a GetCapabilities request cannot be processed for any reason, the response entity shall include an exception report. The exception code must be one of those listed in Table 5.  GetCapabilities with a bogus <em>service</em> parameter value (ADSF), and <em>AcceptVersions</em> parameter equal to 1.0.0.  Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the &lsquo;InvalidParameterValue&rsquo; exception code; (4) theExceptionReport @locator value shall be that of the invalid parameter.</td>
+<td align="center"><strong>(1) R<br />(2) R<br /> (3) O<br /> (4) O</strong></td>
+</tr>
+
+<tr>
+<td><strong>owsTests:ows-OWS.GetCapabilities-Exceptions.3</strong></td>
+<td>In the event that a GetCapabilities request cannot be processed for any reason, the response entity shall include an exception report. The exception code must be one of those listed in Table 5.  GetCapabilities with <em>service</em> parameter SOS, and bogus AcceptVersions parameter value “2000-01-01”.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>owsTests:ows-OWS.GetCapabilities-Exceptions.5</strong></td>
+<td>In the event that a GetCapabilities request cannot be processed for any reason, the response entity shall include an exception report. The exception code must be one of those listed in Table 5.  GetCapabilities with an incorrect KVP query string <code>http://SOS-server-URL/sos?request~GetCapabilities!service~!SOS</code>, triggering the missing parameter value exception.  Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “MissingParameterValue” exception code, for both the request and service.</td>
+<td align="center"><strong>(1) O<br /> (2) O<br />(3) O</strong></td>
+</tr>
+
+<tr>
+<td><strong>owsTests:ows-OWS.CaseInsensitiveKvpNames.1</strong></td>
+<td>Parameter names in KVP strings shall be handled in a case-insensitive manner.  GetCapabilities with the KVP parameter names in all uppercase, lower-case and mixed-case.  Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root element matches the provided root element.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>owsTests:ows-OWS.GetCapabilities-AcceptVersions.1</strong></td>
+<td>If AcceptVersions is not specified, the service must respond with highest supported version.  GetCapabilities with no AcceptVersions and service of “SOS”. Without AcceptVersion, using version negotiation, sends latest copy.  Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an sos:SOS_Capabilities document; (3) the response version must be what was requested</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>owsTests:ows-OWS.GetCapabilities-AcceptVersions.2</strong></td>
+<td>Version negotiation using <em>AcceptVersions</em> parameter (preference ordering) must return service metadata corresponding to the most preferred version that is supported. If none of the requested versions are supported, the server must generate an exception with code &lsquo;VersionNegotiationFailed&rsquo;.  GetCapabilities with AcceptVersions of “1.0.0” and service of “SOS”.  With AcceptVersion, expecting one of the versions listed $acceptVersions.  Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an sos:SOS_Capabilities document; (3) the response version must be what was requested. If the AcceptVersion element is used with a number of versions, one is expected to return (&lsquo;1.0.0&rsquo;).</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>owsTests:ows-OWS.GetCapabilities-AcceptVersions.3</strong></td>
+<td>Version negotiation using AcceptVersions parameter (preference ordering) must return service metadata corresponding to the most preferred version that is supported. If none of the requested versions are supported, the server must generate an exception with code &lsquo;VersionNegotiationFailed&rsquo;. GetCapabilities with <em>service</em> of “SOS”, and bogus <em>AcceptVersion</em> number “2000-01-01” <code>http://SOS-server-URL/sos?request#GetCapabilities&amp;service#SOS&amp;acceptversions#2000-01-01</code>. Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “VersionNegotiationFailed” exception code.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>owsTests:ows-OWS.GetCapabilities-Sections.1</strong></td>
+<td>The response to a GetCapabilities request that includes a sections parameter with NO VALUE provided (i.e. <code>http://SOS_serverURL/sos?service#SOS&amp;request#GetCapabilities&amp;sections#</code>) shall include an abbreviated capabilities document that omits all optional sections.  Pass if the response is schema valid and omits all optional top-level elements.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>owsTests:ows-OWS.GetCapabilities-Sections.2</strong></td>
+<td>The response to a GetCapabilities request that includes a sections parameter listing optional elements <em>ServiceIdentification</em> and <em>OperationsMetadata</em> shall include only the requested elements in the response entity <code>http://SOS-server-URL/sos?service#SOS&amp;request#GetCapabilities&amp;sections#ServiceIdentification,OperationsMetadata</code>. Pass if the response is schema valid and includes only the requested optional elements.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>owsTests:ows-OWS.GetCapabilities-AcceptFormats.1</strong></td>
+<td>The response to a GetCapabilities request containing an <em>AcceptFormats</em> parameter specifying a supported format must include a response entity that corresponds to the requested media type.  Examples: (1)<code>http://SOS-server-URL/sos?service#SOS&amp;request#GetCapabilities&amp;acceptformats#text/xml</code> and (2)<code>http://SOS-server-URL/sos?service#SOS&amp;request#GetCapabilities&amp;acceptformats#application/zip</code>.  Pass if the response is schema valid and <em>outputFormat</em> equals requested media type.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_2">General SOS Tests</h2>
+
+<table>
+<thead>
+<tr>
+<th><strong>TESTS</strong></th>
+<th><strong>ASSERTIONS</strong></th>
+<th align="center"><strong>IOOS Rq&rsquo;d/Opt</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>sos:general-SOS.General-InvalidRequest.1</strong></td>
+<td>Sending a POST request that is non-conformant to a schema associated with an SOS operation (with “test” in the body) causes the server to return a valid error report message. Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “MissingParameterValue” exception code.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+
+<tr>
+<td><strong>sos:general-SOS.General-ValidResponse.1</strong></td>
+<td>A response is a valid response for the SOS. This general assertion is tested by all other tests, so there is nothing specific to test now.</td>
+<td align="center"><strong>N/A</strong></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_3">Core SOS Tests</h2>
+
+<p><strong><em>A request for a valid capabilities document is made with the optional “acceptversions” parameter omitted, and a response is validated with the schema. Further tests are performed on the GetCapabilities response only if the response passes schema validation.</em></strong></p>
+
+<h3 id="toc_4">GetCapabilities Tests</h3>
+
+<h4 id="toc_5">OGC General Tests</h4>
+
+<table>
+<thead>
+<tr>
+<th><strong>TESTS</strong></th>
+<th><strong>ASSERTIONS</strong></th>
+<th align="center"><strong>IOOS Rq&rsquo;d/Opt</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>getCapabilities:core-SOS.GetCapabilities-KVPRequestParameterHandling.1</strong></td>
+<td>GetCapabilities request with missing mandatory parameter <em>service</em> and optional <em>acceptversions</em> returns a valid error report message.  Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “MissingParameterValue” exception code.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:core-SOS.GetCapabilities-KVPRequestServiceParameterHandling.1</strong></td>
+<td>GetCapabilities request with no <em>acceptversions</em> parameter and a bogus <em>service</em> parameter value of “XYZ” returns a valid error report message.  Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “ InvalidParameterValue” exception code.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:core-SOS.GetCapabilities-KVPRequestRequestParameterHandling.1</strong></td>
+<td>Request with no <em>acceptversions</em> parameter and a bogus <em>request</em> parameter value of “GetMeASandwich” returns a valid error report message.  Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “ InvalidRequest” exception code.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:core-SOS.GetCapabilities-OperationsMetadataMandatoryOperations.1</strong></td>
+<td>The OperationsMetadata section of the GetCapabilities response lists the mandatory operations of the SOS.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:core-SOS.GetCapabilities-OperationsMetadaOptionalOperations.1</strong></td>
+<td>Any non-mandatory operations advertised in the OperationsMetadata section of the GetCapabilities response have valid SOS method names.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:core-SOS.GetCapabilities-ResponseContentsValidTime.1</strong></td>
+<td>The values in the <em>time</em> element for each ObservationOffering are valid time values (ISO 8601) or are valid named times (i.e. indeterminate, now, etc.).  If a time period is specified, then the “beginTime” value must come before the “endTime” or be equal to the “endTime” value.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:core-SOS.GetCapabilities-ResponseContentsValidProcedure.1</strong></td>
+<td>The values in the <em>procedure</em> element(s) for each ObservationOffering contain a value and are valid URNs.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:core-SOS.GetCapabilities-ResponseContentsValidObservedProperty.1</strong></td>
+<td>The values in the <em>observedProperty</em> element(s) for each ObservationOffering contain a value and are valid URNs, or valid URLs, e.g. for CF/MMI phenomenon names (see document OGC 05-010 for correct formatting of definition URN).</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:core-SOS.GetCapabilities-ResponseContentsValidResponseFormat.1</strong></td>
+<td>The values in the <em>responseFormat</em> element(s) for each ObservationOffering contain a value and are valid MIME types <em>(namely IOOS profile format)</em></td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:core-SOS.GetCapabilities-ResponseContentsValidResultModel.1</strong></td>
+<td>If an ObservationOffering provides the <em>resultModel</em> element, then the <em>resultModel</em> element must be in the om:Observation substitution group and is typically om:Observation or a specialized extension.  Value must be namespace-qualified.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:core-SOS.GetCapabilities-ResponseContentsValidResponseMode.1</strong></td>
+<td>If an ObservationOffering provides the <em>responseMode</em> element, then the <em>responseMode</em> element contains a value that is one of the valid responseMode values.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_6">IOOS-specific Tests</h4>
+
+<table>
+<thead>
+<tr>
+<th><strong>TESTS</strong></th>
+<th><strong>ASSERTIONS</strong></th>
+<th align="center"><strong>IOOS Rq&rsquo;d/Opt</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>getCapabilities:IOOS-SOS.GetCapabilities-ResponseContainsValidOperationsMetadataProperty.1</strong></td>
+<td>The operation names are listed in UpperCamelCase (i.e. GetCapabilities, DescribeSensor, GetObservation, other – if implemented)</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:IOOS-SOS.GetCapabilities-ResponseContainsValidOperationsMetadataProperty.2</strong></td>
+<td>The ObservationOffering for the whole network is listed, and gml:id and gml:name for that offering is in lower case (e.g. gml:id#“urn_ioos_network_all” and  urn:ioos:network:all)</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:IOOS-SOS.GetCapabilities-ResponseContainsValidOperationsMetadataProperty.3</strong></td>
+<td>The &lt;ows:ExtendedCapabilities&gt; contains valid ioosTemplateVersion value.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:IOOS-SOS.GetCapabilities-ResponseContainsValidOperationsMetadataProperty.4</strong></td>
+<td>The &lt;ows: ExtendedCapabilities &gt; contains valid softwareVersion value.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:IOOS-SOS.GetCapabilities- ResponseContainsValidOutputFormat.1</strong></td>
+<td>The values in the &lt;ows:Parameter name#“outputFormat”&gt; element contain ‘text/xml;subtype#“sensorML/1.0.1/profiles/ioos_sos/1.0”’</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:IOOS-SOS.GetCapabilities- ResponseContainsValidResponseFormat.2</strong></td>
+<td>The values in the &lt;responseFormat&gt; element(s) for each ObservationOffering contain ‘text/xml; subtype#“om/1.0.0/profiles/ioos_sos/1.0”’.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:IOOS-SOS.GetCapabilities- ResponseContainsValidSRSName.1</strong></td>
+<td>If ObservationOffering for the network provides gml:srsName, then it has the value “EPSG:4326”</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:IOOS-SOS.GetCapabilities- ResponseContainsValidSRSName.2</strong></td>
+<td>If ObservationOffering for the network does not provide gml:srsName, then element &lt;gml:boundedBy&gt;/&lt;gml:Envelope&gt; has the attribute ‘srsName’ with the value “<a href="http://www.opengis.net/def/crs/EPSG/0/4326”">http://www.opengis.net/def/crs/EPSG/0/4326”</a></td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:IOOS-SOS.GetCapabilities- ResponseContainsValidTimeFrame.1</strong></td>
+<td>Each &lt;sos:ObservationOffering&gt; provides beginPosition and endPosition values of TimePeriod, and (a) beginPosition value is not later than endPosition; (b) beginPosition value is in ISO 8601 format (e.g. 2009-05-23T00:00:00.000Z), and &copy; endPosition has either an inline value in ISO 8601 format or an attribute ‘indeterminatePosition#”now”’.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:IOOS-SOS.GetCapabilities-ResponseContainsValidProcedure.1</strong></td>
+<td>Each ObservationOffering provides just a single procedure, and the procedure value is (a) a URN that conforms to the IOOS Conventions for Observing Asset Identifiers, and (b) matches the gml:name value for this ObservationOffering.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:IOOS-SOS.GetCapabilities-ResponseContainsValidObservedProperty.1</strong></td>
+<td>Each ObservationOffering provides at least one fully qualified &lt;sos:observedProperty&gt; element with the values of URLs corresponding to a Climate and Forecast (CF) Standard Name of the record in one of the IOOS Vocabularies.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:IOOS-SOS.GetCapabilities-ResponseContainsValidObservedProperty.2</strong></td>
+<td>None of the &lt;sos:observedProperty&gt; elements provides a value of vector phenomenon (i.e. wind, wave, current) instead of a scalar components of a composite phenomenon describing the vector, and defined in the IOOS Parameter Vocabulary (e.g.: <a href="http://mmisw.org/ont/ioos/parameter/wave">http://mmisw.org/ont/ioos/parameter/wave</a>).</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getCapabilities:IOOS-SOS.GetCapabilities-ResponseContainsValidResponseMode.1</strong></td>
+<td>Each ObservationOffering provides a valid responseMode value (i.e. one of the “inline”, “out-of-band”, “attached”, “resultTemplate” strings).</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_7">DescribeSensor Tests</h3>
+
+<h4 id="toc_8">OGC General Tests</h4>
+
+<table>
+<thead>
+<tr>
+<th><strong>TESTS</strong></th>
+<th><strong>ASSERTIONS</strong></th>
+<th align="center"><strong>IOOS Rq&rsquo;d/Opt</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>describeSensor:core-SOS.DescribeSensor-RequestInvalidMIMEType.1</strong></td>
+<td>A DescribeSensor request with no <em>outputFormat</em> parameter as well as with a bogus <em>outputFormat</em> parameter value that is not advertised in the capabilities document (e.g. <em>text/xml;subtype#“sensorML/A.B.C”</em>) produces a valid error report message. Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “MissingParameterValue “ exception code for missing <em>outputFormat</em>; (4) the ExceptionReport shall have the “InvalidParameterValue” exception code for bogus <em>outputFormat</em> value.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:core-SOS.DescribeSensor-RequestInvalidProcedure.1</strong></td>
+<td>A DescribeSensor request with no <em>procedure</em> parameter as well as with a bogus <em>procedure</em> parameter value that is not advertised in the capabilities document (e.g. “urn:ogc:object:procedure:CITE:NFL:AstroDome”) produces a valid error report message. Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “MissingParameterValue “ exception code for missing <em>procedure</em>; (4) the ExceptionReport shall have the “InvalidParameterValue” exception code for bogus <em>procedure</em> value.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:core-SOS.DescribeSensor-ResponseMatchingResponseFormat.1</strong></td>
+<td>The format of the response document matches the <em>outputFormat</em> specified in the request and is valid according to the <em>outputFormat</em> schema.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:core-SOS.DescribeSensor-ResponseMatchingProcedure.1</strong></td>
+<td>The unique identifier in the response document matches the procedure URN specified in the request.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_9">IOOS-specific Tests</h4>
+
+<table>
+<thead>
+<tr>
+<th><strong>TESTS</strong></th>
+<th><strong>ASSERTIONS</strong></th>
+<th align="center"><strong>IOOS Rq&rsquo;d/Opt</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>describeSensor:IOOS-SOS.DescribeSensor-ResponseContainsValidOperationsMetadataProperty.1</strong></td>
+<td>SensorML document provides ioosTemplateVersion value in the &lt;sml:capabilities [@name#“ioosServiceMetadata”]&gt; element.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:IOOS-SOS.DescribeSensor-ResponseContainsValidOperationsMetadataProperty.2</strong></td>
+<td>SensorML document for a network of stations provides valid reference to the EPSG::4326 CRS in a bounding box description &lt;gml:boundedBy&gt;/&lt;gml:Envelope [@srsName#’<a href="http://www.opengis.net/def/crs/EPSG/0/4326’]&gt;">http://www.opengis.net/def/crs/EPSG/0/4326’]&gt;</a> element.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:IOOS-SOS.DescribeSensor- ResponseContainsValidOperationsMetadataProperty.3</strong></td>
+<td>SensorML document for a network of stations provides valid networkID identifier, and the networkID: (a) has definition as &lt;sml:Term [@definition#’<a href="http://mmisw.org/ont/ioos/definition/networkID’]&gt;">http://mmisw.org/ont/ioos/definition/networkID’]&gt;</a>; (b)  has a value as URN that conforms to the IOOS Conventions for Observing Asset Identifiers; and &copy; matches the gml:name value in the &lt;sos:ObservationOffering&gt; for that network in the Capabilities document.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:IOOS-SOS.DescribeSensor- ResponseContainsValidOperationsMetadataProperty.4</strong></td>
+<td>SensorML document for a network of stations provides valid network shortName identifier, and the identifier has (a) definition as &lt;sml:Term [@definition#’<a href="http://mmisw.org/ont/ioos/definition/shortName’]&gt;">http://mmisw.org/ont/ioos/definition/shortName’]&gt;</a>; and (b) a text string value.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:IOOS-SOS.DescribeSensor- ResponseContainsValidOperationsMetadataProperty.5</strong></td>
+<td>SensorML document for a network of stations provides valid network longName identifier, and the identifier has (a) definition as &lt;sml:Term [@definition#’<a href="http://mmisw.org/ont/ioos/definition/longName’]&gt;">http://mmisw.org/ont/ioos/definition/longName’]&gt;</a>; and (b) a text string value.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:IOOS-SOS.DescribeSensor- ResponseContainsValidOperationsMetadataProperty.6</strong></td>
+<td>SensorML response document provides for each network or station the reference to at least one parent network with IOOS codeSpace and RA Acronym value.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:IOOS-SOS.DescribeSensor- ResponseContainsValidOperationsMetadataProperty.7</strong></td>
+<td>SensorML document for a network of station provides valid values for all following elements:  (a) &lt;/sml:SensorML/sml:member[1]/sml:System[1]/sml:contact/sml:ContactList/sml:member[@xlink:role#’<a href="http://mmisw.org/ont/ioos/definition/operator’]/sml:ResponsibleParty/sml:contactInfo/sml:address/sml:country&gt;">http://mmisw.org/ont/ioos/definition/operator’]/sml:ResponsibleParty/sml:contactInfo/sml:address/sml:country&gt;</a>;  (b) &lt;/sml:SensorML/sml:member[1]/sml:System[1]/sml:contact/sml:ContactList/sml:member[@xlink:role#’<a href="http://mmisw.org/ont/ioos/definition/publisher’]/sml:ResponsibleParty/sml:contactInfo/sml:address/sml:country&gt;">http://mmisw.org/ont/ioos/definition/publisher’]/sml:ResponsibleParty/sml:contactInfo/sml:address/sml:country&gt;</a>;  &copy; &lt;/sml:SensorML/sml:member[1]/sml:System[1]/sml:contact/sml:ContactList/sml:member[@xlink:role#’<a href="http://mmisw.org/ont/ioos/definition/operator’]/sml:ResponsibleParty/sml:contactInfo/sml:address/sml:electronicMailAddress&gt;">http://mmisw.org/ont/ioos/definition/operator’]/sml:ResponsibleParty/sml:contactInfo/sml:address/sml:electronicMailAddress&gt;</a>;  (d) &lt;/sml:SensorML/sml:member[1]/sml:System[1]/sml:contact/sml:ContactList/sml:member[@xlink:role#’<a href="http://mmisw.org/ont/ioos/definition/publisher’]/sml:ResponsibleParty/sml:contactInfo/sml:address/sml:electronicMailAddress&gt;**">http://mmisw.org/ont/ioos/definition/publisher’]/sml:ResponsibleParty/sml:contactInfo/sml:address/sml:electronicMailAddress&gt;**</a></td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:IOOS-SOS.DescribeSensor- ResponseContainsValidOperationsMetadataProperty.8</strong></td>
+<td>SensorML document for a network of stations provides a location of each network member station in &lt;sml:location/gml:Point [@srsName#’<a href="http://www.opengis.net/def/crs/EPSG/0/4326’&gt;">http://www.opengis.net/def/crs/EPSG/0/4326’&gt;</a> element with the values of latitude and longitude that are located within the spatial segment defined in the &lt;gml:boundedBy&gt; element.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:IOOS-SOS.DescribeSensor- ResponseContainsValidOperationsMetadataProperty.9</strong></td>
+<td>SensorML document for a network of stations provides a time range of observations for each network member station in &lt;sml:capabilities [@name#’observationTimeRange’]&gt; element with a valid time value pair specifying a time range in ISO 8601 format.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:IOOS-SOS.DescribeSensor- ResponseContainsValidOperationsMetadataProperty.10</strong></td>
+<td>SensorML document for a network of stations provides definition of the observed properties for each network member station in &lt;sml:output [@name#’observed_Property’]/swe:Quantity [@definition#’anyURI’&gt; elements, where anyURI is a reference to the IOOS vocabulary record.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:IOOS-SOS.DescribeSensor- ResponseContainsValidOperationsMetadataProperty.11</strong></td>
+<td>SensorML document for a single station provides valid value of the &lt;sml:classifier [@name#’platformType’&gt; element with the reference definition and IOOS codeSpace.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:IOOS-SOS.DescribeSensor- ResponseContainsValidOperationsMetadataProperty.12</strong></td>
+<td>SensorML document for a single station provides valid value of the &lt;sml:classifier [@name#’operatorSector’&gt; element with the reference definition and IOOS codeSpace.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:IOOS-SOS.DescribeSensor- ResponseContainsValidOperationsMetadataProperty.13</strong></td>
+<td>SensorML document for a single station provides valid value of the &lt;sml:classifier [@name#’publisher’&gt; element with the reference definition and IOOS codeSpace.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:IOOS-SOS.DescribeSensor- ResponseContainsValidOperationsMetadataProperty.14</strong></td>
+<td>SensorML document for a single station provides valid value of the &lt;sml:classifier [@name#’sponsor’&gt; element with the reference definition and IOOS codeSpace.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:IOOS-SOS.DescribeSensor- ResponseContainsValidOperationsMetadataProperty.15</strong></td>
+<td>SensorML document for a single station provides a time range of observations for the station in &lt;sml:capabilities [@name#’observationTimeRange’]&gt; element with a valid time value pair specifying a time range in ISO 8601 format.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:IOOS-SOS.DescribeSensor- ResponseContainsValidOperationsMetadataProperty.16</strong></td>
+<td>SensorML document for a single station provides a location of the station in &lt;sml:location/gml:Point [@srsName#’<a href="http://www.opengis.net/def/crs/EPSG/0/4326’&gt;">http://www.opengis.net/def/crs/EPSG/0/4326’&gt;</a> element with the valid latitude and longitude value pair.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>describeSensor:IOOS-SOS.DescribeSensor- ResponseContainsValidOperationsMetadataProperty.17</strong></td>
+<td>SensorML document for a single station provides a description of at least one sensor that is located at the station (platform), and for each sensor a ‘sensorID’ and a list of the properties observed by this sensor are provided.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_10">GetObservation Tests</h3>
+
+<p><strong><em>All GetObservation tests use “POST” method, and URL obtained from the GetCapabilities response.</em></strong></p>
+
+<h4 id="toc_11">OGC General Tests</h4>
+
+<table>
+<thead>
+<tr>
+<th><strong>TESTS</strong></th>
+<th><strong>ASSERTIONS</strong></th>
+<th align="center"><strong>IOOS Rq&rsquo;d/Opt</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>getObservation:core-SOS.GetObservation-RequestInvalidSRSName.1</strong></td>
+<td>A GetObservation request with a bogus <em>srsName</em> parameter value that is not advertised in the capabilities document (e.g. “urn:ogc:def:crs:EPSG::9999”) produces a valid error message. Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “InvalidParameterValue” exception code.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:core-SOS.GetObservation-RequestInvalidOffering.1</strong></td>
+<td>A GetObservation request with a bogus _ offeringId _ parameter value that is not advertised in the capabilities document (e.g. “softliness_of_jello”) produces a valid error message. Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “InvalidParameterValue” exception code.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:core-SOS.GetObservation-RequestInvalidEventTime.1</strong></td>
+<td>A GetObservation request with an invalid <em>eventTime</em> parameter (e.g. bogus _ timePosition _ parameter value of “scooby”) produces a valid error message. Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “InvalidParameterValue” exception code.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:core-SOS.GetObservation-RequestInvalidProcedure.1</strong></td>
+<td>A GetObservation request with a bogus <em>procedure</em> parameter value that is not advertised in the capabilities document (e.g. “urn:ogc:object:procedure:CITE:WeatherService:ThisIsInvalid”) produces a valid error report message. Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “InvalidParameterValue” exception code.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:core-SOS.GetObservation-RequestInvalidFeatureOfInterest.1</strong></td>
+<td>A GetObservation request with one or more invalid _ featureOfInterest _ values that are not advertised in the capabilities document (e.g. “urn:ogc:def:object:feature:TheInvalidFeature”) produces a valid error report message. Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “InvalidParameterValue” exception code.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:core-SOS.GetObservation-RequestInvalidObservedProperty.1</strong></td>
+<td>A GetObservation request with one or more invalid <em>observedProperty</em> values that are not advertised in the capabilities document (e.g. “urn:ogc:def:phenomenon:OGC:TheInvalidObservedProperty”) produces a valid error report message. Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “InvalidParameterValue” exception code.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:core-SOS.GetObservation-RequestInvalidResult.1</strong></td>
+<td>A GetObservation request with an invalid <em>result</em> parameter (e.g. using the comparison operator “ogc:PropertyIsEqualTo” with no value) produces a valid error report message. Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “InvalidParameterValue” exception code.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:core-SOS.GetObservation-RequestInvalidResponseFormat.1</strong></td>
+<td>A GetObservation request with a bogus <em>responseFormat</em> parameter value that is not advertised in the capabilities document (e.g. <em>text/xml;subtype#”XX”</em>) produces a valid error report message. Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “InvalidParameterValue” exception code.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:core-SOS.GetObservation-RequestInvalidResultModel.1</strong></td>
+<td>A GetObservation request with a bogus <em>resultModel</em> parameter value that is not advertised in the capabilities document (e.g. “TheBogusOne”) produces a valid error report message. Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “InvalidParameterValue” exception code.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:core-SOS.GetObservation-RequestInvalidResponseMode.1</strong></td>
+<td>A GetObservation request with a bogus <em>responseMode</em> parameter value that is not advertised in the capabilities document (e.g. “NotValid”) produces a valid error report message. Pass if all of the following conditions are true: (1) the response is schema valid; (2) the root document is an ows:ExceptionReport document; (3) the ExceptionReport shall have the “InvalidParameterValue” exception code.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:core-SOS.GetObservation-ResponseMatchingSRSData.1</strong></td>
+<td>If an <em>srsName</em> parameter is supplied in the request, then the <em>srsName</em> value of the response data is valid according to the format specified by the requested <em>srsName</em>.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:core-SOS.GetObservation-ResponseMatchingProcedureData.1</strong></td>
+<td>GetObservation requests made for each <em>procedure</em> element advertised in the capabilities document produce the responses with <em>procedure</em> values that match or are a subset of the <em>procedure</em> values specified in the requests.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:core-SOS.GetObservation-ResponseMatchingObservedPropertyData.1</strong></td>
+<td>GetObservation requests made for each <em>observedProperty</em> element advertised in the capabilities document produce the responses with <em>observedProperty</em> values that match or are a subset of the <em>observedProperty</em> values specified in the requests.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:core-SOS.GetObservation-ResponseAdvertisedEventTimeData.1</strong></td>
+<td>A valid GetObservation request made for each offering advertised in the capabilities document with the advertised <em>eventTime</em> for the requested offering returns one or more observations.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:core-SOS.GetObservation-ResponseMatchingEventTimeData.1</strong></td>
+<td>A valid GetObservation request made for each offering advertised in the capabilities document with the <em>eventTime</em> value that is off the advertised range for the requested offering (e.g. is before the earliest advertised <em>beginPosition</em>) returns no observations.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:core-SOS.GetObservation-ResponseMatchingFeatureOfInterestData.1</strong></td>
+<td>A valid GetObservation request made for each <em>featureOfInterest</em> advertised in the capabilities document produces the response with <em>featureOfInterest</em> values that match or fall within the spatial extent identified in the <em>featureOfInterest</em> value specified in the request.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:core-SOS.GetObservation-ResponseMatchingResultData.1</strong></td>
+<td>If a valid filter value is supplied in the result parameter of the request, then the response O&amp;M data is valid for that filter.</td>
+<td align="center"><strong>O</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:core-SOS.GetObservation-ResponseMatchingResponseFormatData.1</strong></td>
+<td>The format of the response data matches the format supplied in the <em>responseFormat</em> parameter of the request.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_12">IOOS-specific Tests</h4>
+
+<table>
+<thead>
+<tr>
+<th><strong>TESTS</strong></th>
+<th><strong>ASSERTIONS</strong></th>
+<th align="center"><strong>IOOS Rq&rsquo;d/Opt</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseMissingEventTimeData.1</strong></td>
+<td>A valid GetObservation request made for each offering advertised in the capabilities document without ‘eventTime’ for the requested offering returns either all observations for that offering, or a ResponseExceedsSizeLimit exception code, if (a) server employs a limit on the response size, and (b) the limit is exceeded.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseMatchingProcedureData.1</strong></td>
+<td>GetObservation requests made for each single platform/station ‘procedure’ element advertised in the Capabilities document produce the responses with &lt;om:procedure&gt; values that (a) match the ‘procedure’ values specified in the requests, and &copy; are in a form of URN that conforms to the IOOS Conventions for Observing Asset Identifiers.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseMatchingProcedureData.2</strong></td>
+<td>GetObservation request made for a network of multiple platforms/stations ‘procedure’ element advertised in the Capabilities document produces the response with &lt;om:procedure&gt; element that lists all affiliated platforms/stations as members of a single &lt;om:Process&gt; element</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseContainsValidCompositeProperty.1</strong></td>
+<td>GetObservation request for the ‘observedProperty’ advertised in the Capability documents as a composite phenomenon or a member of it produces a response with &lt;om:observedProperty&gt; that contains a child &lt;swe:CompositePhenomenon&gt; element, which (a) has a response-wide unique &lt;gml:id&gt; attribute, (b) includes &lt;gml:name&gt; with a string value, and &copy; contains a list of the constituent scalar properties that is a subset of the properties defined in the IOOS Parameter Vocabulary for that composite phenomenon.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseContainsValidFeatureOfInterest.1</strong></td>
+<td>A GetObservation response returns for each &lt;om:member&gt; an &lt;om:featureOfInterest&gt; with (a) valid name and codeSpace values for the CF Feature Type (e.g., timeSeries, timeSeriesProfile, etc), (b) valid geospatial bounding box (lat/lon), and &copy; valid geographical location information for each individual platform/station (i.e. 2D only, always in EPSG::4326).</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseContainsValidDataRecord.1</strong></td>
+<td>All &lt;om:result&gt; elements in GetObservation response contain a  DataRecord comprised of (a) &lt;swe2:field name#“stations”&gt;, and (b) &lt;swe2:field name#“observationData”&gt;.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseContainsValidTemplateVersion.1</strong></td>
+<td>A GetObservation response contains valid ioosTemplateVersion value.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseContainsValidMemberElement.1</strong></td>
+<td>A GetObservation response contains at least one &lt;om:member&gt; element</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseMemberElementContainsSingleProcedure.1</strong></td>
+<td>A GetObservation response contains a single &lt;om:procedure&gt; for each &lt;om:member&gt;</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseMemberElementContainsResult.1</strong></td>
+<td>A GetObservation response returns an &lt;om:result&gt; for each &lt;om:member&gt;.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseMatchingStationID.1</strong></td>
+<td>A GetObservation response returns valid ‘stationID’ properties for each station that fits within bounding box and reports a requested observedProperty.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseContainsValidReferenceLocalFrames.1</strong></td>
+<td>A GetObservation response returns valid ‘referenceFrame’ and ‘localFrame’ properties for each &lt;swe2:field name=&ldquo;platformLocation&rdquo;&gt;.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseMatchingLatLonVertical AxisOrder.1</strong></td>
+<td>A GetObservation response returns geographical coordinate in a valid order (latitude precedes longitude, vertical coordinate is listed after the horizontal ones, and explicitly follow the definition of the vertical CRS) for each &lt;swe2:field name=&ldquo;platformLocation&rdquo;&gt;.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseMatchingSensorID.1</strong></td>
+<td>A GetObservation response returns valid ‘sensorID’ properties for all sensors that measure a requested observedProperty, and are located on the platforms/stations that fit within bounding box.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation- ResponseContainsValidSensorHeightProperty.1</strong></td>
+<td>A GetObservation response for a ‘timeSeries’ CF Feature Type returns valid sensor vertical position (height) properties for all non-profiling sensors that measure a requested observedProperty, and are located on the platforms/stations that fit within bounding box.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation- ProfileResponseContainsValidProfilingSensorLocationProperty.1</strong></td>
+<td>A GetObservation response for a ‘profile’ and ‘timeSerisesProfile’ CF Feature Types returns valid ‘sensorOrientation’ or ‘sensorLocation’ properties for all profiling sensors that measure a requested observedProperty, and are located on the platforms/stations that fit within bounding box.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ProfileResponseContainsValidProfilingSensorProperty.1</strong></td>
+<td>A GetObservation response for a ‘profile’ and ‘timeSerisesProfile’ CF Feature Types returns valid ‘profileBins’ or ‘profileHeights’ properties for all profiling sensors that measure a requested observedProperty, and are located on the platforms/stations that fit within bounding box.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseContainsValidDefinitionAttributes.1</strong></td>
+<td>A GetObservation response returns valid “definition” attribute for each of the &lt;swe2:DataRecord&gt; elements.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation- ResponseContainsValidDefinitionAttributes.2</strong></td>
+<td>A GetObservation response returns valid “definition” attribute for each of the &lt;swe2:DataArray&gt; elements.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation- ResponseContainsValidDefinitionAttributes.3</strong></td>
+<td>A GetObservation response returns valid “definition” attribute for each of the &lt;swe2:Text&gt; elements.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation- ResponseContainsValidDefinitionAttributes.4</strong></td>
+<td>A GetObservation response returns valid “definition” attribute for each of the &lt;swe2:Vector&gt; elements.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation- ResponseContainsValidDefinitionAttributes.5</strong></td>
+<td>A GetObservation response returns valid “definition” attribute for each of the &lt;swe2:Quantity&gt; elements.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation- ResponseContainsValidDefinitionAttributes.6</strong></td>
+<td>A GetObservation response returns valid “definition” attribute for each of the &lt;swe2:QuantityRange&gt; child elements.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation- ResponseContainsValidDefinitionAttributes.7</strong></td>
+<td>A GetObservation response returns valid “definition” attribute for each of the &lt;swe2:Time&gt; elements.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseContainsValidTextElementProperty.1</strong></td>
+<td>A GetObservation response returns valid &lt;swe2:Text&gt; child element for each &lt;swe2:field name=&ldquo;stationID&rdquo;&gt; and &lt;swe2:field name=&ldquo;sensorID&rdquo;&gt; elements: (a) the &lt;swe2:Text&gt; must provide fully qualified stationID or sensorID definition through ‘definition’ attribute, and (b) value of the &lt;swe2:Text&gt; must be a full station URN as defined in the IOOS Conventions for Observing Asset Identifiers.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseMatchingStationSensorNames.1</strong></td>
+<td>A GetObservation response returns ‘name’ attributes for each of &lt;swe2:item&gt; child elements of a &lt;swe2:DataChoice&gt;; the attribute values (a) are valid, and (b) match the stations’ names in &lt;swe2:field name=&ldquo;stations&rdquo;&gt; and/or sensors’ names in &lt;swe2:field name=&ldquo;sensors&rdquo;&gt; elements.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseContainsValidEncodingElements.1</strong></td>
+<td>A GetObservation response returns a valid &lt;swe2:encoding&gt; element for each &lt;om:member&gt;; the &lt;swe2:encoding&gt; shall (a) define separators for records and values in the &lt;swe2:values&gt;, and (b) replace all special ASCII characters used in the capacity of separators with the corresponding standard HTML Escape Sequences.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ResponseMemberElementContainsValidValuesProperty.1</strong></td>
+<td>A GetObservation response returns a valid &lt;swe2:values&gt; element for each &lt;om:member&gt;: (a) the &lt;swe2:values&gt; shall contain records with  values of all requested observed properties; (b) each record shall contain the observation sampling time, name of the sensor, and the observed values as defined in the DataChoice &lt;swe2:item&gt; element associated with the sensor; &copy; the names of the sensors shall match the values of ‘name’ attributes for corresponding &lt;swe2:item&gt; child elements of &lt;swe2:DataChoice&gt;; (d) the total number of records shall match the value of &lt;swe2:elementCount&gt;; and (e) special ASCII characters used as separators are not encoded in HTML Escape Sequences.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ProfileResponseContainsValidDataArray.1</strong></td>
+<td>A GetObservation response returns a valid child element &lt;swe2:DataArray definition=&ldquo;<a href="http://mmisw.org/ont/ioos/definition/profile&quot;&gt;">http://mmisw.org/ont/ioos/definition/profile&quot;&gt;</a> with empty &lt;&lt;swe2:elementCount&gt; for each profiling sensor within &lt;swe2:DataChoice definition=&ldquo;<a href="http://mmisw.org/ont/ioos/definition/sensors&quot;&gt;">http://mmisw.org/ont/ioos/definition/sensors&quot;&gt;</a>.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td><strong>getObservation:IOOS-SOS.GetObservation-ProfileResponseContainsValidProfileIndex.1</strong></td>
+<td>A GetObservation response returns for each profiling sensor within &lt;swe2:DataChoice definition=&ldquo;<a href="http://mmisw.org/ont/ioos/definition/sensors&quot;&gt;">http://mmisw.org/ont/ioos/definition/sensors&quot;&gt;</a> a valid &lt;swe2:field name=&ldquo;profileIndex&rdquo;&gt; or &lt;swe2:field name=&ldquo;binIndex&rdquo;&gt; with &lt;swe2:Count definition=&ldquo;<a href="http://mmisw.org/ont/ioos/definition/profileIndex&quot;&gt;">http://mmisw.org/ont/ioos/definition/profileIndex&quot;&gt;</a> child element that indicates which height/bin is being reported.</td>
+<td align="center"><strong>R</strong></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+
+  </body>
+</html>
