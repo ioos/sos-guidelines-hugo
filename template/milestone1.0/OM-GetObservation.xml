@@ -26,7 +26,7 @@
   <!-- IOOS SOS VERSION (optional) -->
   <gml:metaDataProperty
     xlink:title="ioosTemplateVersion"
-    xlink:href="http://code.google.com/p/ioostech/source/browse/#svn%2Ftrunk%2Ftemplates%2FMilestone1.0">
+    xlink:href="https://github.com/ioos/sos-guidelines/tree/master/template/milestone1.0">
     <gml:version>1.0</gml:version>
   </gml:metaDataProperty>
 
