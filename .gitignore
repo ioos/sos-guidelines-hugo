@@ -36,11 +36,11 @@ Icon
 .Trashes
 
 # Files from Hugo configuration folders
-archetypes/**
-content/**
-css/**
-layouts/**
-static/**
-temp/**
-*.toml
-*.yaml
+# archetypes/**
+# content/**
+# css/**
+# layouts/**
+# static/**
+# temp/**
+# *.toml
+# *.yaml
