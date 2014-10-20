@@ -41,6 +41,6 @@ Icon
 # css/**
 # layouts/**
 # static/**
-# temp/**
+temp/**
 # *.toml
 # *.yaml
