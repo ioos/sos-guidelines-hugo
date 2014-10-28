@@ -3,7 +3,7 @@
   <channel>
       <title>Docs on SOS v1.0 </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://abirger.github.io/sos-guidelines/doc/index.xml/</link>
+    <link>http://ioos.github.io/sos-guidelines/doc/index.xml/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>IOOS SOS v1.0 WSDD</title>
-      <link>http://abirger.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</link>
+      <link>http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://abirger.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</guid>
+      <guid>http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;This Web Service Description Document (WSDD) provides a description of a Sensor Observation Service (SOS) that has been developed by U.S. IOOS for deployment by NOAA data providers and IOOS Regional Associations (RAs). This service provides a service consumer with the capability to access ocean observations data products, such as time series and profiles, which have XML-based encodings and included in the SWE Common Data Model.&lt;/em&gt;&lt;/p&gt;
@@ -3367,13 +3367,21 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
     
     <item>
       <title>List of SOS Tests</title>
-      <link>http://abirger.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</link>
+      <link>http://ioos.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</link>
       <pubDate>Mon, 04 Aug 2014 08:10:23 UTC</pubDate>
       
-      <guid>http://abirger.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</guid>
+      <guid>http://ioos.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</guid>
       <description>
 
-&lt;p&gt;&lt;em&gt;This document contains a list of required and optional tests that have to be run in order to ensure full compliance with IOOS SOS Profile 1.0 (Milestone 1.0), and currently sufficient level of compliance with the OGC SOS 1.0.0 specification.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This document describes a collection of tests that have to be run in order to ensure a required level of compliance with IOOS SOS Profile 1.0 (IOOS Convention), and official OGC SOS 1.0.0 specification.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The collection includes both OGC Standard and IOOS Profile compliance tests. The goal of OGC compliance tests is to ensure that the service is to a certain extent compliant with the OGC specifications. The tests are essentially the same as the official OGC CITE test set for SOS 1.0.0; however, some tests were marked out as optional for the current phase of IOOS SOS development, e.g. verification of exception report messages.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: The OGC tests based on HTTP POST requests cannot be used with ncSOS instances because ncSOS does not support POST binding.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The IOOS SOS Profile tests have originated from the official OGC CITE test set for SOS 1.0.0, and adapted for IOOS-specific requirements. The goal of these tests is to validate that a service response is syntactically and semantically valid. The response is considered syntactically valid if it contains the expected elements and attributes in the order prescribed by the IOOS Profile Templates v1.0. The response is recognized as semantically valid if its semantic conforms to the IOOS SOS Convention, i.e. the meaning of variables, elements, attributes, etc. matches the CF Conventions v1.6, IOOS SOS WSDD, and IOOS Controlled Vocabularies.&lt;/p&gt;
 
 &lt;h2 id=&#34;toc_0&#34;&gt;OWS Common Tests&lt;/h2&gt;
 
