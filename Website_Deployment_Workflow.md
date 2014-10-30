@@ -69,7 +69,7 @@ The `static` directory is used to hold the common website elements, such as Styl
 ``` 
 
 _**NOTES**_:
->1. Currently, _**Hugo**_ can render only Markdown files, so all documents in other formats have to be converted into Markdown for rendering; it is also necessary to put [summaries](### Html Templates) of the documents on a website front page, and [sort](### Hugo Metadata in Content Files) them in a specific order.
+>1. Currently, _**Hugo**_ can render only Markdown files, so all documents in other formats have to be converted into Markdown for rendering; it is also necessary to put [summaries](#summary) of the documents on a website front page, and [sort](#front-matter) them in a specific order.
 >2. If the original document directory is not defined as a 'contentdir' in the _**Hugo**_ config file, the content of that folder should be copied into the `contentdir'.
 >3. The directory (folder) that contains images and figures for the original Markdown document must be copied/moved inside the _**static**_ directory for the proper website rendering.  The links to the images in the original document have to be modified accordingly.       
 
@@ -91,7 +91,7 @@ Title = "SOS v1.0"
 For detailed explanation of how to build the _**Hugo**_ config file, and the exact meaning of the parameters and operators refer to the [Configuration](http://gohugo.io/overview/configuration) section of _**Hugo**_ documentation.
 
 
-### Html Templates
+### <a name="summary"></a> Html Templates
 
 The IOOS project website is based on a _**Hugo**_ default theme called [Hyde](https://github.com/spf13/hyde). The default theme layout and templates were just slightly modified to add the IOOS logo to a sidebar, change the sidebar's color, and publish short documents' summary on the website home page.
 
@@ -103,7 +103,7 @@ _**NOTES**_
 
 For a detailed description of the _**Hugo**_ themes, templates and layouts refer to the [_**Hugo**_ documentation](http://gohugo.io/).
 
-### Hugo Metadata in Content Files
+### <a name="front-matter"></a> Hugo Metadata in Content Files
 
 To ensure a proper rendering of the website content, each document in the `contentdir` should include at the top a [metadata section](http://gohugo.io/content/front-matter/). This metadata section tells _**Hugo**_ some details of how to render the content file. For example, the following metadata section is included in the 'sos_test_list_github_notoc_summary.md' file:
 ```
