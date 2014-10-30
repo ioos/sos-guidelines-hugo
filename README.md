@@ -27,4 +27,4 @@ The documentation in the [sos-guidelines](https://github.com/ioos/sos-guidelines
     └── README.md
 ```      
 
-The rest of repository content is placed there only for website deployment with the _**Hugo**_ static page generator. The deployment workflow is described in the [_**Website Deployment Workflow**_](sos-guidelines/Website_Deployment_Workflow.md) document located in the root directory next to this _README_.
+The rest of repository content is placed there only for website deployment with the _**Hugo**_ static page generator. The deployment workflow is described in the [_**Website Deployment Workflow**_](Website_Deployment_Workflow.md) document located in the root directory next to this _README_.

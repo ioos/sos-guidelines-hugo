@@ -69,7 +69,7 @@ The `static` directory is used to hold the common website elements, such as Styl
 ``` 
 
 _**NOTES**_:
->1. Currently, _**Hugo**_ can render only Markdown files, so all documents in other formats have to be converted into Markdown for rendering; it is also necessary to put [summaries](Html Templates) of the documents on a website front page, and [sort](Hugo Metadata in Content Files) them in a specific order.
+>1. Currently, _**Hugo**_ can render only Markdown files, so all documents in other formats have to be converted into Markdown for rendering; it is also necessary to put [summaries](### Html Templates) of the documents on a website front page, and [sort](### Hugo Metadata in Content Files) them in a specific order.
 >2. If the original document directory is not defined as a 'contentdir' in the _**Hugo**_ config file, the content of that folder should be copied into the `contentdir'.
 >3. The directory (folder) that contains images and figures for the original Markdown document must be copied/moved inside the _**static**_ directory for the proper website rendering.  The links to the images in the original document have to be modified accordingly.       
 
