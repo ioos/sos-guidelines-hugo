@@ -60,7 +60,7 @@ The top level of a source directory will typically have the following elements:
 
 The `content` directory by default holds the documents that are the actual content of the website, and sub-directories of the `content` directory form the sections. The real content holding directory may be changed in the _**Hugo**_ config file. 
 
-The `static` directory is used to hold the common website elements, such as Style Sheets, Java Scripts, and images, etc., which will be copied directly into the final site when rendered. Although _**Hugo**_ does not require any specific structure for `static` directory, it is usually organized in the following way: into
+The `static` directory is used to hold the common website elements, such as Style Sheets, Java Scripts, and images, etc., which will be copied directly into the final site when rendered. Although _**Hugo**_ does not require any specific structure for `static` directory, it is usually organized in the following way:
 ```
    static/
     ├── css/
