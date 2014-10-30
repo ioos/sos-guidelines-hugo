@@ -97,7 +97,7 @@ The IOOS project website is based on a _**Hugo**_ default theme called [Hyde](ht
 _**NOTES**_
 
 >1. The _**Hugo**_ requires that the home page should be defined as the 'index.html' file in the 'layouts' directory. 
->2. To show the document's summary on the website front page, the document has to start from the summary text separated from the rest of the document with the text line `<!--more-->`
+>2. To show the document's summary on the website front page, the document has to start from the summary text separated from the rest of the document with the line that contains just `<!--more-->`
 >3. The IOOS logo is in the 'ioos_blue2.png' file located in 'static/images/' directory.
 
 For a detailed description of the _**Hugo**_ themes, templates and layouts refer to the [_**Hugo**_ documentation](http://gohugo.io/).
@@ -142,7 +142,8 @@ The links to the GitHub IOOS main website home page and current documentation we
 GitHub Pages will serve up a website for any repository that has a branch called `gh-pages` with a valid `index.html` file at that branch's root. To keep an adequate separation between the `master` and `gh-pages` branches, and at the same time make a deployment process visual and simple, the developers of _**Hugo**_ suggested a workflow that is based on use of the `git subtree` family of commands. It allows to mirror the entire `public` directory (which contains the generated website) into the root of the `gh-pages` branch of the repository. As a result, all content modification can be done on the `master` branch, and after _**Hugo**_ has generated the site output into the `public` directory it can be pushed directly to the correct place for GitHub Pages to serve the website. Below is a step-by-step description of the workflow that is reproduced from the ["_Hosting on GitHub Pages_"](http://gohugo.io/tutorials/github_pages_blog/) _**Hugo**_ tutorial. 
 
 _**NOTES**_:
->1. All `git` commands have to be run from the site `<root>` directory, i.e. the directory, where the `content` (or another directory defined as `contentdir`) and `layout` sub-directories are located). 
+>1. The workflow was developed for Linux. On Windows, some command either have to be modified (e.g. `rm -rf` to `rmdir c:\test /s /q`), or Linux native commands can be used with the Linux [CoreUtils](http://gnuwin32.sourceforge.net/packages.html) installed.
+>2. All `git` commands have to be run from the site `<root>` directory, i.e. the directory, where the `content` (or another directory defined as `contentdir`) and `layout` sub-directories are located). 
 >2. The `[some-repository-name]` has to be changed to the real repository GitHub address, e.g. `ioos/sos-guidelines`. 
 
 ```
@@ -185,7 +186,7 @@ _**NOTES**_:
          git push origin master
 
      13. Push the public subtree to the gh-pages branch
-          git subtree push --prefix=public git@[some-repository-name].git gh-pages
+          git subtree push --prefix=public git@github.com:[some-repository-name].git gh-pages
 ```
 
 
