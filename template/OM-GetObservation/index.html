@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> IOOS SOS v1.0 OM GetObservation Template &middot; SOS v1.0 </title>
+
+  
+  <link rel="stylesheet" href="http://ioos.github.io/sos-guidelines/css/poole.css">
+  <link rel="stylesheet" href="http://ioos.github.io/sos-guidelines/css/syntax.css">
+  <link rel="stylesheet" href="http://ioos.github.io/sos-guidelines/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="SOS v1.0" />
+</head>
+
+<body>
+
+<div class="sidebar">
+   	<p>  <img src="/sos-guidelines/images/ioos_blue2.png" alt="ho-ho-ho"> </p> 
+
+	<div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>SOS v1.0</h1>
+      <p class="lead">
+       Docs, codes, scripts, templates 
+      </p>
+    </div>
+
+
+    <ul class="sidebar-nav">
+      <li><a href="http://ioos.github.io">IOOS Home</a> </li>
+	  <li><a href="/sos-guidelines/">SOS Guidelines Home</a> </li>
+      
+    </ul>
+
+	
+
+	
+  
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+
+  <h1>IOOS SOS v1.0 OM GetObservation Template</h1>
+
+    <div id="toc" class="well col-md-4 col-sm-6">
+    
+    </div>
+
+      <p><em>Template for a generic (independent of feature type) GetObservation response. The result block in this template is empty; see SWE templates for guidance on the result block.</em></p>
+
+<pre><code class="language-XML">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- Template Document for a generic (independent of feature type) Get Observation. --&gt;
+&lt;!-- Specific feature types are referenced for example only. --&gt;
+&lt;!--  --&gt;
+&lt;!-- The GO contains one member observation per feature type in the response.  --&gt;
+&lt;!-- The result block in the template is empty. Examples of the result block are in the SWE --&gt;
+&lt;!-- templates defined seperately for each strucutre and concept. Any of these SWE results could --&gt;
+&lt;!-- be expressed in the result block of this document with the appropriate matching metadata. --&gt;
+&lt;!--  --&gt;
+&lt;om:ObservationCollection
+  xmlns:om=&quot;http://www.opengis.net/om/1.0&quot;
+  xmlns:gml=&quot;http://www.opengis.net/gml&quot;
+  xmlns:swe=&quot;http://www.opengis.net/swe/1.0.1&quot;
+  xmlns:swe2=&quot;http://www.opengis.net/swe/2.0&quot;
+  xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://www.opengis.net/om/1.0 http://schemas.opengis.net/om/1.0.0/om.xsd&quot;&gt;
+
+  &lt;!-- DISCLAIMER (optional) --&gt;
+  &lt;gml:metaDataProperty xlink:title=&quot;disclaimer&quot;&gt;
+    &lt;gml:GenericMetaData&gt;
+      &lt;gml:description&gt;DISCLAIMER&lt;/gml:description&gt;
+    &lt;/gml:GenericMetaData&gt;
+  &lt;/gml:metaDataProperty&gt;
+
+  &lt;!-- IOOS SOS VERSION (optional) --&gt;
+  &lt;gml:metaDataProperty
+    xlink:title=&quot;ioosTemplateVersion&quot;
+    xlink:href=&quot;http://code.google.com/p/ioostech/source/browse/#svn%2Ftrunk%2Ftemplates%2FMilestone1.0&quot;&gt;
+    &lt;gml:version&gt;1.0&lt;/gml:version&gt;
+  &lt;/gml:metaDataProperty&gt;
+
+  &lt;!-- =========================================================== --&gt;
+  &lt;!-- A GO response will contain at least one member observation. --&gt;
+  &lt;!-- Multiple stations and multiple sensors of the same feature  --&gt;
+  &lt;!-- type may be expressed in a single observation result block. --&gt;
+  &lt;!--  --&gt;
+  &lt;!-- Separate member observations are used when the response     --&gt;
+  &lt;!-- contains more than one feature type. Each feature type is   --&gt;
+  &lt;!-- returned in a separate member observation.                  --&gt;
+  &lt;!-- =========================================================== --&gt;
+  &lt;om:member&gt;
+    &lt;om:Observation&gt;
+
+      &lt;!-- =========================================================== --&gt;
+      &lt;!-- gml:description                                             --&gt;
+      &lt;!-- Intended as fairly free-form text for human eyeballs.       --&gt;
+      &lt;!-- Should include station(s) name and location as well as      --&gt;
+      &lt;!-- sensor or procedure information if possible                 --&gt;
+      &lt;!-- =========================================================== --&gt;
+      &lt;gml:description&gt;
+        Observations at point station urn:ioos:station:wmo:41001, 150 NM East of Cape
+        HATTERAS. Observations at point station urn:ioos:station:wmo:41002, S HATTERAS 
+        - 250 NM East of Charleston, SC
+      &lt;/gml:description&gt;
+
+      &lt;!-- =========================================================== --&gt;
+      &lt;!-- samplingTime                                                --&gt;
+      &lt;!-- Time bounds of response data, encoded as an iso8601 string  --&gt;
+      &lt;!-- or using a GML attribute expressions (e.g. 'now').          --&gt;
+      &lt;!-- Currently only UTC (Z) is supported/advocated.              --&gt;
+      &lt;!-- =========================================================== --&gt;
+      &lt;om:samplingTime&gt;
+        &lt;gml:TimePeriod&gt;
+          &lt;gml:beginPosition&gt;2009-05-23T00:00:00Z&lt;/gml:beginPosition&gt;
+          &lt;gml:endPosition&gt;2009-05-23T02:00:00Z&lt;/gml:endPosition&gt;
+        &lt;/gml:TimePeriod&gt;
+      &lt;/om:samplingTime&gt;
+
+      &lt;!-- =========================================================== --&gt;
+      &lt;!-- procedure                                                   --&gt;
+      &lt;!-- Each station is listed as a process member                  --&gt;
+      &lt;!-- =========================================================== --&gt;
+      &lt;om:procedure&gt;
+        &lt;om:Process&gt;
+          &lt;gml:member xlink:href=&quot;urn:ioos:station:wmo:41001&quot; /&gt;
+          &lt;gml:member xlink:href=&quot;urn:ioos:station:wmo:41002&quot; /&gt;
+        &lt;/om:Process&gt;
+      &lt;/om:procedure&gt;
+
+      &lt;!-- =========================================================== --&gt;
+      &lt;!-- observedProperty                                            --&gt;
+      &lt;!-- This block contains a list of *scalar* properties only,     --&gt;
+      &lt;!-- referencing the MMI CF or IOOS parameter vocabularies; see  --&gt;
+      &lt;!-- the wiki documentation on the topic for the choice of       --&gt;
+      &lt;!-- vocabularies. Requests constructed using composite (vector) --&gt;
+      &lt;!-- phenomena such as &quot;winds&quot; will return the scalar components --&gt;
+      &lt;!-- only.This scheme accommodates both true composite phenomena --&gt;
+      &lt;!-- like winds, and ad-hoc requests for multiple properties     --&gt;
+      &lt;!-- (eg, water and air temperature). The general                --&gt;
+      &lt;!-- swe:CompositePhenomenon element is used even when the       --&gt;
+      &lt;!-- response returns a single observed property.                --&gt;
+      &lt;!-- =========================================================== --&gt;
+      &lt;om:observedProperty&gt;
+        &lt;swe:CompositePhenomenon dimension=&quot;5&quot;
+          gml:id=&quot;observedproperties1&quot;&gt;
+          &lt;gml:name&gt;Response Observed Properties&lt;/gml:name&gt;
+          &lt;swe:component xlink:href=&quot;http://mmisw.org/ont/cf/parameter/air_temperature&quot; /&gt;
+          &lt;swe:component xlink:href=&quot;http://mmisw.org/ont/cf/parameter/wind_speed&quot; /&gt;
+          &lt;swe:component xlink:href=&quot;http://mmisw.org/ont/cf/parameter/wind_direction&quot; /&gt;
+          &lt;swe:component xlink:href=&quot;http://mmisw.org/ont/cf/parameter/sea_water_temperature&quot; /&gt;
+          &lt;swe:component xlink:href=&quot;http://mmisw.org/ont/ioos/parameter/dissolved_oxygen&quot; /&gt;
+        &lt;/swe:CompositePhenomenon&gt;
+      &lt;/om:observedProperty&gt;
+
+      &lt;!-- =========================================================== --&gt;
+      &lt;!-- featureOfInterest                                           --&gt;
+      &lt;!-- Encompasses all spatial and feature-type response metadata. --&gt;
+      &lt;!-- =========================================================== --&gt;
+      &lt;om:featureOfInterest&gt;
+        &lt;gml:FeatureCollection&gt;
+
+          &lt;!-- CF Feature Type (discrete-sampling-geometry). --&gt;
+          &lt;gml:metaDataProperty&gt;
+            &lt;gml:name codeSpace=&quot;http://cf-pcmdi.llnl.gov/documents/cf-conventions/1.6/cf-conventions.html#discrete-sampling-geometries&quot;&gt;timeSeries&lt;/gml:name&gt;
+          &lt;/gml:metaDataProperty&gt;
+
+          &lt;!-- Geographic (lat lon) Bounding Box of this feature --&gt;
+          &lt;gml:boundedBy&gt;
+            &lt;gml:Envelope srsName=&quot;http://www.opengis.net/def/crs/EPSG/0/4326&quot;&gt;
+              &lt;gml:lowerCorner&gt;32.38 -75.42&lt;/gml:lowerCorner&gt;
+              &lt;gml:upperCorner&gt;34.7 -72.73&lt;/gml:upperCorner&gt;
+            &lt;/gml:Envelope&gt;
+          &lt;/gml:boundedBy&gt;
+
+
+
+          &lt;!-- =========================================================== --&gt;
+          &lt;!-- location                                                    --&gt;
+          &lt;!-- Feature geographic location (lat &amp; lon only, no z)          --&gt;
+          &lt;!-- Always use epsg 4326.                                       --&gt;
+          &lt;!-- This example includes one point for one station.            --&gt;
+          &lt;!-- Several gml feature types are available to describe the     --&gt;
+          &lt;!-- location of the data in the response. See the IoosTech wiki --&gt;
+          &lt;!-- for documentation on what GML type to use for each IoosTech --&gt;
+          &lt;!-- feature type.                                               --&gt;
+          &lt;!-- =========================================================== --&gt;
+          &lt;gml:location&gt;
+            &lt;!-- For a station with timeSeries or timeSeriesProfile data   --&gt;
+            &lt;!-- use gml:MultiPoint --&gt;
+            &lt;gml:MultiPoint
+              srsName=&quot;http://www.opengis.net/def/crs/EPSG/0/4326&quot;&gt;
+              &lt;gml:pointMembers&gt;
+                &lt;!-- For each station in the result add an additional point --&gt;
+                &lt;gml:Point&gt;
+                  &lt;gml:name&gt;urn:ioos:station:wmo:41001&lt;/gml:name&gt;
+                  &lt;gml:pos&gt;34.7 -72.73&lt;/gml:pos&gt;
+                &lt;/gml:Point&gt;
+                &lt;gml:Point&gt;
+                &lt;gml:name&gt;urn:ioos:station:wmo:41002&lt;/gml:name&gt;
+                  &lt;gml:pos&gt;32.382 -75.415&lt;/gml:pos&gt;
+                &lt;/gml:Point&gt;
+              &lt;/gml:pointMembers&gt;
+            &lt;/gml:MultiPoint&gt;
+          &lt;/gml:location&gt;
+        &lt;/gml:FeatureCollection&gt;
+      &lt;/om:featureOfInterest&gt;
+
+      &lt;!-- =========================================================== --&gt;
+      &lt;!-- result                                                      --&gt;
+      &lt;!-- (THE &quot;DATA&quot; BLOCK)                                          --&gt;
+      &lt;!-- =========================================================== --&gt;
+      &lt;om:result&gt;
+        &lt;!-- This block contains a SWE Data Record conforming to the   --&gt; 
+        &lt;!-- appropriate result block template in Milestone 1.0.       --&gt;
+      &lt;/om:result&gt;
+
+    &lt;/om:Observation&gt;
+  &lt;/om:member&gt;
+  
+  &lt;om:member&gt;
+    &lt;!-- A different feature type may be returned in this member --&gt;
+  &lt;/om:member&gt;
+  
+&lt;/om:ObservationCollection&gt;
+</code></pre>
+
+</div>
+</div>
+
+  </body>
+</html>
