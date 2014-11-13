@@ -346,24 +346,24 @@ At the start of the interaction, a consumer issues a GetCapabilities request to
 <ul>
 <li><strong><code>http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?</code></strong><br><br></li>
 </ul></li>
-<li><strong>HTTP/POST</strong>
-<code>XML
-&lt;sos:GetCapabilities 
+<li><strong>HTTP/POST</strong></li>
+</ul>
+
+<pre><code class="language-XML">&lt;sos:GetCapabilities 
 xmlns=&quot;http://www.opengis.net/sos/1.0&quot; 
 xmlns:ows=&quot;http://www.opengis.net/ows/1.1&quot; 
 xmlns:ogc=&quot;http://www.opengis.net/ogc&quot; 
 xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
 xsi:schemaLocation=&quot;http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosGetCapabilities.xsd&quot; 
 service=&quot;SOS&quot; updateSequence=&quot;&quot;&gt;
-&lt;ows:AcceptVersions&gt;
-    &lt;ows:Version&gt;1.0.0&lt;/ows:Version&gt;
-&lt;/ows:AcceptVersions&gt;
-&lt;ows:Sections&gt;   
-    &lt;ows:Value&gt;All&lt;/ows:Value&gt;  
-&lt;/ows:Sections&gt;
+    &lt;ows:AcceptVersions&gt;
+        &lt;ows:Version&gt;1.0.0&lt;/ows:Version&gt;
+    &lt;/ows:AcceptVersions&gt;
+    &lt;ows:Sections&gt;   
+        &lt;ows:Value&gt;All&lt;/ows:Value&gt;  
+    &lt;/ows:Sections&gt;
 &lt;/sos:GetCapabilities&gt;
-</code></li>
-</ul>
+</code></pre>
 
 <h4 id="toc_12">GetCapabilities Response</h4>
 
@@ -605,9 +605,9 @@ xmlns:ows=&quot;http://www.opengis.net/ows/1.1&quot; xmlns:xlink=&quot;http://ww
 </tbody>
 </table>
 
-<p>The application of the IOOS Convention to the SOS 1.0.0 Implementation Standard is illustrated by a sample of the Content section of the IOOS Milestone 1.0 GetCapabilities template below; the template shows just the bare minimum of the required metadata, a real server may advertize more parameters and provide more details.
-<code>XML
-  &lt;sos:Contents&gt;
+<p>The application of the IOOS Convention to the SOS 1.0.0 Implementation Standard is illustrated by a sample of the Content section of the IOOS Milestone 1.0 GetCapabilities template below; the template shows just the bare minimum of the required metadata, a real server may advertize more parameters and provide more details.</p>
+
+<pre><code class="language-XML">  &lt;sos:Contents&gt;
     &lt;sos:ObservationOfferingList&gt;
       &lt;sos:ObservationOffering gml:id=&quot;network_all&quot;&gt;
         &lt;gml:description&gt;All stations&lt;/gml:description&gt;
@@ -659,11 +659,11 @@ xmlns:ows=&quot;http://www.opengis.net/ows/1.1&quot; xmlns:xlink=&quot;http://ww
       &lt;/sos:ObservationOffering&gt;
     &lt;/sos:ObservationOfferingList&gt;
   &lt;/sos:Contents&gt;
-</code></p>
+</code></pre>
 
-<p>Even more details are depicted in the sample below, which presents a Contents part of the real AOOS test SOS server GetCapabilities documenmt (the sample is presented just for reference, as the response may change at any time); the sampled document advertizes more offerings, observed properties, response output format encodings, etc.
-<code>XML
-  &lt;sos:Contents&gt;
+<p>Even more details are depicted in the sample below, which presents a Contents part of the real AOOS test SOS server GetCapabilities documenmt (the sample is presented just for reference, as the response may change at any time); the sampled document advertizes more offerings, observed properties, response output format encodings, etc.</p>
+
+<pre><code class="language-XML">  &lt;sos:Contents&gt;
     &lt;sos:ObservationOfferingList&gt;
       &lt;sos:ObservationOffering gml:id=&quot;urn_ioos_network_test_all&quot;&gt;
         &lt;gml:name&gt;urn:ioos:network:test:all&lt;/gml:name&gt;
@@ -812,7 +812,7 @@ xmlns:ows=&quot;http://www.opengis.net/ows/1.1&quot; xmlns:xlink=&quot;http://ww
       &lt;/sos:ObservationOffering&gt;
     &lt;/sos:ObservationOfferingList&gt;
   &lt;/sos:Contents&gt;
-</code></p>
+</code></pre>
 
 <h3 id="toc_17">DescribeSensor</h3>
 
@@ -887,17 +887,17 @@ xmlns:ows=&quot;http://www.opengis.net/ows/1.1&quot; xmlns:xlink=&quot;http://ww
 </code></pre>
 
 <ul>
-<li><strong>HTTP/POST</strong>:
-<code>XML
-&lt;sos:DescribeSensor version=&quot;1.0.0&quot; service=&quot;SOS&quot;
-xmlns=&quot;http://www.opengis.net/sos/1.0&quot;
-xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
-xsi:schemaLocation=&quot;http://www.opengis.net/sos/1.0  http://schemas.opengis.net/sos/1.0.0/sosDescribeSensor.xsd&quot; 
-outputFormat=&quot;text/xml;subtype=&amp;quot;sensorML/1.0.1/profiles/ioos_sos/1.0&amp;quot;&quot;&gt;
-&lt;procedure&gt;urn:ioos:network:test:all&lt;/procedure&gt;
-&lt;/sos:DescribeSensor&gt; 
-</code></li>
+<li><strong>HTTP/POST</strong>:</li>
 </ul>
+
+<pre><code class="language-XML">&lt;sos:DescribeSensor version=&quot;1.0.0&quot; service=&quot;SOS&quot;
+  xmlns=&quot;http://www.opengis.net/sos/1.0&quot;
+  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
+  xsi:schemaLocation=&quot;http://www.opengis.net/sos/1.0  http://schemas.opengis.net/sos/1.0.0/sosDescribeSensor.xsd&quot; 
+  outputFormat=&quot;text/xml;subtype=&amp;quot;sensorML/1.0.1/profiles/ioos_sos/1.0&amp;quot;&quot;&gt;
+  &lt;procedure&gt;urn:ioos:network:test:all&lt;/procedure&gt;
+&lt;/sos:DescribeSensor&gt; 
+</code></pre>
 
 <h4 id="toc_19">DescribeSensor Response</h4>
 
@@ -2782,7 +2782,7 @@ outputFormat=&quot;text/xml;subtype=&amp;quot;sensorML/1.0.1/profiles/ioos_sos/1
                 &lt;/swe2:DataChoice&gt;
             &lt;/swe2:field&gt;
         &lt;/swe2:DataRecord&gt;
-    &lt;/swe2:elementType&gt; 
+    &lt;/swe2:elementType&gt;	
     
     &lt;swe2:values&gt;
         2009-05-23T00:00:00Z,a,wmo_41001_sensor1,15.4,T,a,r,2.0,280

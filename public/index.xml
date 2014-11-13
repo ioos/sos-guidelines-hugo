@@ -241,24 +241,24 @@ At the start of the interaction, a consumer issues a GetCapabilities request to
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;HTTP/POST&lt;/strong&gt;
-&lt;code&gt;XML
-&amp;lt;sos:GetCapabilities 
+&lt;li&gt;&lt;strong&gt;HTTP/POST&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;sos:GetCapabilities 
 xmlns=&amp;quot;http://www.opengis.net/sos/1.0&amp;quot; 
 xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; 
 xmlns:ogc=&amp;quot;http://www.opengis.net/ogc&amp;quot; 
 xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; 
 xsi:schemaLocation=&amp;quot;http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosGetCapabilities.xsd&amp;quot; 
 service=&amp;quot;SOS&amp;quot; updateSequence=&amp;quot;&amp;quot;&amp;gt;
-&amp;lt;ows:AcceptVersions&amp;gt;
-    &amp;lt;ows:Version&amp;gt;1.0.0&amp;lt;/ows:Version&amp;gt;
-&amp;lt;/ows:AcceptVersions&amp;gt;
-&amp;lt;ows:Sections&amp;gt;   
-    &amp;lt;ows:Value&amp;gt;All&amp;lt;/ows:Value&amp;gt;  
-&amp;lt;/ows:Sections&amp;gt;
+    &amp;lt;ows:AcceptVersions&amp;gt;
+        &amp;lt;ows:Version&amp;gt;1.0.0&amp;lt;/ows:Version&amp;gt;
+    &amp;lt;/ows:AcceptVersions&amp;gt;
+    &amp;lt;ows:Sections&amp;gt;   
+        &amp;lt;ows:Value&amp;gt;All&amp;lt;/ows:Value&amp;gt;  
+    &amp;lt;/ows:Sections&amp;gt;
 &amp;lt;/sos:GetCapabilities&amp;gt;
-&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h4 id=&#34;toc_12&#34;&gt;GetCapabilities Response&lt;/h4&gt;
 
@@ -500,9 +500,9 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;The application of the IOOS Convention to the SOS 1.0.0 Implementation Standard is illustrated by a sample of the Content section of the IOOS Milestone 1.0 GetCapabilities template below; the template shows just the bare minimum of the required metadata, a real server may advertize more parameters and provide more details.
-&lt;code&gt;XML
-  &amp;lt;sos:Contents&amp;gt;
+&lt;p&gt;The application of the IOOS Convention to the SOS 1.0.0 Implementation Standard is illustrated by a sample of the Content section of the IOOS Milestone 1.0 GetCapabilities template below; the template shows just the bare minimum of the required metadata, a real server may advertize more parameters and provide more details.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;  &amp;lt;sos:Contents&amp;gt;
     &amp;lt;sos:ObservationOfferingList&amp;gt;
       &amp;lt;sos:ObservationOffering gml:id=&amp;quot;network_all&amp;quot;&amp;gt;
         &amp;lt;gml:description&amp;gt;All stations&amp;lt;/gml:description&amp;gt;
@@ -554,11 +554,11 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
       &amp;lt;/sos:ObservationOffering&amp;gt;
     &amp;lt;/sos:ObservationOfferingList&amp;gt;
   &amp;lt;/sos:Contents&amp;gt;
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Even more details are depicted in the sample below, which presents a Contents part of the real AOOS test SOS server GetCapabilities documenmt (the sample is presented just for reference, as the response may change at any time); the sampled document advertizes more offerings, observed properties, response output format encodings, etc.
-&lt;code&gt;XML
-  &amp;lt;sos:Contents&amp;gt;
+&lt;p&gt;Even more details are depicted in the sample below, which presents a Contents part of the real AOOS test SOS server GetCapabilities documenmt (the sample is presented just for reference, as the response may change at any time); the sampled document advertizes more offerings, observed properties, response output format encodings, etc.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;  &amp;lt;sos:Contents&amp;gt;
     &amp;lt;sos:ObservationOfferingList&amp;gt;
       &amp;lt;sos:ObservationOffering gml:id=&amp;quot;urn_ioos_network_test_all&amp;quot;&amp;gt;
         &amp;lt;gml:name&amp;gt;urn:ioos:network:test:all&amp;lt;/gml:name&amp;gt;
@@ -707,7 +707,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
       &amp;lt;/sos:ObservationOffering&amp;gt;
     &amp;lt;/sos:ObservationOfferingList&amp;gt;
   &amp;lt;/sos:Contents&amp;gt;
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;toc_17&#34;&gt;DescribeSensor&lt;/h3&gt;
 
@@ -782,17 +782,17 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;HTTP/POST&lt;/strong&gt;:
-&lt;code&gt;XML
-&amp;lt;sos:DescribeSensor version=&amp;quot;1.0.0&amp;quot; service=&amp;quot;SOS&amp;quot;
-xmlns=&amp;quot;http://www.opengis.net/sos/1.0&amp;quot;
-xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; 
-xsi:schemaLocation=&amp;quot;http://www.opengis.net/sos/1.0  http://schemas.opengis.net/sos/1.0.0/sosDescribeSensor.xsd&amp;quot; 
-outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/ioos_sos/1.0&amp;amp;quot;&amp;quot;&amp;gt;
-&amp;lt;procedure&amp;gt;urn:ioos:network:test:all&amp;lt;/procedure&amp;gt;
-&amp;lt;/sos:DescribeSensor&amp;gt; 
-&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HTTP/POST&lt;/strong&gt;:&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;sos:DescribeSensor version=&amp;quot;1.0.0&amp;quot; service=&amp;quot;SOS&amp;quot;
+  xmlns=&amp;quot;http://www.opengis.net/sos/1.0&amp;quot;
+  xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; 
+  xsi:schemaLocation=&amp;quot;http://www.opengis.net/sos/1.0  http://schemas.opengis.net/sos/1.0.0/sosDescribeSensor.xsd&amp;quot; 
+  outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/ioos_sos/1.0&amp;amp;quot;&amp;quot;&amp;gt;
+  &amp;lt;procedure&amp;gt;urn:ioos:network:test:all&amp;lt;/procedure&amp;gt;
+&amp;lt;/sos:DescribeSensor&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h4 id=&#34;toc_19&#34;&gt;DescribeSensor Response&lt;/h4&gt;
 
@@ -2677,7 +2677,7 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
                 &amp;lt;/swe2:DataChoice&amp;gt;
             &amp;lt;/swe2:field&amp;gt;
         &amp;lt;/swe2:DataRecord&amp;gt;
-    &amp;lt;/swe2:elementType&amp;gt; 
+    &amp;lt;/swe2:elementType&amp;gt;	
     
     &amp;lt;swe2:values&amp;gt;
         2009-05-23T00:00:00Z,a,wmo_41001_sensor1,15.4,T,a,r,2.0,280
@@ -5707,7 +5707,7 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
             &amp;lt;/swe2:DataChoice&amp;gt;
           &amp;lt;/swe2:field&amp;gt;
         &amp;lt;/swe2:DataRecord&amp;gt;
-      &amp;lt;/swe2:elementType&amp;gt;   
+      &amp;lt;/swe2:elementType&amp;gt;	
       
       &amp;lt;swe2:encoding&amp;gt;
         &amp;lt;!-- SWE encoding and data values --&amp;gt;
@@ -5718,7 +5718,7 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
         &amp;lt;!-- swe:TextEncoding specification. --&amp;gt;
         &amp;lt;!--  --&amp;gt;
         &amp;lt;!-- About DataChoice from SWE Common 2.0: --&amp;gt;
-        &amp;lt;!-- 9.2.5  Rules for DataChoice --&amp;gt;
+        &amp;lt;!-- 9.2.5	Rules for DataChoice --&amp;gt;
         &amp;lt;!-- A тАЬDataChoiceтАЭ is encoded with the text method by providing the name of the selected item --&amp;gt;
         &amp;lt;!-- before the item values themselves. The name used shall correspond to the тАЬnameтАЭ attribute --&amp;gt;
         &amp;lt;!-- of the тАЬitemтАЭ property element that describes the structure of the selected item. --&amp;gt;
@@ -6341,7 +6341,7 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
             &amp;lt;/swe2:DataChoice&amp;gt;
           &amp;lt;/swe2:field&amp;gt;
         &amp;lt;/swe2:DataRecord&amp;gt;
-      &amp;lt;/swe2:elementType&amp;gt;   
+      &amp;lt;/swe2:elementType&amp;gt;	
       
       &amp;lt;swe2:encoding&amp;gt;
         &amp;lt;!-- SWE encoding and data values --&amp;gt;
@@ -6352,7 +6352,7 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
         &amp;lt;!-- swe:TextEncoding specification. --&amp;gt;
         &amp;lt;!--  --&amp;gt;
         &amp;lt;!-- About DataChoice from SWE Common 2.0: --&amp;gt;
-        &amp;lt;!-- 9.2.5  Rules for DataChoice --&amp;gt;
+        &amp;lt;!-- 9.2.5	Rules for DataChoice --&amp;gt;
         &amp;lt;!-- A тАЬDataChoiceтАЭ is encoded with the text method by providing the name of the selected item --&amp;gt;
         &amp;lt;!-- before the item values themselves. The name used shall correspond to the тАЬnameтАЭ attribute --&amp;gt;
         &amp;lt;!-- of the тАЬitemтАЭ property element that describes the structure of the selected item. --&amp;gt;
@@ -6612,7 +6612,7 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
             &amp;lt;/swe2:DataChoice&amp;gt;
           &amp;lt;/swe2:field&amp;gt;
         &amp;lt;/swe2:DataRecord&amp;gt;
-      &amp;lt;/swe2:elementType&amp;gt;   
+      &amp;lt;/swe2:elementType&amp;gt;	
       
       &amp;lt;swe2:encoding&amp;gt;
         &amp;lt;!-- SWE encoding and data values --&amp;gt;
@@ -6623,7 +6623,7 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
         &amp;lt;!-- swe:TextEncoding specification. --&amp;gt;
         &amp;lt;!--  --&amp;gt;
         &amp;lt;!-- About DataChoice from SWE Common 2.0: --&amp;gt;
-        &amp;lt;!-- 9.2.5  Rules for DataChoice --&amp;gt;
+        &amp;lt;!-- 9.2.5	Rules for DataChoice --&amp;gt;
         &amp;lt;!-- A тАЬDataChoiceтАЭ is encoded with the text method by providing the name of the selected item --&amp;gt;
         &amp;lt;!-- before the item values themselves. The name used shall correspond to the тАЬnameтАЭ attribute --&amp;gt;
         &amp;lt;!-- of the тАЬitemтАЭ property element that describes the structure of the selected item. --&amp;gt;

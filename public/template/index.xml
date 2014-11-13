@@ -1513,7 +1513,7 @@
             &amp;lt;/swe2:DataChoice&amp;gt;
           &amp;lt;/swe2:field&amp;gt;
         &amp;lt;/swe2:DataRecord&amp;gt;
-      &amp;lt;/swe2:elementType&amp;gt;   
+      &amp;lt;/swe2:elementType&amp;gt;	
       
       &amp;lt;swe2:encoding&amp;gt;
         &amp;lt;!-- SWE encoding and data values --&amp;gt;
@@ -1524,7 +1524,7 @@
         &amp;lt;!-- swe:TextEncoding specification. --&amp;gt;
         &amp;lt;!--  --&amp;gt;
         &amp;lt;!-- About DataChoice from SWE Common 2.0: --&amp;gt;
-        &amp;lt;!-- 9.2.5  Rules for DataChoice --&amp;gt;
+        &amp;lt;!-- 9.2.5	Rules for DataChoice --&amp;gt;
         &amp;lt;!-- A тАЬDataChoiceтАЭ is encoded with the text method by providing the name of the selected item --&amp;gt;
         &amp;lt;!-- before the item values themselves. The name used shall correspond to the тАЬnameтАЭ attribute --&amp;gt;
         &amp;lt;!-- of the тАЬitemтАЭ property element that describes the structure of the selected item. --&amp;gt;
@@ -2147,7 +2147,7 @@
             &amp;lt;/swe2:DataChoice&amp;gt;
           &amp;lt;/swe2:field&amp;gt;
         &amp;lt;/swe2:DataRecord&amp;gt;
-      &amp;lt;/swe2:elementType&amp;gt;   
+      &amp;lt;/swe2:elementType&amp;gt;	
       
       &amp;lt;swe2:encoding&amp;gt;
         &amp;lt;!-- SWE encoding and data values --&amp;gt;
@@ -2158,7 +2158,7 @@
         &amp;lt;!-- swe:TextEncoding specification. --&amp;gt;
         &amp;lt;!--  --&amp;gt;
         &amp;lt;!-- About DataChoice from SWE Common 2.0: --&amp;gt;
-        &amp;lt;!-- 9.2.5  Rules for DataChoice --&amp;gt;
+        &amp;lt;!-- 9.2.5	Rules for DataChoice --&amp;gt;
         &amp;lt;!-- A тАЬDataChoiceтАЭ is encoded with the text method by providing the name of the selected item --&amp;gt;
         &amp;lt;!-- before the item values themselves. The name used shall correspond to the тАЬnameтАЭ attribute --&amp;gt;
         &amp;lt;!-- of the тАЬitemтАЭ property element that describes the structure of the selected item. --&amp;gt;
@@ -2418,7 +2418,7 @@
             &amp;lt;/swe2:DataChoice&amp;gt;
           &amp;lt;/swe2:field&amp;gt;
         &amp;lt;/swe2:DataRecord&amp;gt;
-      &amp;lt;/swe2:elementType&amp;gt;   
+      &amp;lt;/swe2:elementType&amp;gt;	
       
       &amp;lt;swe2:encoding&amp;gt;
         &amp;lt;!-- SWE encoding and data values --&amp;gt;
@@ -2429,7 +2429,7 @@
         &amp;lt;!-- swe:TextEncoding specification. --&amp;gt;
         &amp;lt;!--  --&amp;gt;
         &amp;lt;!-- About DataChoice from SWE Common 2.0: --&amp;gt;
-        &amp;lt;!-- 9.2.5  Rules for DataChoice --&amp;gt;
+        &amp;lt;!-- 9.2.5	Rules for DataChoice --&amp;gt;
         &amp;lt;!-- A тАЬDataChoiceтАЭ is encoded with the text method by providing the name of the selected item --&amp;gt;
         &amp;lt;!-- before the item values themselves. The name used shall correspond to the тАЬnameтАЭ attribute --&amp;gt;
         &amp;lt;!-- of the тАЬitemтАЭ property element that describes the structure of the selected item. --&amp;gt;
