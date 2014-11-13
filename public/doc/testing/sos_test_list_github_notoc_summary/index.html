@@ -10,9 +10,9 @@
   <title> List of SOS Tests &middot; SOS v1.0 </title>
 
   
-  <link rel="stylesheet" href="http://abirger.github.io/sos-guidelines/css/poole.css">
-  <link rel="stylesheet" href="http://abirger.github.io/sos-guidelines/css/syntax.css">
-  <link rel="stylesheet" href="http://abirger.github.io/sos-guidelines/css/hyde.css">
+  <link rel="stylesheet" href="http://ioos.github.io/sos-guidelines/css/poole.css">
+  <link rel="stylesheet" href="http://ioos.github.io/sos-guidelines/css/syntax.css">
+  <link rel="stylesheet" href="http://ioos.github.io/sos-guidelines/css/hyde.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   
@@ -26,7 +26,7 @@
 <body>
 
 <div class="sidebar">
-   	<p>  <img src="./images/ioos_blue2.png" alt="ho-ho-ho"> </p> 
+   	<p>  <img src="/sos-guidelines/images/ioos_blue2.png" alt="ho-ho-ho"> </p> 
 
 	<div class="container sidebar-sticky">
     <div class="sidebar-about">
@@ -38,8 +38,8 @@
 
 
     <ul class="sidebar-nav">
-      <li><a href="http://abirger.github.io">IOOS Home (fork)</a> </li>
-	  <li><a href="/sos-guidelines/">SOS Guidelines Home (fork)</a> </li>
+      <li><a href="http://ioos.github.io">IOOS Home</a> </li>
+	  <li><a href="/sos-guidelines/">SOS Guidelines Home</a> </li>
       
     </ul>
 
@@ -91,7 +91,15 @@
 
       
 
-<p><em>This document contains a list of required and optional tests that have to be run in order to ensure full compliance with IOOS SOS Profile 1.0 (Milestone 1.0), and currently sufficient level of compliance with the OGC SOS 1.0.0 specification.</em></p>
+<p><em>This document describes a collection of tests that have to be run in order to ensure a required level of compliance with IOOS SOS Profile 1.0 (IOOS Convention), and official OGC SOS 1.0.0 specification.</em></p>
+
+<p>The collection includes both OGC Standard and IOOS Profile compliance tests. The goal of OGC compliance tests is to ensure that the service is to a certain extent compliant with the OGC specifications. The tests are essentially the same as the official OGC CITE test set for SOS 1.0.0; however, some tests were marked out as optional for the current phase of IOOS SOS development, e.g. verification of exception report messages.</p>
+
+<blockquote>
+<p><em><strong>NOTE</strong>: The OGC tests based on HTTP POST requests cannot be used with ncSOS instances because ncSOS does not support POST binding.</em></p>
+</blockquote>
+
+<p>The IOOS SOS Profile tests have originated from the official OGC CITE test set for SOS 1.0.0, and adapted for IOOS-specific requirements. The goal of these tests is to validate that a service response is syntactically and semantically valid. The response is considered syntactically valid if it contains the expected elements and attributes in the order prescribed by the IOOS Profile Templates v1.0. The response is recognized as semantically valid if its semantic conforms to the IOOS SOS Convention, i.e. the meaning of variables, elements, attributes, etc. matches the CF Conventions v1.6, IOOS SOS WSDD, and IOOS Controlled Vocabularies.</p>
 
 <h2 id="toc_0">OWS Common Tests</h2>
 
