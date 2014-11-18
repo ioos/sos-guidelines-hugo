@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Templates on SOS v1.0 </title>
+      <title>Templates on IOOS SOS Guidelines </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://ioos.github.io/sos-guidelines/template/index.xml/</link>
+    <link>http://abirger.github.io/sos-guidelines/template/index.xml/</link>
     <language>en-us</language>
     
     
@@ -11,11 +11,11 @@
     
     <item>
       <title>IOOS SOS v1.0 GetCapabilities Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SOS-GetCapabilities/</link>
+      <link>http://abirger.github.io/sos-guidelines/template/SOS-GetCapabilities/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SOS-GetCapabilities/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) GetCapabilities response&lt;/em&gt;&lt;/p&gt;
+      <guid>http://abirger.github.io/sos-guidelines/template/SOS-GetCapabilities/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) GetCapabilities response.&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;!-- Template Document for a generic (independant of feature type) Get Capabilites --&amp;gt;
@@ -216,10 +216,10 @@
     
     <item>
       <title>IOOS SOS v1.0 SML DescribeSensor-Network Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Network/</link>
+      <link>http://abirger.github.io/sos-guidelines/template/SML-DescribeSensor-Network/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Network/</guid>
+      <guid>http://abirger.github.io/sos-guidelines/template/SML-DescribeSensor-Network/</guid>
       <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) SensorML DescribeSensor response for Network of Stations&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
@@ -511,10 +511,10 @@
     
     <item>
       <title>IOOS SOS v1.0 SML DescribeSensor-Station Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Station/</link>
+      <link>http://abirger.github.io/sos-guidelines/template/SML-DescribeSensor-Station/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Station/</guid>
+      <guid>http://abirger.github.io/sos-guidelines/template/SML-DescribeSensor-Station/</guid>
       <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) SensorML DescribeSensor response for a single station&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
@@ -876,10 +876,10 @@
     
     <item>
       <title>IOOS SOS v1.0 OM GetObservation Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/OM-GetObservation/</link>
+      <link>http://abirger.github.io/sos-guidelines/template/OM-GetObservation/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/OM-GetObservation/</guid>
+      <guid>http://abirger.github.io/sos-guidelines/template/OM-GetObservation/</guid>
       <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) GetObservation response. The result block in this template is empty; see SWE templates for guidance on the result block.&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
@@ -1063,10 +1063,10 @@
     
     <item>
       <title>IOOS SOS v1.0 SWE-MultiStation-TimeSeries Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries/</link>
+      <link>http://abirger.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries/</guid>
+      <guid>http://abirger.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries/</guid>
       <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for multiple stations with multiple sensors&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
@@ -1566,10 +1566,10 @@
     
     <item>
       <title>IOOS SOS v1.0 SWE-MultiStation-TimeSeries-QC Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries_QC/</link>
+      <link>http://abirger.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries_QC/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries_QC/</guid>
+      <guid>http://abirger.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries_QC/</guid>
       <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for multiple stations with multiple sensors including quality elements for some quantities&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
@@ -2201,10 +2201,10 @@
     
     <item>
       <title>IOOS SOS v1.0 SWE-SingleStation-SingleProperty-TimeSeries Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-SingleProperty-TimeSeries/</link>
+      <link>http://abirger.github.io/sos-guidelines/template/SWE-SingleStation-SingleProperty-TimeSeries/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-SingleProperty-TimeSeries/</guid>
+      <guid>http://abirger.github.io/sos-guidelines/template/SWE-SingleStation-SingleProperty-TimeSeries/</guid>
       <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for a single station with a single sensor&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
@@ -2461,10 +2461,10 @@
     
     <item>
       <title>IOOS SOS v1.0 SWE-SingleStation-TimeSeriesProfile Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile/</link>
+      <link>http://abirger.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile/</guid>
+      <guid>http://abirger.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile/</guid>
       <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for a station with profiling sensors&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
@@ -2983,10 +2983,10 @@
     
     <item>
       <title>IOOS SOS v1.0 SWE-SingleStation-TimeSeriesProfile-QC Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile_QC/</link>
+      <link>http://abirger.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile_QC/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile_QC/</guid>
+      <guid>http://abirger.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile_QC/</guid>
       <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for a station with profiling sensors including quality elements for some quantities&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;

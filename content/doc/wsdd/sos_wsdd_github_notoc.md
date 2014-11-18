@@ -11,8 +11,6 @@ weight = "1"
 _This Web Service Description Document (WSDD) provides a description of a Sensor Observation Service (SOS) that has been developed by U.S. IOOS for deployment by NOAA data providers and IOOS Regional Associations (RAs). This service provides a service consumer with the capability to access ocean observations data products, such as time series and profiles, which have XML-based encodings and included in the SWE Common Data Model._
 <!--more-->
 
-* * * * *
-
 
 
 # SERVICE INTERFACES #

@@ -2,63 +2,68 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://ioos.github.io/sos-guidelines/</loc>
-    <lastmod>2014-08-04T08:09:56+00:00</lastmod>
+    <loc>http://abirger.github.io/sos-guidelines/</loc>
+    <lastmod>2014-08-04T07:56:39+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</loc>
+    <loc>http://abirger.github.io/sos-guidelines/about/</loc>
+    <lastmod>2014-08-04T07:56:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://abirger.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</loc>
     <lastmod>2014-08-04T08:09:56+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ioos.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</loc>
+    <loc>http://abirger.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</loc>
     <lastmod>2014-08-04T08:10:23+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ioos.github.io/sos-guidelines/template/SOS-GetCapabilities/</loc>
+    <loc>http://abirger.github.io/sos-guidelines/template/SOS-GetCapabilities/</loc>
     <lastmod>2014-08-04T08:09:56+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Network/</loc>
+    <loc>http://abirger.github.io/sos-guidelines/template/SML-DescribeSensor-Network/</loc>
     <lastmod>2014-08-04T08:09:56+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Station/</loc>
+    <loc>http://abirger.github.io/sos-guidelines/template/SML-DescribeSensor-Station/</loc>
     <lastmod>2014-08-04T08:09:56+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ioos.github.io/sos-guidelines/template/OM-GetObservation/</loc>
+    <loc>http://abirger.github.io/sos-guidelines/template/OM-GetObservation/</loc>
     <lastmod>2014-08-04T08:09:56+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries/</loc>
+    <loc>http://abirger.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries/</loc>
     <lastmod>2014-08-04T08:09:56+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries_QC/</loc>
+    <loc>http://abirger.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries_QC/</loc>
     <lastmod>2014-08-04T08:09:56+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-SingleProperty-TimeSeries/</loc>
+    <loc>http://abirger.github.io/sos-guidelines/template/SWE-SingleStation-SingleProperty-TimeSeries/</loc>
     <lastmod>2014-08-04T08:09:56+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile/</loc>
+    <loc>http://abirger.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile/</loc>
     <lastmod>2014-08-04T08:09:56+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile_QC/</loc>
+    <loc>http://abirger.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile_QC/</loc>
     <lastmod>2014-08-04T08:09:56+00:00</lastmod>
   </url>
   

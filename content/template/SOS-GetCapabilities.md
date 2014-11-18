@@ -7,7 +7,7 @@ date = 2014-08-04T08:09:56Z
 weight = "3"
 +++
 
-_Template for a generic (independent of feature type) GetCapabilities response_
+_Template for a generic (independent of feature type) GetCapabilities response._
 <!--more-->
 
 ```XML

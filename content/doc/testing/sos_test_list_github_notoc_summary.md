@@ -9,6 +9,7 @@ weight = "2"
 
 _This document describes a collection of tests that have to be run in order to ensure a required level of compliance with IOOS SOS Profile 1.0 (IOOS Convention), and official OGC SOS 1.0.0 specification._
 <!--more-->
+
 The collection includes both OGC Standard and IOOS Profile compliance tests. The goal of OGC compliance tests is to ensure that the service is to a certain extent compliant with the OGC specifications. The tests are essentially the same as the official OGC CITE test set for SOS 1.0.0; however, some tests were marked out as optional for the current phase of IOOS SOS development, e.g. verification of exception report messages. 
 
 > _**NOTE**: The OGC tests based on HTTP POST requests cannot be used with ncSOS instances because ncSOS does not support POST binding._

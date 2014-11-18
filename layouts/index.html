@@ -7,23 +7,31 @@
 
 	<div class="posts">
 
-      {{ range .Data.Pages }}
+ 
   <div class="post">
+
+	{{ range .Data.Pages }}
 
     <header>
       <h2><a href='{{ .Permalink }}'> {{ .Title }}</a> </h2>
-      <div class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
+    <!--  <div class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div> -->
     </header>
-
-	{{ .Summary }}
+	
+	{{ if eq .RelPermalink "/sos-guidelines/index.html" }} 
+		{{ .Content }}
+	{{else}}
+		{{ .Summary }} 
+	{{end}}
 
     <footer>
-        <a href='{{ .Permalink }}'><nobr>Read more ></nobr></a>
+        <a href='{{ .Permalink }}'><nobr><i>Read more ></i></nobr></a>
     </footer>
+
+	{{ end }}
 
 	</div>
 
-  {{ end }}
+
 </div>
 
 

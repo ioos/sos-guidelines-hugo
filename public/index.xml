@@ -1,25 +1,79 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Recent Content on SOS v1.0 </title>
+      <title>Recent Content on IOOS SOS Guidelines </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://ioos.github.io/sos-guidelines/index.xml/</link>
+    <link>http://abirger.github.io/sos-guidelines/index.xml/</link>
     <language>en-us</language>
     
     
-    <updated>Mon, 04 Aug 2014 08:09:56 UTC</updated>
+    <updated>Mon, 04 Aug 2014 07:56:39 UTC</updated>
+    
+    <item>
+      <title>About IOOS SOS Application Profile</title>
+      <link>http://abirger.github.io/sos-guidelines/about/</link>
+      <pubDate>Mon, 04 Aug 2014 07:56:39 UTC</pubDate>
+      
+      <guid>http://abirger.github.io/sos-guidelines/about/</guid>
+      <description>
+
+&lt;!-- For a single homepage put in FrontMatter url = &#34;index.html&#34; --&gt;
+
+&lt;p&gt;&lt;em&gt;U.S. IOOS distributes ocean observations using the OGC Sensor Observation Service.  To support this effort U.S. IOOS has developed a profile of SOS v1.0 (henceforth IOOS SOS v1.0) that includes specific behaviors for the SOS interface and for the output formats delivered in response to the three operations of the SOS Core Profile.&lt;br /&gt;
+The &lt;a href=&#34;https://github.com/ioos/sos-guidelines&#34;&gt;GitHub repository&lt;/a&gt; contains documentation of the IOOS SOS v1.0 profile, example templates for the responses, and information on two reference implementations developed to support the IOOS SOS v1.0 profile.  To facilitate the practical implementation of the SOS, IOOS has developed the IOOS Application Profile (AP) for SOS, which includes a series of operation templates, controlled vocabularies, IOOS Conventions for SOS Implementation, and a set of tests for IOOS SOS implementations.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;toc_0&#34;&gt;Documentation of the Profile&lt;/h1&gt;
+
+&lt;p&gt;The IOOS SOS 1.0 is conformant to the following OGC Standards and Conventions:
+* &lt;a href=&#34;http://www.opengeospatial.org/standards/sos&#34;&gt;OpenGIS Sensor Observation Service v1.0.0 [OGC 06-009r6]&lt;/a&gt;, for provision of observational data;
+* &lt;a href=&#34;http://www.opengeospatial.org/standards/sensorml&#34;&gt;OpenGIS Sensor Model Language (SensorML) v1.0.1 [OGC 07-000 and 07-122r2]&lt;/a&gt;, for platform and sensor description and result encoding;  and
+* &lt;a href=&#34;http://www.opengeospatial.org/standards/swecommon&#34;&gt;OGC® SWE Common Data Model Encoding Standard v2.0 [OGC 08-094r1]&lt;/a&gt;, for result encoding options.
+* &lt;a href=&#34;http://cfconventions.org&#34;&gt;CF Conventions v1.6&lt;/a&gt;, for provision of standard naming and description of feature types, data components, dimensions, variables and attributes, coordinate systems definition, axis order, etc.&lt;/p&gt;
+
+&lt;p&gt;IOOS Conventions for the AP v1 is described in the series of documents:
+* &lt;a href=&#34;http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/&#34;&gt;IOOS SOS Web Service Description Document&lt;/a&gt;, which provides a detailed description of the IOOS implementation of the OGC SOS v1.0.0, including definitions, constraints, encoding requirements and “best practices” that are not explicitly defined in OGC SOS Implementation Standard;
+* &lt;a href=&#34;http://ioos.github.io/conventions-for-observing-asset-identifiers/&#34;&gt;Convention for Observing Asset Identifiers&lt;/a&gt;, which describes the algorithm for identification of IOOS-related observing assets including measurement stations, platforms and sensors; &lt;a href=&#34;https://github.com/ioos/conventions-for-observing-asset-identifiers&#34;&gt;Temporary URL&lt;/a&gt;
+* &lt;a href=&#34;http://ioos.github.io/ioos-csv-tsv/&#34;&gt;Convention for CSV/TSV Encoding&lt;/a&gt;, which lays down rules for encoding observation data as plain text Comma-Separated Values (CSV) or Tab-Separated Values (TSV);
+* &lt;a href=&#34;http://ioos.github.io/vocabularies/&#34;&gt;Guidelines for use of Controlled Vocabularies&lt;/a&gt;, which provides instructions for usage of the controlled vocabularies and vocabulary mappings developed or adopted by IOOS in IOOS-compliant data services, including existing vocabulary and terms selection process as well as request policy for new terms.  Most controlled vocabularies used by IOOS are hosted on the &lt;a href=&#34;https://marinemetadata.org/&#34;&gt;Marine Metadata Interoperability&lt;/a&gt; &lt;a href=&#34;http://mmisw.org/orr/&#34;&gt;Ontology Registry and Repository&lt;/a&gt; in the &lt;a href=&#34;http://mmisw.org/ont/ioos&#34;&gt;IOOS folder&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;toc_1&#34;&gt;Templates and Examples&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/ioos/sos-guidelines/tree/master/template&#34;&gt;SOS Operation Templates for IOOS AP v1&lt;/a&gt; include templates for SOS v1.0.0 GetCapabilities, DescribeSensor, and GetObservation server&amp;rsquo;s response. The GetObservation templates describe &amp;lsquo;point&amp;rsquo;, &amp;lsquo;timeSeries&amp;rsquo;, &amp;lsquo;profile&amp;rsquo;, and &amp;lsquo;timeSeriesProfile&amp;rsquo; &lt;a href=&#34;http://cfconventions.org/Data/cf-conventions/cf-conventions-1.6/build/cf-conventions.html#discrete-sampling-geometries&#34;&gt;CF v1.6 Discrete Sampling Geometries&lt;/a&gt;. The templates are intended as a mandatory guidance for all developers of IOOS-compliant SOS applications.&lt;/p&gt;
+
+&lt;p&gt;In 2015-2016 IOOS is planning to move to IOOS SOS v2.0. A new Application Profile (AP v2) is anticipated to modify IOOS Conventions and current templates to accommodate the &lt;a href=&#34;http://www.opengeospatial.org/standards/sos&#34;&gt;OGC SOS v2.0 Interface Standard [OGC 12-006]&lt;/a&gt;, including the Obsevations and Measurements  v2.0, Sensor Web Enablement v2.0, and SensorML v2.0 standards.  Additionally, templates will also be added for &amp;lsquo;trajectory&amp;rsquo; and &amp;lsquo;trajectoryProfile&amp;rsquo; CF v1.6 Discrete Sampling Geometries.&lt;/p&gt;
+
+&lt;h1 id=&#34;toc_2&#34;&gt;Reference Implementations and Current Deployments&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ioos/i52n-sos&#34;&gt;i52N&lt;/a&gt; for RDBMS observation data store (IOOS custom version of the &lt;a href=&#34;https://github.com/52North/SOS&#34;&gt;52°North Sensor Observation Service&lt;/a&gt;, and&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/asascience-open/ncsos&#34;&gt;ncSOS&lt;/a&gt; that adds an SOS service to any of the CF Discrete Sampling Geometries datasets in the existing &lt;a href=&#34;http://www.unidata.ucar.edu/projects/THREDDS/&#34;&gt;THREDDS server&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;Conformance Testing&lt;/h2&gt;
+
+&lt;p&gt;Similar to OGC Compliance &amp;amp; Interoperability Testing &amp;amp; Evaluation (CITE) program, IOOS has developed a set of formal tests to ensure that IOOS SOS implementations are providing a product compliant with the IOOS AP v1. The &lt;a href=&#34;http://ioos.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/&#34;&gt;IOOS AP v1 Compliance Test List&lt;/a&gt; describes tests for SOS v1.0.0 developed by IOOS, and indicates optional some OGC CITE tests that are considered non-critical for the current state of IOOS SOS implementation.&lt;/p&gt;
+
+&lt;p&gt;A testing framework for use as a web service and as a command line tool is &lt;a href=&#34;https://github.com/ioos/ioos-sos-compliance-tests&#34;&gt;being developed as well&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_4&#34;&gt;Current Deployments&lt;/h2&gt;
+
+&lt;p&gt;The complete list of all known IOOS SOS deployments can be found at the &lt;a href=&#34;http://catalog.ioos.us/services/filter/none/SOS&#34;&gt;IOOS Catalog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;IOOS Federal and RA partners are expected to register their DMAC data access services with the IOOS Service Registry hosted and operated by NGDC. The Service Registry maintains the master list of data sets available via DMAC data access services, and allows discovery of IOOS services and data via the &lt;a href=&#34;http://www.ngdc.noaa.gov/geoportal/&#34;&gt;NGDC ESRI Geoportal Server&amp;rsquo;s web based GUI&lt;/a&gt; or via direct queries using the OGC CS/W interface or the ESRI REST interface, e.g. the query for &lt;a href=&#34;http://www.ngdc.noaa.gov/geoportal/rest/find/document?rid=local&amp;amp;ridName=NOAA%27s%20Geophysical%20Data%20Center&amp;amp;rids=local&amp;amp;searchText=sos.resource.url:*%20&amp;amp;start=1&amp;amp;max=1000&amp;amp;orderBy=relevance&amp;amp;maxSearchTimeMilliSec=10000&amp;amp;f=html&#34;&gt;all IOOS SOS services&lt;/a&gt;. The &lt;a href=&#34;https://github.com/ioos/registry&#34;&gt;IOOS Service Registry&lt;/a&gt; documentation provides detailed instructions for IOOS partners on getting dataset metadata into the Service Registry.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://catalog.ioos.us/&#34;&gt;IOOS Catalog&lt;/a&gt; is intended to be the web-based client for the Service Registry and to provide a view of the data published via the registered services. Currently, the Catalog provides information under 1000 registered SOS services and 4000 data sets.  The Catalog obtains all service URLs from the metadata managed by the IOOS Service Registry via OGC CS-W interface to the NGDC&amp;rsquo;s ESRI Geoportal Server. The &lt;a href=&#34;http://catalog.ioos.us/&#34;&gt;GitHub software repository&lt;/a&gt; contains the source code for generation of the IOOS Catalog web site.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>IOOS SOS v1.0 WSDD</title>
-      <link>http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</link>
+      <link>http://abirger.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</guid>
+      <guid>http://abirger.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;This Web Service Description Document (WSDD) provides a description of a Sensor Observation Service (SOS) that has been developed by U.S. IOOS for deployment by NOAA data providers and IOOS Regional Associations (RAs). This service provides a service consumer with the capability to access ocean observations data products, such as time series and profiles, which have XML-based encodings and included in the SWE Common Data Model.&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
 
 &lt;h1 id=&#34;toc_0&#34;&gt;SERVICE INTERFACES&lt;/h1&gt;
 
@@ -3367,10 +3421,10 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
     
     <item>
       <title>List of SOS Tests</title>
-      <link>http://ioos.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</link>
+      <link>http://abirger.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</link>
       <pubDate>Mon, 04 Aug 2014 08:10:23 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</guid>
+      <guid>http://abirger.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;This document describes a collection of tests that have to be run in order to ensure a required level of compliance with IOOS SOS Profile 1.0 (IOOS Convention), and official OGC SOS 1.0.0 specification.&lt;/em&gt;&lt;/p&gt;
@@ -4205,11 +4259,11 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
     
     <item>
       <title>IOOS SOS v1.0 GetCapabilities Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SOS-GetCapabilities/</link>
+      <link>http://abirger.github.io/sos-guidelines/template/SOS-GetCapabilities/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SOS-GetCapabilities/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) GetCapabilities response&lt;/em&gt;&lt;/p&gt;
+      <guid>http://abirger.github.io/sos-guidelines/template/SOS-GetCapabilities/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) GetCapabilities response.&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;!-- Template Document for a generic (independant of feature type) Get Capabilites --&amp;gt;
@@ -4410,10 +4464,10 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
     
     <item>
       <title>IOOS SOS v1.0 SML DescribeSensor-Network Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Network/</link>
+      <link>http://abirger.github.io/sos-guidelines/template/SML-DescribeSensor-Network/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Network/</guid>
+      <guid>http://abirger.github.io/sos-guidelines/template/SML-DescribeSensor-Network/</guid>
       <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) SensorML DescribeSensor response for Network of Stations&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
@@ -4705,10 +4759,10 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
     
     <item>
       <title>IOOS SOS v1.0 SML DescribeSensor-Station Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Station/</link>
+      <link>http://abirger.github.io/sos-guidelines/template/SML-DescribeSensor-Station/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Station/</guid>
+      <guid>http://abirger.github.io/sos-guidelines/template/SML-DescribeSensor-Station/</guid>
       <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) SensorML DescribeSensor response for a single station&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
@@ -5070,10 +5124,10 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
     
     <item>
       <title>IOOS SOS v1.0 OM GetObservation Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/OM-GetObservation/</link>
+      <link>http://abirger.github.io/sos-guidelines/template/OM-GetObservation/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/OM-GetObservation/</guid>
+      <guid>http://abirger.github.io/sos-guidelines/template/OM-GetObservation/</guid>
       <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) GetObservation response. The result block in this template is empty; see SWE templates for guidance on the result block.&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
@@ -5257,10 +5311,10 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
     
     <item>
       <title>IOOS SOS v1.0 SWE-MultiStation-TimeSeries Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries/</link>
+      <link>http://abirger.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries/</guid>
+      <guid>http://abirger.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries/</guid>
       <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for multiple stations with multiple sensors&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
@@ -5760,10 +5814,10 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
     
     <item>
       <title>IOOS SOS v1.0 SWE-MultiStation-TimeSeries-QC Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries_QC/</link>
+      <link>http://abirger.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries_QC/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries_QC/</guid>
+      <guid>http://abirger.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries_QC/</guid>
       <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for multiple stations with multiple sensors including quality elements for some quantities&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
@@ -6395,10 +6449,10 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
     
     <item>
       <title>IOOS SOS v1.0 SWE-SingleStation-SingleProperty-TimeSeries Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-SingleProperty-TimeSeries/</link>
+      <link>http://abirger.github.io/sos-guidelines/template/SWE-SingleStation-SingleProperty-TimeSeries/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-SingleProperty-TimeSeries/</guid>
+      <guid>http://abirger.github.io/sos-guidelines/template/SWE-SingleStation-SingleProperty-TimeSeries/</guid>
       <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for a single station with a single sensor&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
@@ -6655,10 +6709,10 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
     
     <item>
       <title>IOOS SOS v1.0 SWE-SingleStation-TimeSeriesProfile Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile/</link>
+      <link>http://abirger.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile/</guid>
+      <guid>http://abirger.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile/</guid>
       <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for a station with profiling sensors&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
@@ -7177,10 +7231,10 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
     
     <item>
       <title>IOOS SOS v1.0 SWE-SingleStation-TimeSeriesProfile-QC Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile_QC/</link>
+      <link>http://abirger.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile_QC/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile_QC/</guid>
+      <guid>http://abirger.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile_QC/</guid>
       <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for a station with profiling sensors including quality elements for some quantities&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;

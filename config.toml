@@ -1,9 +1,9 @@
-baseurl = "http://ioos.github.io/sos-guidelines"
+baseurl = "http://abirger.github.io/sos-guidelines"
 contentdir = "content"
 layoutdir = "layouts"
 publishdir = "public"
 languageCode = "en-us"
-Title = "SOS v1.0"
+Title = "IOOS SOS Guidelines"
 [params]
  Description = "Docs, codes, scripts, templates"
  Copyright = "(C) 2014 U.S. IOOS. Some rights reserved"
