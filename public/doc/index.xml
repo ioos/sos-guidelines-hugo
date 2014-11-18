@@ -3,7 +3,7 @@
   <channel>
       <title>Docs on IOOS SOS Guidelines </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://abirger.github.io/sos-guidelines/doc/index.xml/</link>
+    <link>http://localhost:1313/sos-guidelines/doc/index.xml/</link>
     <language>en-us</language>
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>IOOS SOS v1.0 WSDD</title>
-      <link>http://abirger.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</link>
+      <link>http://localhost:1313/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</link>
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://abirger.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</guid>
+      <guid>http://localhost:1313/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;This Web Service Description Document (WSDD) provides a description of a Sensor Observation Service (SOS) that has been developed by U.S. IOOS for deployment by NOAA data providers and IOOS Regional Associations (RAs). This service provides a service consumer with the capability to access ocean observations data products, such as time series and profiles, which have XML-based encodings and included in the SWE Common Data Model.&lt;/em&gt;&lt;/p&gt;
@@ -3365,10 +3365,10 @@ outputFormat=&amp;quot;text/xml;subtype=&amp;amp;quot;sensorML/1.0.1/profiles/io
     
     <item>
       <title>List of SOS Tests</title>
-      <link>http://abirger.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</link>
+      <link>http://localhost:1313/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</link>
       <pubDate>Mon, 04 Aug 2014 08:10:23 UTC</pubDate>
       
-      <guid>http://abirger.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</guid>
+      <guid>http://localhost:1313/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;This document describes a collection of tests that have to be run in order to ensure a required level of compliance with IOOS SOS Profile 1.0 (IOOS Convention), and official OGC SOS 1.0.0 specification.&lt;/em&gt;&lt;/p&gt;
