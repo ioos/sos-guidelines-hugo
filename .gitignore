@@ -38,7 +38,7 @@ Icon
 # Files from Hugo configuration folders
 # archetypes/**
 # content/**
-css/**
+# css/**
 # layouts/**
 # static/**
 temp/**
