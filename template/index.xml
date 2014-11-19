@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Templates on SOS v1.0 </title>
+      <title>Templates on IOOS SOS Guidelines </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
     <link>http://ioos.github.io/sos-guidelines/template/index.xml/</link>
     <language>en-us</language>
@@ -15,7 +15,7 @@
       <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
       <guid>http://ioos.github.io/sos-guidelines/template/SOS-GetCapabilities/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) GetCapabilities response&lt;/em&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) GetCapabilities response.&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;!-- Template Document for a generic (independant of feature type) Get Capabilites --&amp;gt;
