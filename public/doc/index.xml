@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Docs on SOS v1.0 </title>
+      <title>Docs on IOOS SOS Guidelines </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
     <link>http://ioos.github.io/sos-guidelines/doc/index.xml/</link>
     <language>en-us</language>
@@ -18,8 +18,6 @@
       <description>
 
 &lt;p&gt;&lt;em&gt;This Web Service Description Document (WSDD) provides a description of a Sensor Observation Service (SOS) that has been developed by U.S. IOOS for deployment by NOAA data providers and IOOS Regional Associations (RAs). This service provides a service consumer with the capability to access ocean observations data products, such as time series and profiles, which have XML-based encodings and included in the SWE Common Data Model.&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
 
 &lt;h1 id=&#34;toc_0&#34;&gt;SERVICE INTERFACES&lt;/h1&gt;
 
