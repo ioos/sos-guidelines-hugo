@@ -168,12 +168,12 @@ _**NOTES**_:
         git checkout master
 
     7. Remove the public folder to make room for the gh-pages subtree
-        rm -rf public
+        rm -rf public        
 
     8. Add the gh-pages branch of the repository. It will look like a folder named public
         git subtree add --prefix public git@github.com:[some-repository-name].git gh-pages --squash
 
-    9. Pull down the file we just committed. This helps avoid merge conflicts
+    9. Pull down the file we just committed (totally optional step but helps avoid merge conflicts)
         git subtree pull --prefix=public
 
     10. Run Hugo. Generated site will be placed in public directory

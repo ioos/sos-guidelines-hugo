@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> About IOOS SOS Application Profile &middot; IOOS SOS Guidelines </title>
+
+  
+  <link rel="stylesheet" href="http://ioos.github.io/sos-guidelines/css/poole.css">
+  <link rel="stylesheet" href="http://ioos.github.io/sos-guidelines/css/syntax.css">
+  <link rel="stylesheet" href="http://ioos.github.io/sos-guidelines/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="IOOS SOS Guidelines" />
+</head>
+
+<body>
+
+<div class="sidebar">
+   	<p>  <img src="/sos-guidelines/images/ioos_blue2.png" alt="ho-ho-ho"> </p> 
+
+	<div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>IOOS SOS Guidelines</h1>
+      <p class="lead">
+       Docs, codes, scripts, templates 
+      </p>
+    </div>
+
+
+    <ul class="sidebar-nav">
+	  <li><a href="/sos-guidelines/">Home</a> </li>
+	  <li><a href="/sos-guidelines/about/">About IOOS SOS</a> </li>
+	  <li><a href="https://github.com/ioos/sos-guidelines">SOS Guidelines on GitHub</a> </li>
+      <li><a href="http://ioos.github.io">IOOS GitHub Pages</a> </li>
+      
+    </ul>
+
+	
+
+	
+  
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+
+  <h1>About IOOS SOS Application Profile</h1>
+
+    <div id="toc" class="well col-md-4 col-sm-6">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#toc_0">Documentation of the Profile</a></li>
+<li><a href="#toc_1">Templates and Examples</a></li>
+<li><a href="#toc_2">Reference Implementations and Current Deployments</a>
+<ul>
+<li><a href="#toc_3">Conformance Testing</a></li>
+<li><a href="#toc_4">Current Deployments</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+
+      
+
+<!-- For a single homepage put in FrontMatter url = "index.html" -->
+
+<p><em>U.S. IOOS distributes ocean observations using the OGC Sensor Observation Service.  To support this effort U.S. IOOS has developed a profile of SOS v1.0 (henceforth IOOS SOS v1.0) that includes specific behaviors for the SOS interface and for the output formats delivered in response to the three operations of the SOS Core Profile.<br />
+The <a href="https://github.com/ioos/sos-guidelines">GitHub repository</a> contains documentation of the IOOS SOS v1.0 profile, example templates for the responses, and information on two reference implementations developed to support the IOOS SOS v1.0 profile.  To facilitate the practical implementation of the SOS, IOOS has developed the IOOS Application Profile (AP) for SOS, which includes a series of operation templates, controlled vocabularies, IOOS Conventions for SOS Implementation, and a set of tests for IOOS SOS implementations.</em></p>
+
+<h1 id="toc_0">Documentation of the Profile</h1>
+
+<p>The IOOS SOS 1.0 is conformant to the following OGC Standards and Conventions:
+* <a href="http://www.opengeospatial.org/standards/sos">OpenGIS Sensor Observation Service v1.0.0 [OGC 06-009r6]</a>, for provision of observational data;
+* <a href="http://www.opengeospatial.org/standards/sensorml">OpenGIS Sensor Model Language (SensorML) v1.0.1 [OGC 07-000 and 07-122r2]</a>, for platform and sensor description and result encoding;  and
+* <a href="http://www.opengeospatial.org/standards/swecommon">OGC® SWE Common Data Model Encoding Standard v2.0 [OGC 08-094r1]</a>, for result encoding options.
+* <a href="http://cfconventions.org">CF Conventions v1.6</a>, for provision of standard naming and description of feature types, data components, dimensions, variables and attributes, coordinate systems definition, axis order, etc.</p>
+
+<p>IOOS Conventions for the AP v1 is described in the series of documents:
+* <a href="http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/">IOOS SOS Web Service Description Document</a>, which provides a detailed description of the IOOS implementation of the OGC SOS v1.0.0, including definitions, constraints, encoding requirements and “best practices” that are not explicitly defined in OGC SOS Implementation Standard;
+* <a href="http://ioos.github.io/conventions-for-observing-asset-identifiers/">Convention for Observing Asset Identifiers</a>, which describes the algorithm for identification of IOOS-related observing assets including measurement stations, platforms and sensors; <a href="https://github.com/ioos/conventions-for-observing-asset-identifiers">Temporary URL</a>
+* <a href="http://ioos.github.io/ioos-csv-tsv/">Convention for CSV/TSV Encoding</a>, which lays down rules for encoding observation data as plain text Comma-Separated Values (CSV) or Tab-Separated Values (TSV);
+* <a href="http://ioos.github.io/vocabularies/">Guidelines for use of Controlled Vocabularies</a>, which provides instructions for usage of the controlled vocabularies and vocabulary mappings developed or adopted by IOOS in IOOS-compliant data services, including existing vocabulary and terms selection process as well as request policy for new terms.  Most controlled vocabularies used by IOOS are hosted on the <a href="https://marinemetadata.org/">Marine Metadata Interoperability</a> <a href="http://mmisw.org/orr/">Ontology Registry and Repository</a> in the <a href="http://mmisw.org/ont/ioos">IOOS folder</a>.</p>
+
+<h1 id="toc_1">Templates and Examples</h1>
+
+<p><a href="https://github.com/ioos/sos-guidelines/tree/master/template">SOS Operation Templates for IOOS AP v1</a> include templates for SOS v1.0.0 GetCapabilities, DescribeSensor, and GetObservation server&rsquo;s response. The GetObservation templates describe &lsquo;point&rsquo;, &lsquo;timeSeries&rsquo;, &lsquo;profile&rsquo;, and &lsquo;timeSeriesProfile&rsquo; <a href="http://cfconventions.org/Data/cf-conventions/cf-conventions-1.6/build/cf-conventions.html#discrete-sampling-geometries">CF v1.6 Discrete Sampling Geometries</a>. The templates are intended as a mandatory guidance for all developers of IOOS-compliant SOS applications.</p>
+
+<p>In 2015-2016 IOOS is planning to move to IOOS SOS v2.0. A new Application Profile (AP v2) is anticipated to modify IOOS Conventions and current templates to accommodate the <a href="http://www.opengeospatial.org/standards/sos">OGC SOS v2.0 Interface Standard [OGC 12-006]</a>, including the Obsevations and Measurements  v2.0, Sensor Web Enablement v2.0, and SensorML v2.0 standards.  Additionally, templates will also be added for &lsquo;trajectory&rsquo; and &lsquo;trajectoryProfile&rsquo; CF v1.6 Discrete Sampling Geometries.</p>
+
+<h1 id="toc_2">Reference Implementations and Current Deployments</h1>
+
+<ol>
+<li><a href="https://github.com/ioos/i52n-sos">i52N</a> for RDBMS observation data store (IOOS custom version of the <a href="https://github.com/52North/SOS">52°North Sensor Observation Service</a>, and</li>
+<li><a href="https://github.com/asascience-open/ncsos">ncSOS</a> that adds an SOS service to any of the CF Discrete Sampling Geometries datasets in the existing <a href="http://www.unidata.ucar.edu/projects/THREDDS/">THREDDS server</a>.</li>
+</ol>
+
+<h2 id="toc_3">Conformance Testing</h2>
+
+<p>Similar to OGC Compliance &amp; Interoperability Testing &amp; Evaluation (CITE) program, IOOS has developed a set of formal tests to ensure that IOOS SOS implementations are providing a product compliant with the IOOS AP v1. The <a href="http://ioos.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/">IOOS AP v1 Compliance Test List</a> describes tests for SOS v1.0.0 developed by IOOS, and indicates optional some OGC CITE tests that are considered non-critical for the current state of IOOS SOS implementation.</p>
+
+<p>A testing framework for use as a web service and as a command line tool is <a href="https://github.com/ioos/ioos-sos-compliance-tests">being developed as well</a>.</p>
+
+<h2 id="toc_4">Current Deployments</h2>
+
+<p>The complete list of all known IOOS SOS deployments can be found at the <a href="http://catalog.ioos.us/services/filter/none/SOS">IOOS Catalog</a>.</p>
+
+<p>IOOS Federal and RA partners are expected to register their DMAC data access services with the IOOS Service Registry hosted and operated by NGDC. The Service Registry maintains the master list of data sets available via DMAC data access services, and allows discovery of IOOS services and data via the <a href="http://www.ngdc.noaa.gov/geoportal/">NGDC ESRI Geoportal Server&rsquo;s web based GUI</a> or via direct queries using the OGC CS/W interface or the ESRI REST interface, e.g. the query for <a href="http://www.ngdc.noaa.gov/geoportal/rest/find/document?rid=local&amp;ridName=NOAA%27s%20Geophysical%20Data%20Center&amp;rids=local&amp;searchText=sos.resource.url:*%20&amp;start=1&amp;max=1000&amp;orderBy=relevance&amp;maxSearchTimeMilliSec=10000&amp;f=html">all IOOS SOS services</a>. The <a href="https://github.com/ioos/registry">IOOS Service Registry</a> documentation provides detailed instructions for IOOS partners on getting dataset metadata into the Service Registry.</p>
+
+<p>The <a href="http://catalog.ioos.us/">IOOS Catalog</a> is intended to be the web-based client for the Service Registry and to provide a view of the data published via the registered services. Currently, the Catalog provides information under 1000 registered SOS services and 4000 data sets.  The Catalog obtains all service URLs from the metadata managed by the IOOS Service Registry via OGC CS-W interface to the NGDC&rsquo;s ESRI Geoportal Server. The <a href="http://catalog.ioos.us/">GitHub software repository</a> contains the source code for generation of the IOOS Catalog web site.</p>
+
+</div>
+</div>
+
+  </body>
+</html>
