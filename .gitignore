@@ -44,3 +44,7 @@ Icon
 temp/**
 # *.toml
 # *.yaml
+
+# editor files
+*.swp
+
