@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> IOOS SOS v1.0 GetCapabilities Template &middot; IOOS SOS Guidelines </title>
+
+  
+  <link rel="stylesheet" href="http://ioos.github.io/sos-guidelines/css/poole.css">
+  <link rel="stylesheet" href="http://ioos.github.io/sos-guidelines/css/syntax.css">
+  <link rel="stylesheet" href="http://ioos.github.io/sos-guidelines/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="IOOS SOS Guidelines" />
+</head>
+
+<body>
+
+<div class="sidebar">
+   	<p>  <img src="/sos-guidelines/images/ioos_blue2.png" alt="ho-ho-ho"> </p> 
+
+	<div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>IOOS SOS Guidelines</h1>
+      <p class="lead">
+       Docs, codes, scripts, templates 
+      </p>
+    </div>
+
+
+    <ul class="sidebar-nav">
+	  <li><a href="/sos-guidelines/">Home</a> </li>
+	  <li><a href="/sos-guidelines/about/">About IOOS SOS</a> </li>
+	  <li><a href="https://github.com/ioos/sos-guidelines">SOS Guidelines on GitHub</a> </li>
+      <li><a href="http://ioos.github.io">IOOS GitHub Pages</a> </li>
+      
+    </ul>
+
+	
+
+	
+  
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+
+  <h1>IOOS SOS v1.0 GetCapabilities Template</h1>
+
+    <div id="toc" class="well col-md-4 col-sm-6">
+    
+    </div>
+
+      <p><em>Template for a generic (independent of feature type) GetCapabilities response.</em></p>
+
+<pre><code class="language-XML">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- Template Document for a generic (independant of feature type) Get Capabilites --&gt;
+&lt;!--  --&gt;
+&lt;!-- Template includes the following required metadata elements: --&gt;
+&lt;!--    ServiceIdentification --&gt;
+&lt;!--    ServiceProvider --&gt;
+&lt;!--    OperationMetadata --&gt;
+&lt;!--    Contents - specifically the network offerings--&gt;
+&lt;!--  --&gt;
+&lt;sos:Capabilities 
+  xmlns:sos=&quot;http://www.opengis.net/sos/1.0&quot; 
+  xmlns:ows=&quot;http://www.opengis.net/ows/1.1&quot; 
+  xmlns:gml=&quot;http://www.opengis.net/gml&quot; 
+  xmlns:om=&quot;http://www.opengis.net/om/1.0&quot; 
+  xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; 
+  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
+  xsi:schemaLocation=&quot;http://www.opengis.net/sos/1.0 
+    http://schemas.opengis.net/sos/1.0.0/sosAll.xsd&quot; version=&quot;1.0.0&quot;&gt;
+  &lt;ows:ServiceIdentification&gt;
+    &lt;ows:Title&gt;TITLE&lt;/ows:Title&gt;
+    &lt;!-- Note to implementer: if any metadata value is missing for a data source use &quot;UNKNOWN&quot; --&gt;
+    &lt;!-- Missing values should be logged and reported so that the provider fix it. --&gt;
+    &lt;ows:Abstract&gt;ABSTRACT&lt;/ows:Abstract&gt;
+    &lt;ows:Keywords&gt;
+      &lt;ows:Keyword&gt;KEYWORD 1&lt;/ows:Keyword&gt;
+      &lt;ows:Keyword&gt;KEYWORD 2&lt;/ows:Keyword&gt;
+    &lt;/ows:Keywords&gt;
+    &lt;ows:ServiceType codeSpace=&quot;http://opengeospatial.net&quot;&gt;OGC:SOS&lt;/ows:ServiceType&gt;
+    &lt;ows:ServiceTypeVersion&gt;1.0.0&lt;/ows:ServiceTypeVersion&gt;
+    &lt;ows:Fees&gt;NONE&lt;/ows:Fees&gt;
+    &lt;ows:AccessConstraints&gt;NONE&lt;/ows:AccessConstraints&gt;
+  &lt;/ows:ServiceIdentification&gt;
+  &lt;ows:ServiceProvider&gt;
+    &lt;ows:ProviderName&gt;PROVIDER&lt;/ows:ProviderName&gt;
+    &lt;ows:ProviderSite xlink:href=&quot;PROVIDER_LINK&quot;/&gt;
+    &lt;ows:ServiceContact&gt;
+      &lt;ows:IndividualName&gt;CONTACT NAME&lt;/ows:IndividualName&gt;
+      &lt;ows:ContactInfo&gt;
+        &lt;ows:Phone&gt;
+          &lt;ows:Voice&gt;PHONE&lt;/ows:Voice&gt;
+        &lt;/ows:Phone&gt;
+        &lt;ows:Address&gt;
+          &lt;ows:DeliveryPoint&gt;foo&lt;/ows:DeliveryPoint&gt;
+          &lt;ows:City&gt;foo&lt;/ows:City&gt;
+          &lt;ows:AdministrativeArea&gt;foo&lt;/ows:AdministrativeArea&gt;
+          &lt;ows:PostalCode&gt;foo&lt;/ows:PostalCode&gt;
+          &lt;ows:Country&gt;foo&lt;/ows:Country&gt;
+          &lt;ows:ElectronicMailAddress&gt;foo@bar&lt;/ows:ElectronicMailAddress&gt;
+        &lt;/ows:Address&gt;
+      &lt;/ows:ContactInfo&gt;
+    &lt;/ows:ServiceContact&gt;
+  &lt;/ows:ServiceProvider&gt;
+  &lt;ows:OperationsMetadata&gt;
+    &lt;ows:Operation name=&quot;GetCapabilities&quot;&gt;
+      &lt;ows:DCP&gt;
+        &lt;ows:HTTP&gt;
+          &lt;ows:Get xlink:href=&quot;SOS_SERVER&quot;/&gt;
+          &lt;ows:Post xlink:href=&quot;SOS_SERVER&quot;/&gt;
+        &lt;/ows:HTTP&gt;
+      &lt;/ows:DCP&gt;
+      &lt;ows:Parameter name=&quot;Sections&quot;&gt;
+        &lt;ows:AllowedValues&gt;
+          &lt;ows:Value&gt;ServiceIdentification&lt;/ows:Value&gt;
+          &lt;ows:Value&gt;ServiceProvider&lt;/ows:Value&gt;
+          &lt;ows:Value&gt;OperationsMetadata&lt;/ows:Value&gt;
+          &lt;ows:Value&gt;Contents&lt;/ows:Value&gt;
+          &lt;ows:Value&gt;All&lt;/ows:Value&gt;
+        &lt;/ows:AllowedValues&gt;
+      &lt;/ows:Parameter&gt;
+    &lt;/ows:Operation&gt;
+    &lt;ows:Operation name=&quot;GetObservation&quot;&gt;
+      &lt;ows:DCP&gt;
+        &lt;ows:HTTP&gt;
+          &lt;ows:Get xlink:href=&quot;SOS_SERVER&quot;/&gt;
+          &lt;ows:Post xlink:href=&quot;SOS_SERVER&quot;/&gt;
+        &lt;/ows:HTTP&gt;
+      &lt;/ows:DCP&gt;
+      &lt;ows:Parameter name=&quot;observedProperty&quot;&gt;
+        &lt;ows:AllowedValues&gt;
+          &lt;ows:Value&gt;VALUE&lt;/ows:Value&gt;
+          &lt;ows:Value&gt;COMPOSITE_VALUE&lt;/ows:Value&gt;
+        &lt;/ows:AllowedValues&gt;
+      &lt;/ows:Parameter&gt;
+    &lt;/ows:Operation&gt;
+    &lt;ows:Operation name=&quot;DescribeSensor&quot;&gt;
+      &lt;ows:DCP&gt;
+        &lt;ows:HTTP&gt;
+          &lt;ows:Get xlink:href=&quot;SOS_SERVER&quot;/&gt;
+          &lt;ows:Post xlink:href=&quot;SOS_SERVER&quot;/&gt;
+        &lt;/ows:HTTP&gt;
+      &lt;/ows:DCP&gt;
+      &lt;ows:Parameter name=&quot;outputFormat&quot;&gt;
+        &lt;ows:AllowedValues&gt;
+          &lt;!-- Specify the flavor of SML described by these templates --&gt;
+          &lt;ows:Value&gt;text/xml;subtype=&quot;sensorML/1.0.1/profiles/ioos_sos/1.0&quot;&lt;/ows:Value&gt;
+        &lt;/ows:AllowedValues&gt;
+      &lt;/ows:Parameter&gt;
+    &lt;/ows:Operation&gt;
+    &lt;ows:Parameter name=&quot;service&quot;&gt;
+      &lt;ows:AllowedValues&gt;
+        &lt;ows:Value&gt;SOS&lt;/ows:Value&gt;
+      &lt;/ows:AllowedValues&gt;
+    &lt;/ows:Parameter&gt;
+    &lt;ows:Parameter name=&quot;version&quot;&gt;
+      &lt;ows:AllowedValues&gt;
+        &lt;ows:Value&gt;1.0.0&lt;/ows:Value&gt;
+      &lt;/ows:AllowedValues&gt;
+    &lt;/ows:Parameter&gt;
+    &lt;ows:ExtendedCapabilities&gt;
+      &lt;gml:metaDataProperty xlink:title=&quot;ioosTemplateVersion&quot; 
+        xlink:href=&quot;http://code.google.com/p/ioostech/source/browse/#svn%2Ftrunk%2Ftemplates%2FMilestone1.0&quot;&gt;
+        &lt;gml:version&gt;1.0&lt;/gml:version&gt;
+      &lt;/gml:metaDataProperty&gt;
+          &lt;ows:ExtendedCapabilities&gt;
+      &lt;gml:metaDataProperty xlink:title=&quot;softwareVersion&quot; 
+          xlink:href=&quot;http://someURI&quot;&gt;
+          &lt;gml:version&gt;0.9.4.5&lt;/gml:version&gt;
+      &lt;/gml:metaDataProperty&gt;
+    &lt;/ows:ExtendedCapabilities&gt;    
+  &lt;/ows:OperationsMetadata&gt;
+  &lt;sos:Contents&gt;
+    &lt;!-- IoosTech Convention: --&gt;
+    &lt;!-- NetworkAll is a required grouping of stations. --&gt;
+    &lt;!-- Individual stations and other networks may be offered as well. --&gt;
+    &lt;!-- It is recomended to use DescribeSensor-Network to get a listing --&gt;
+    &lt;!-- of the platforms in a network rather than list them as offerings --&gt;
+    &lt;!-- in the GetCaps. --&gt;
+    &lt;sos:ObservationOfferingList&gt;
+    
+      &lt;!-- NETWORK_ALL --&gt;
+      &lt;sos:ObservationOffering gml:id=&quot;network_all&quot;&gt;
+        &lt;gml:description&gt;All stations&lt;/gml:description&gt;
+        &lt;gml:name&gt;urn:ioos:network:AUTHORITY:all&lt;/gml:name&gt;
+        &lt;gml:srsName&gt;EPSG:4326&lt;/gml:srsName&gt;
+        &lt;!-- Always use EPSG:4326 as CRS for 2D coordinates --&gt;
+        &lt;gml:boundedBy&gt;
+          &lt;gml:Envelope srsName=&quot;http://www.opengis.net/def/crs/EPSG/0/4326&quot;&gt;
+            &lt;gml:lowerCorner&gt;-90 -180&lt;/gml:lowerCorner&gt;
+            &lt;gml:upperCorner&gt;90 180&lt;/gml:upperCorner&gt;
+          &lt;/gml:Envelope&gt;
+        &lt;/gml:boundedBy&gt;
+        &lt;sos:time&gt;
+          &lt;gml:TimePeriod&gt;
+            &lt;!-- Time period allows a variety of fixed (ISO 8601) and evaluated (now) expressions --&gt;
+            &lt;gml:beginPosition&gt;2008-04-28T08:00:00.000Z&lt;/gml:beginPosition&gt;
+            &lt;gml:endPosition indeterminatePosition=&quot;now&quot;/&gt;
+          &lt;/gml:TimePeriod&gt;
+        &lt;/sos:time&gt;
+        &lt;!-- SOS 2.0 only allows one procedure list only one for future compatibility --&gt;
+        &lt;sos:procedure xlink:href=&quot;urn:ioos:network:AUTHORITY:all&quot;/&gt;
+        &lt;sos:observedProperty xlink:href=&quot;http://mmisw.org/ont/cf/parameter/VALUE&quot;/&gt;
+        &lt;sos:observedProperty xlink:href=&quot;http://mmisw.org/ont/cf/parameter/COMPOSITE_VALUE&quot;/&gt;
+        &lt;sos:featureOfInterest xlink:href=&quot;FEATURE&quot;/&gt;
+        &lt;sos:responseFormat&gt;text/xml;subtype=&quot;om/1.0.0/profiles/ioos_sos/1.0&quot;&lt;/sos:responseFormat&gt;
+        &lt;sos:resultModel&gt;om:ObservationCollection&lt;/sos:resultModel&gt;
+        &lt;sos:responseMode&gt;inline&lt;/sos:responseMode&gt;
+      &lt;/sos:ObservationOffering&gt;
+
+      &lt;!-- NETWORK_FAVORITES --&gt;
+      &lt;!-- It is not scalable to list individual platforms or sensors here however --&gt;
+      &lt;!-- listing additional logical groupings by provide, region, measurement type etc --&gt;
+      &lt;!-- is encouraged! --&gt;
+      &lt;sos:ObservationOffering gml:id=&quot;network_favorites&quot;&gt;
+        &lt;gml:description&gt;All stations&lt;/gml:description&gt;
+        &lt;gml:name&gt;urn:ioos:network:AUTHORITY:favorites&lt;/gml:name&gt;
+        &lt;gml:srsName&gt;EPSG:4326&lt;/gml:srsName&gt;
+        &lt;!-- Always use EPSG:4326 as CRS for 2D coordinates --&gt;
+        &lt;gml:boundedBy&gt;
+          &lt;gml:Envelope srsName=&quot;http://www.opengis.net/def/crs/EPSG/0/4326&quot;&gt;
+            &lt;gml:lowerCorner&gt;30 -130&lt;/gml:lowerCorner&gt;
+            &lt;gml:upperCorner&gt;45 -110&lt;/gml:upperCorner&gt;
+          &lt;/gml:Envelope&gt;
+        &lt;/gml:boundedBy&gt;
+        &lt;sos:time&gt;
+          &lt;gml:TimePeriod&gt;
+            &lt;!-- Time period allows a variety of fixed (ISO 8601) and evaluated (now) expressions --&gt;
+            &lt;gml:beginPosition&gt;2008-04-28T08:00:00.000Z&lt;/gml:beginPosition&gt;
+            &lt;gml:endPosition indeterminatePosition=&quot;now&quot;/&gt;
+          &lt;/gml:TimePeriod&gt;
+        &lt;/sos:time&gt;
+        &lt;!-- SOS 2.0 only allows one procedure list only one for future compatibility --&gt;
+        &lt;sos:procedure xlink:href=&quot;urn:ioos:network:AUTHORITY:favorites&quot;/&gt;
+        &lt;sos:observedProperty xlink:href=&quot;http://mmisw.org/ont/cf/parameter/VALUE&quot;/&gt;
+        &lt;sos:observedProperty xlink:href=&quot;http://mmisw.org/ont/cf/parameter/COMPOSITE_VALUE&quot;/&gt;
+        &lt;sos:featureOfInterest xlink:href=&quot;FEATURE&quot;/&gt;
+        &lt;sos:responseFormat&gt;text/xml;subtype=&quot;om/1.0.0/profiles/ioos_sos/1.0&quot;&lt;/sos:responseFormat&gt;
+        &lt;sos:resultModel&gt;om:ObservationCollection&lt;/sos:resultModel&gt;
+        &lt;sos:responseMode&gt;inline&lt;/sos:responseMode&gt;
+      &lt;/sos:ObservationOffering&gt;
+
+    &lt;/sos:ObservationOfferingList&gt;
+  &lt;/sos:Contents&gt;
+&lt;/sos:Capabilities&gt;
+</code></pre>
+
+</div>
+</div>
+
+  </body>
+</html>
