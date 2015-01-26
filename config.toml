@@ -1,14 +1,15 @@
 baseurl = "http://ioos.github.io/sos-guidelines"
+CanonifyUrls = true
 contentdir = "content"
 layoutdir = "layouts"
 publishdir = "public"
 languageCode = "en-us"
-Title = "IOOS SOS Guidelines"
 [params]
- Description = "Docs, codes, scripts, templates"
- Copyright = "(C) 2014 U.S. IOOS. Some rights reserved"
-
-
+  Title = "IOOS SOS Guidelines"
+  Tagline = "Docs, codes, scripts, templates"
+[params.Github]
+  Head = "master"
+  Url = "https://github.com/ioos/sos-guidelines"
 	
 	
  

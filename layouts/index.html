@@ -1,39 +1,23 @@
-{{ template "chrome/head.html" . }}
-<body>
+{{ partial "default_head.html" . }}
 
-{{ template "chrome/sidebar.html" . }}
-
-    <div class="content container">
-
+  <div class="content container">
 	<div class="posts">
+      <div class="post">
 
- 
-  <div class="post">
-
-	{{ range .Data.Pages }}
-
-    <header>
-      <h2><a href='{{ .Permalink }}'> {{ .Title }}</a> </h2>
-    <!--  <div class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div> -->
-    </header>
-	
-	{{ if eq .RelPermalink "/sos-guidelines/index.html" }} 
-		{{ .Content }}
-	{{else}}
+ 	    {{ range .Data.Pages }}
+           <h2><a href='{{ .Permalink }}'>{{ .Title }}</a> </h2>
+           <!--  <div class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div> -->
+		
 		{{ .Summary }} 
-	{{end}}
 
-    <footer>
-        <a href='{{ .Permalink }}'><nobr><i>Read more ></i></nobr></a>
-    </footer>
+           <footer>
+              <a href='{{ .Permalink }}'><nobr><i>Read more ></i></nobr></a>
+           </footer>
 
-	{{ end }}
+	    {{ end }}
+	  
+ 	  </div>
+    </div>
+  </div>
 
-	</div>
-
-
-</div>
-
-
-  </body>
-</html>
+{{ partial "default_foot.html" . }}

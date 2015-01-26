@@ -38,13 +38,10 @@ Icon
 # Files from Hugo configuration folders
 # archetypes/**
 # content/**
-# css/**
+css/**
 # layouts/**
+public/**
 # static/**
 temp/**
 # *.toml
 # *.yaml
-
-# editor files
-*.swp
-

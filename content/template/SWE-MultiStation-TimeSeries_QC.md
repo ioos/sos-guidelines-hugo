@@ -5,6 +5,7 @@ description = ""
 type = "post"
 date = 2014-08-04T08:09:56Z
 weight = "8"
+sidebar = true
 +++
 
 _Template for a SWE Data Record's static and dynamic fields for multiple stations with multiple sensors including quality elements for some quantities_

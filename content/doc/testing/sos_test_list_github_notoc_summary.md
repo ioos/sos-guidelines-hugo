@@ -5,6 +5,7 @@ subtitle = "List of OGC CITE general & IOOS-specific tests for IOOS SOS Mileston
 type = "post"
 date = 2014-08-04T08:10:23Z
 weight = "2"
+sidebar = true
 +++
 
 _This document describes a collection of tests that have to be run in order to ensure a required level of compliance with IOOS SOS Profile 1.0 (IOOS Convention), and official OGC SOS 1.0.0 specification._

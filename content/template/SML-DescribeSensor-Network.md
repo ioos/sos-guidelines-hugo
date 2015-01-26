@@ -5,6 +5,7 @@ description = ""
 type = "post"
 date = 2014-08-04T08:09:56Z
 weight = "4"
+sidebar = true
 +++
 
 _Template for a generic (independent of feature type) SensorML DescribeSensor response for Network of Stations_

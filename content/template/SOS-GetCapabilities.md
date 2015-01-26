@@ -5,6 +5,7 @@ description = ""
 type = "post"
 date = 2014-08-04T08:09:56Z
 weight = "3"
+sidebar = true
 +++
 
 _Template for a generic (independent of feature type) GetCapabilities response._

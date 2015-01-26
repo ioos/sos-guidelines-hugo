@@ -1,7 +1,9 @@
 +++
-weight = "-500"
+weight = "0"
+type = "post"
 draft = false
-title = "About IOOS SOS Application Profile"
+sidebar = true
+Title = "About IOOS SOS Application Profile"
 date = 2014-08-04T07:56:39Z
 +++
 
@@ -11,17 +13,19 @@ The [GitHub repository](https://github.com/ioos/sos-guidelines) contains documen
 
 # Documentation of the Profile
 
-The IOOS SOS 1.0 is conformant to the following OGC Standards and Conventions: 
-* [OpenGIS Sensor Observation Service v1.0.0 [OGC 06-009r6]](http://www.opengeospatial.org/standards/sos), for provision of observational data; 
-* [OpenGIS Sensor Model Language (SensorML) v1.0.1 [OGC 07-000 and 07-122r2]](http://www.opengeospatial.org/standards/sensorml), for platform and sensor description and result encoding;  and
-* [OGC® SWE Common Data Model Encoding Standard v2.0 [OGC 08-094r1]](http://www.opengeospatial.org/standards/swecommon), for result encoding options. 
-* [CF Conventions v1.6](http://cfconventions.org), for provision of standard naming and description of feature types, data components, dimensions, variables and attributes, coordinate systems definition, axis order, etc.
+The IOOS SOS 1.0 is conformant to the following OGC Standards and Conventions:
+ 
+- [OpenGIS Sensor Observation Service v1.0.0 [OGC 06-009r6]](http://www.opengeospatial.org/standards/sos), for provision of observational data; 
+- [OpenGIS Sensor Model Language (SensorML) v1.0.1 [OGC 07-000 and 07-122r2]](http://www.opengeospatial.org/standards/sensorml), for platform and sensor description and result encoding;  and
+- [OGC® SWE Common Data Model Encoding Standard v2.0 [OGC 08-094r1]](http://www.opengeospatial.org/standards/swecommon), for result encoding options. 
+- [CF Conventions v1.6](http://cfconventions.org), for provision of standard naming and description of feature types, data components, dimensions, variables and attributes, coordinate systems definition, axis order, etc.
 
 IOOS Conventions for the AP v1 is described in the series of documents:
-* [IOOS SOS Web Service Description Document](http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/), which provides a detailed description of the IOOS implementation of the OGC SOS v1.0.0, including definitions, constraints, encoding requirements and “best practices” that are not explicitly defined in OGC SOS Implementation Standard;
-* [Convention for Observing Asset Identifiers](http://ioos.github.io/conventions-for-observing-asset-identifiers/), which describes the algorithm for identification of IOOS-related observing assets including measurement stations, platforms and sensors; [Temporary URL](https://github.com/ioos/conventions-for-observing-asset-identifiers)
-* [Convention for CSV/TSV Encoding](http://ioos.github.io/ioos-csv-tsv/), which lays down rules for encoding observation data as plain text Comma-Separated Values (CSV) or Tab-Separated Values (TSV);
-* [Guidelines for use of Controlled Vocabularies](http://ioos.github.io/vocabularies/), which provides instructions for usage of the controlled vocabularies and vocabulary mappings developed or adopted by IOOS in IOOS-compliant data services, including existing vocabulary and terms selection process as well as request policy for new terms.  Most controlled vocabularies used by IOOS are hosted on the [Marine Metadata Interoperability](https://marinemetadata.org/) [Ontology Registry and Repository](http://mmisw.org/orr/) in the [IOOS folder](http://mmisw.org/ont/ioos).
+
+  * [IOOS SOS Web Service Description Document](http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/), which provides a detailed description of the IOOS implementation of the OGC SOS v1.0.0, including definitions, constraints, encoding requirements and “best practices” that are not explicitly defined in OGC SOS Implementation Standard;
+  * [Convention for Observing Asset Identifiers](http://ioos.github.io/conventions-for-observing-asset-identifiers/), which describes the algorithm for identification of IOOS-related observing assets including measurement stations, platforms and sensors; [Temporary URL](https://github.com/ioos/conventions-for-observing-asset-identifiers)
+  * [Convention for CSV/TSV Encoding](http://ioos.github.io/ioos-csv-tsv/), which lays down rules for encoding observation data as plain text Comma-Separated Values (CSV) or Tab-Separated Values (TSV);
+  * [Guidelines for use of Controlled Vocabularies](http://ioos.github.io/vocabularies/), which provides instructions for usage of the controlled vocabularies and vocabulary mappings developed or adopted by IOOS in IOOS-compliant data services, including existing vocabulary and terms selection process as well as request policy for new terms.  Most controlled vocabularies used by IOOS are hosted on the [Marine Metadata Interoperability](https://marinemetadata.org/) [Ontology Registry and Repository](http://mmisw.org/orr/) in the [IOOS folder](http://mmisw.org/ont/ioos).
 
 # Templates and Examples
 

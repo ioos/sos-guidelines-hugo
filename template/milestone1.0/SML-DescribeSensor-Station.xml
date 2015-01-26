@@ -17,7 +17,7 @@
   <sml:capabilities name="ioosServiceMetadata">
     <swe:SimpleDataRecord>
       <swe:field name="ioosTemplateVersion">
-        <swe:Text definition="https://github.com/ioos/sos-guidelines/tree/master/template/milestone1.0">
+        <swe:Text definition="http://code.google.com/p/ioostech/source/browse/#svn%2Ftrunk%2Ftemplates%2FMilestone1.0">
           <swe:value>1.0</swe:value>
         </swe:Text>
       </swe:field>

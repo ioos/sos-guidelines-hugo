@@ -1,21 +1,11 @@
-# sos-guidelines
+# About SOS Guidelines
 
-U.S. IOOS distributes ocean observations using the OGC Sensor Observation
-Service (SOS).  To support this effort U.S. IOOS has developed a profile of SOS
-v1.0 (henceforth IOOS SOS v1.0) that includes specific behaviors for the SOS
-interface and for the output formats delivered in response to the three
-operations of the SOS Core Profile.  This repository contains documentation of
-the IOOS SOS v1.0 profile, example templates for the responses, and information
-on two reference implementations developed to support the IOOS SOS v1.0
-profile.  To facilitate the practical implementation of the SOS, IOOS has
-developed the IOOS Application Profile (AP) for SOS, which includes a series of
-operation templates, controlled vocabularies, IOOS Conventions for SOS
-Implementation, and a set of tests for IOOS SOS implementations.
+U.S. IOOS distributes ocean observations using the OGC Sensor Observation Service.  To support this effort U.S. IOOS has developed a profile of SOS v1.0 (henceforth IOOS SOS v1.0) that includes specific behaviors for the SOS interface and for the output formats delivered in response to the three operations of the SOS Core Profile.  This repository contains documentation of the IOOS SOS v1.0 profile, example templates for the responses, and information on two reference implementations developed to support the IOOS SOS v1.0 profile.  To facilitate the practical implementation of the SOS, IOOS has developed the IOOS Application Profile (AP) for SOS, which includes a series of operation templates, controlled vocabularies, IOOS Conventions for SOS Implementation, and a set of tests for IOOS SOS implementations.
 
 ## Contents
 
 + [Documentation of the Profile](#documentation-of-the-profile)
-+ [Templates and Examples](#Templates and Examples)
++ [Templates and Examples](#templates-and-examples)
 + [Reference Implementations and Current Deployments](#reference-implementations-and-current-deployments)
 
 
@@ -43,7 +33,7 @@ In 2015-2016 IOOS is planning to move to IOOS SOS v2.0. A new Application Profil
 
 ## Reference Implementations and Current Deployments
 1. [i52N](https://github.com/ioos/i52n-sos) for RDBMS observation data store (IOOS custom version of the [52°North Sensor Observation Service](https://github.com/52North/SOS), and 
-2. [ncSOS](github.com/asascience-open/ncsos) that adds an SOS service to any of the CF Discrete Sampling Geometries datasets in the existing [THREDDS server](http://www.unidata.ucar.edu/projects/THREDDS/). 
+2. [ncSOS](https://github.com/asascience-open/ncSOS) that adds an SOS service to any of the CF Discrete Sampling Geometries datasets in the existing [THREDDS server](http://www.unidata.ucar.edu/projects/THREDDS/). 
 
 ### Conformance Testing
 Similar to OGC Compliance & Interoperability Testing & Evaluation (CITE) program, IOOS has developed a set of formal tests to ensure that IOOS SOS implementations are providing a product compliant with the IOOS AP v1. The [IOOS AP v1 Compliance Test List](http://ioos.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/) describes tests for SOS v1.0.0 developed by IOOS, and indicates optional some OGC CITE tests that are considered non-critical for the current state of IOOS SOS implementation.
@@ -84,4 +74,3 @@ The documentation in the [sos-guidelines](https://github.com/ioos/sos-guidelines
 ```      
 
 The rest of repository content is placed there only for website deployment with the _**Hugo**_ static page generator. The deployment workflow is described in the [_**Website Deployment Workflow**_](Website_Deployment_Workflow.md) document located in the root directory next to this _README_.  The URL of the web page for this documentation is [ioos.github.io/sos-guidelines](ioos.github.io/sos-guidelines)
-
