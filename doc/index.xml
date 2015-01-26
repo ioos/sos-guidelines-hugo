@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Docs on IOOS SOS Guidelines </title>
-      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <title> </title>
     <link>http://ioos.github.io/sos-guidelines/doc/index.xml/</link>
     <language>en-us</language>
+    <author></author>
+    <rights>(C) 2014</rights>
+    <updated>2014-08-04 08:09:56 &#43;0000 UTC</updated>
+
     
-    
-    <updated>Mon, 04 Aug 2014 08:09:56 UTC</updated>
-    
-    <item>
-      <title>IOOS SOS v1.0 WSDD</title>
-      <link>http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</link>
-      <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</guid>
-      <description>
+        <item>
+          <title>IOOS SOS v1.0 WSDD</title>
+          <link>http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</link>
+          <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+          <author></author>
+          <guid>http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</guid>
+          <description>
 
 &lt;p&gt;&lt;em&gt;This Web Service Description Document (WSDD) provides a description of a Sensor Observation Service (SOS) that has been developed by U.S. IOOS for deployment by NOAA data providers and IOOS Regional Associations (RAs). This service provides a service consumer with the capability to access ocean observations data products, such as time series and profiles, which have XML-based encodings and included in the SWE Common Data Model.&lt;/em&gt;&lt;/p&gt;
 
@@ -41,7 +42,7 @@
 
 &lt;p&gt;As the SOS 2.0 standard has been approved as an official OGC standard while Milestone 1.0 has already been in development, the use of this new and updated version was postponed to the Milestone 2.0, and at present, the SOS v1.0.0 is used for operations.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image18.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/images/image18.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_1&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 1: Core Model Diagram for Observations and Measurements (O&amp;amp;M)&lt;/strong&gt;&lt;/p&gt;
@@ -152,7 +153,7 @@
 
 &lt;p&gt;The Core Profile has been identified as relevant to IOOS DMAC; the implementation of the Core Profile operations within the Mileastone 1.0 framework is described hereinafter. The Core Profile operations are based on the stateless HTTP request/response model. A diagram illustrating the basic message sequence is shown in &lt;a href=&#34;#Fig_2&#34;&gt;&lt;strong&gt;Figure 2&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image00.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/images/image00.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_2&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 2: SOS Request/Response Pattern&lt;/strong&gt;&lt;/p&gt;
@@ -176,7 +177,7 @@ At the start of the interaction, a consumer issues a GetCapabilities request to
 
 &lt;p&gt;GetCapabilities request may be sent to the server as HTTP/GET or HTTP/POST. HTTP/GET request passes parameters to the server in the HTTP URL with a number of key-value pairs (KVP) of input parameters, and HTTP/POST request sends an XML document to the server, that may also be KVP-encoded. A request to perform GetCapabilities should follow the structure as depicted in the &lt;a href=&#34;#Fig_3&#34;&gt;&lt;strong&gt;Figure 3&lt;/strong&gt;&lt;/a&gt; and table below.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image19.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/images/image19.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_3&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 3: GetCapabilities request schema&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -262,7 +263,7 @@ service=&amp;quot;SOS&amp;quot; updateSequence=&amp;quot;&amp;quot;&amp;gt;
 
 &lt;p&gt;The response to a GetCapabilities request is an XML encoded document that conforms to the &lt;a href=&#34;http://portal.opengeospatial.org/files/?artifact_id=26667&#34;&gt;SOS 1.0.0 Implementation Specification [OGC 06-009r6]&lt;/a&gt;, and illustrates the characteristics of the SOS system by providing a comprehensive information about coordinate reference system (CRS), spatial or temporal filtering and other information about sensors, feature of interest, and response format. The OGC specification is constrained by the IOOS Convention that on one hand prescribes a certain way of use for some optional components, and on the other hand – facilitates the future acceptance of the SOS 2.0. At any rate, the IOOS Convention does not violate OGC specification’s requirements.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image20.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/images/image20.png&#34; alt=&#34;&#34; /&gt;
 
 &lt;a name=&#34;Fig_4&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 4: GetCapabilities response schema&lt;/strong&gt;&lt;/p&gt;
 
@@ -721,7 +722,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The UML diagram of the DescribeSensor request is presented in &lt;a href=&#34;#Fig_5&#34;&gt;&lt;strong&gt;Figure 5&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image21.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/images/image21.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_5&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 5: DescribeSensor request schema&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -796,7 +797,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The response to a DescribeSensor request is a &lt;a href=&#34;http://www.opengeospatial.org/standards/sensorml&#34;&gt;Sensor Model Language (SensorML&lt;/a&gt;) document that describes the sensor system. In some cases, a DescribeSensor response may be quite voluminous; for example, if description of the network has been requested, and the response returns the document that contains detailed information not just about the network itself, but all network platforms and all sensors installed on each platform. A UML diagram  of such an all-inclusive DescribeSensor document is depicted in &lt;a href=&#34;#Fig_6&#34;&gt;&lt;strong&gt;Figure 6&lt;/strong&gt;&lt;/a&gt; followed by the annotated outline of the document.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image22.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/images/image22.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_6&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 6: DescribeSensor response schema&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -1663,7 +1664,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The UML diagram of the GetObservation request is presented in &lt;a href=&#34;#Fig_7&#34;&gt;&lt;strong&gt;Figure 7&lt;/strong&gt;&lt;/a&gt;, and input parameters are elaborated in the following table.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image23.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/images/image23.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_7&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 7: GetObservation request schema&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -2058,7 +2059,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The static information for all stations and sensors in GetObservation response is encompassed within the field “stations” of the root DataRecord element. Each DataRecord’s field may recursively enclose an unlimited number of DataRecords, which makes the static data block a pretty complex structure of nested DataRecords in case of multiple stations and/or sensors, as shown in &lt;a href=&#34;#Fig_8&#34;&gt;&lt;strong&gt;Figure 8&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image99.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/images/image99.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_8&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 8: GetObservation static data block outline&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -2249,7 +2250,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The sensor’s orientation is reported in terms of the pitch, roll, and yaw angles using the CF Conventions standard names: platform_pitch_angle, platform_roll_angle, and platform_orientation for yaw angle; the &lt;a href=&#34;#Fig_9&#34;&gt;&lt;strong&gt;Figure 9&lt;/strong&gt;&lt;/a&gt; depicts a relation of the directional vectors and orientation angles.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image28c.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/images/image28c.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_9&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 9: Directions, Yaw, Pitch and Roll Angles&lt;/strong&gt; &lt;em&gt;(copied from &lt;a href=&#34;http://en.wikipedia.org/wiki/Six_degrees_of_freedom&#34;&gt;Wikipedia&lt;/a&gt;)&lt;/em&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2675,7 +2676,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
                 &amp;lt;/swe2:DataChoice&amp;gt;
             &amp;lt;/swe2:field&amp;gt;
         &amp;lt;/swe2:DataRecord&amp;gt;
-    &amp;lt;/swe2:elementType&amp;gt;	
+    &amp;lt;/swe2:elementType&amp;gt; 
     
     &amp;lt;swe2:values&amp;gt;
         2009-05-23T00:00:00Z,a,wmo_41001_sensor1,15.4,T,a,r,2.0,280
@@ -3361,15 +3362,17 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;hr /&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>List of SOS Tests</title>
-      <link>http://ioos.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</link>
-      <pubDate>Mon, 04 Aug 2014 08:10:23 UTC</pubDate>
+        </item>
       
-      <guid>http://ioos.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</guid>
-      <description>
+    
+      
+        <item>
+          <title>List of SOS Tests</title>
+          <link>http://ioos.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</link>
+          <pubDate>Mon, 04 Aug 2014 08:10:23 UTC</pubDate>
+          <author></author>
+          <guid>http://ioos.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</guid>
+          <description>
 
 &lt;p&gt;&lt;em&gt;This document describes a collection of tests that have to be run in order to ensure a required level of compliance with IOOS SOS Profile 1.0 (IOOS Convention), and official OGC SOS 1.0.0 specification.&lt;/em&gt;&lt;/p&gt;
 
@@ -4199,7 +4202,9 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;/tbody&gt;
 &lt;/table&gt;
 </description>
-    </item>
+        </item>
+      
     
+
   </channel>
 </rss>

@@ -1,68 +1,141 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile"> 
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title> IOOS SOS v1.0 OM GetObservation Template &middot; IOOS SOS Guidelines </title>
+  <title>
+    
+      IOOS SOS v1.0 OM GetObservation Template &middot; IOOS SOS Guidelines
+    
+  </title>
 
   
   <link rel="stylesheet" href="http://ioos.github.io/sos-guidelines/css/poole.css">
   <link rel="stylesheet" href="http://ioos.github.io/sos-guidelines/css/syntax.css">
-  <link rel="stylesheet" href="http://ioos.github.io/sos-guidelines/css/hyde.css">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="http://ioos.github.io/sos-guidelines/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
 
   
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://ioos.github.io/sos-guidelines/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="http://ioos.github.io/sos-guidelines/assets/favicon.ico">
 
   
-  <link href="" rel="alternate" type="application/rss+xml" title="IOOS SOS Guidelines" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://ioos.github.io/sos-guidelines/atom.xml">
 </head>
 
-<body>
 
-<div class="sidebar">
-   	<p>  <img src="/sos-guidelines/images/ioos_blue2.png" alt="ho-ho-ho"> </p> 
+  <body>
 
-	<div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <h1>IOOS SOS Guidelines</h1>
-      <p class="lead">
-       Docs, codes, scripts, templates 
-      </p>
-    </div>
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
 
 
-    <ul class="sidebar-nav">
-	  <li><a href="/sos-guidelines/">Home</a> </li>
-	  <li><a href="/sos-guidelines/about/">About IOOS SOS</a> </li>
-	  <li><a href="https://github.com/ioos/sos-guidelines">SOS Guidelines on GitHub</a> </li>
-	  <li><a href="http://ioos.github.io">IOOS GitHub Pages</a> </li>
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p align="center">&middot; <a href="http://ioos.github.io/" target="_blank">IOOS GitHub Pages</a> &middot; <br>
+	a collection of IOOS documentation and software</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="http://ioos.github.io/sos-guidelines/">Home</a>
+
+
+  <div class="sidebar-item">
+    <p>Documents</p>
+  </div>
+
+<p style="text-align:right"> 
+    
+    
       
-    </ul>
+        <a class="sidebar-nav-item-list " href="http://ioos.github.io/sos-guidelines/about/">About IOOS SOS Application Profile</a>
+      
+    
+      
+        <a class="sidebar-nav-item-list " href="http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/">IOOS SOS v1.0 WSDD</a>
+      
+    
+      
+        <a class="sidebar-nav-item-list " href="http://ioos.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/">List of SOS Tests</a>
+      
+    
+      
+        <a class="sidebar-nav-item-list " href="http://ioos.github.io/sos-guidelines/template/SOS-GetCapabilities/">IOOS SOS v1.0 GetCapabilities Template</a>
+      
+    
+      
+        <a class="sidebar-nav-item-list " href="http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Network/">IOOS SOS v1.0 SML DescribeSensor-Network Template</a>
+      
+    
+      
+        <a class="sidebar-nav-item-list " href="http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Station/">IOOS SOS v1.0 SML DescribeSensor-Station Template</a>
+      
+    
+      
+        <a class="sidebar-nav-item-list  active " href="http://ioos.github.io/sos-guidelines/template/OM-GetObservation/">IOOS SOS v1.0 OM GetObservation Template</a>
+      
+    
+      
+        <a class="sidebar-nav-item-list " href="http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries/">IOOS SOS v1.0 SWE-MultiStation-TimeSeries Template</a>
+      
+    
+      
+        <a class="sidebar-nav-item-list " href="http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries_QC/">IOOS SOS v1.0 SWE-MultiStation-TimeSeries-QC Template</a>
+      
+    
+      
+        <a class="sidebar-nav-item-list " href="http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-SingleProperty-TimeSeries/">IOOS SOS v1.0 SWE-SingleStation-SingleProperty-TimeSeries Template</a>
+      
+    
+      
+        <a class="sidebar-nav-item-list " href="http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile/">IOOS SOS v1.0 SWE-SingleStation-TimeSeriesProfile Template</a>
+      
+    
+      
+        <a class="sidebar-nav-item-list " href="http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile_QC/">IOOS SOS v1.0 SWE-SingleStation-TimeSeriesProfile-QC Template</a>
+      
+    
+</p>
+<p style="text-align:right">
+      
+</p>
 
-	
+    <a class="sidebar-nav-item" href="https://github.com/ioos/sos-guidelines/archive/master.zip">Download</a>
+    <a class="sidebar-nav-item" href="https://github.com/ioos/sos-guidelines">GitHub repository</a>
+    <span class="sidebar-nav-item">Currently on master</span>
+  </nav>
 
-	
-  
+  <div class="sidebar-item">
+    <p>&copy; 2014 U.S. IOOS. Rights reserved</p>
   </div>
 </div>
 
 
-    <div class="content container">
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h2 class="masthead-title">
+		  <a href="http://ioos.github.io/sos-guidelines/" title="Home"> IOOS SOS Guidelines &middot; 
+		  <small>Docs, codes, scripts, templates</small>
+		  <img src="http://ioos.github.io/sos-guidelines/images/ioos_blue2.png" alt="Smiley face" align="right" /></a>
+		  </h2>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
 <div class="post">
-
-  <h1>IOOS SOS v1.0 OM GetObservation Template</h1>
-
+  <h1 class="post-title">IOOS SOS v1.0 OM GetObservation Template</h1>
     <div id="toc" class="well col-md-4 col-sm-6">
     
     </div>
-
-      <p><em>Template for a generic (independent of feature type) GetObservation response. The result block in this template is empty; see SWE templates for guidance on the result block.</em></p>
+  <p><em>Template for a generic (independent of feature type) GetObservation response. The result block in this template is empty; see SWE templates for guidance on the result block.</em></p>
 
 <pre><code class="language-XML">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!-- Template Document for a generic (independent of feature type) Get Observation. --&gt;
@@ -242,7 +315,15 @@
 </code></pre>
 
 </div>
-</div>
+
+
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
   </body>
 </html>
+

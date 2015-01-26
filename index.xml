@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Recent Content on IOOS SOS Guidelines </title>
-      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <title> </title>
     <link>http://ioos.github.io/sos-guidelines/index.xml/</link>
     <language>en-us</language>
+    <author></author>
+    <rights>(C) 2014</rights>
+    <updated>2014-08-04 07:56:39 &#43;0000 UTC</updated>
+
     
-    
-    <updated>Mon, 04 Aug 2014 07:56:39 UTC</updated>
-    
-    <item>
-      <title>About IOOS SOS Application Profile</title>
-      <link>http://ioos.github.io/sos-guidelines/about/</link>
-      <pubDate>Mon, 04 Aug 2014 07:56:39 UTC</pubDate>
       
-      <guid>http://ioos.github.io/sos-guidelines/about/</guid>
-      <description>
+        <item>
+          <title>About IOOS SOS Application Profile</title>
+          <link>http://ioos.github.io/sos-guidelines/about/</link>
+          <pubDate>Mon, 04 Aug 2014 07:56:39 UTC</pubDate>
+          <author></author>
+          <guid>http://ioos.github.io/sos-guidelines/about/</guid>
+          <description>
 
 &lt;!-- For a single homepage put in FrontMatter url = &#34;index.html&#34; --&gt;
 
@@ -24,17 +25,23 @@ The &lt;a href=&#34;https://github.com/ioos/sos-guidelines&#34;&gt;GitHub reposi
 
 &lt;h1 id=&#34;toc_0&#34;&gt;Documentation of the Profile&lt;/h1&gt;
 
-&lt;p&gt;The IOOS SOS 1.0 is conformant to the following OGC Standards and Conventions:
-* &lt;a href=&#34;http://www.opengeospatial.org/standards/sos&#34;&gt;OpenGIS Sensor Observation Service v1.0.0 [OGC 06-009r6]&lt;/a&gt;, for provision of observational data;
-* &lt;a href=&#34;http://www.opengeospatial.org/standards/sensorml&#34;&gt;OpenGIS Sensor Model Language (SensorML) v1.0.1 [OGC 07-000 and 07-122r2]&lt;/a&gt;, for platform and sensor description and result encoding;  and
-* &lt;a href=&#34;http://www.opengeospatial.org/standards/swecommon&#34;&gt;OGC® SWE Common Data Model Encoding Standard v2.0 [OGC 08-094r1]&lt;/a&gt;, for result encoding options.
-* &lt;a href=&#34;http://cfconventions.org&#34;&gt;CF Conventions v1.6&lt;/a&gt;, for provision of standard naming and description of feature types, data components, dimensions, variables and attributes, coordinate systems definition, axis order, etc.&lt;/p&gt;
+&lt;p&gt;The IOOS SOS 1.0 is conformant to the following OGC Standards and Conventions:&lt;/p&gt;
 
-&lt;p&gt;IOOS Conventions for the AP v1 is described in the series of documents:
-* &lt;a href=&#34;http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/&#34;&gt;IOOS SOS Web Service Description Document&lt;/a&gt;, which provides a detailed description of the IOOS implementation of the OGC SOS v1.0.0, including definitions, constraints, encoding requirements and “best practices” that are not explicitly defined in OGC SOS Implementation Standard;
-* &lt;a href=&#34;http://ioos.github.io/conventions-for-observing-asset-identifiers/&#34;&gt;Convention for Observing Asset Identifiers&lt;/a&gt;, which describes the algorithm for identification of IOOS-related observing assets including measurement stations, platforms and sensors; &lt;a href=&#34;https://github.com/ioos/conventions-for-observing-asset-identifiers&#34;&gt;Temporary URL&lt;/a&gt;
-* &lt;a href=&#34;http://ioos.github.io/ioos-csv-tsv/&#34;&gt;Convention for CSV/TSV Encoding&lt;/a&gt;, which lays down rules for encoding observation data as plain text Comma-Separated Values (CSV) or Tab-Separated Values (TSV);
-* &lt;a href=&#34;http://ioos.github.io/vocabularies/&#34;&gt;Guidelines for use of Controlled Vocabularies&lt;/a&gt;, which provides instructions for usage of the controlled vocabularies and vocabulary mappings developed or adopted by IOOS in IOOS-compliant data services, including existing vocabulary and terms selection process as well as request policy for new terms.  Most controlled vocabularies used by IOOS are hosted on the &lt;a href=&#34;https://marinemetadata.org/&#34;&gt;Marine Metadata Interoperability&lt;/a&gt; &lt;a href=&#34;http://mmisw.org/orr/&#34;&gt;Ontology Registry and Repository&lt;/a&gt; in the &lt;a href=&#34;http://mmisw.org/ont/ioos&#34;&gt;IOOS folder&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.opengeospatial.org/standards/sos&#34;&gt;OpenGIS Sensor Observation Service v1.0.0 [OGC 06-009r6]&lt;/a&gt;, for provision of observational data;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.opengeospatial.org/standards/sensorml&#34;&gt;OpenGIS Sensor Model Language (SensorML) v1.0.1 [OGC 07-000 and 07-122r2]&lt;/a&gt;, for platform and sensor description and result encoding;  and&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.opengeospatial.org/standards/swecommon&#34;&gt;OGC® SWE Common Data Model Encoding Standard v2.0 [OGC 08-094r1]&lt;/a&gt;, for result encoding options.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cfconventions.org&#34;&gt;CF Conventions v1.6&lt;/a&gt;, for provision of standard naming and description of feature types, data components, dimensions, variables and attributes, coordinate systems definition, axis order, etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;IOOS Conventions for the AP v1 is described in the series of documents:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/&#34;&gt;IOOS SOS Web Service Description Document&lt;/a&gt;, which provides a detailed description of the IOOS implementation of the OGC SOS v1.0.0, including definitions, constraints, encoding requirements and “best practices” that are not explicitly defined in OGC SOS Implementation Standard;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ioos.github.io/conventions-for-observing-asset-identifiers/&#34;&gt;Convention for Observing Asset Identifiers&lt;/a&gt;, which describes the algorithm for identification of IOOS-related observing assets including measurement stations, platforms and sensors; &lt;a href=&#34;https://github.com/ioos/conventions-for-observing-asset-identifiers&#34;&gt;Temporary URL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ioos.github.io/ioos-csv-tsv/&#34;&gt;Convention for CSV/TSV Encoding&lt;/a&gt;, which lays down rules for encoding observation data as plain text Comma-Separated Values (CSV) or Tab-Separated Values (TSV);&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ioos.github.io/vocabularies/&#34;&gt;Guidelines for use of Controlled Vocabularies&lt;/a&gt;, which provides instructions for usage of the controlled vocabularies and vocabulary mappings developed or adopted by IOOS in IOOS-compliant data services, including existing vocabulary and terms selection process as well as request policy for new terms.  Most controlled vocabularies used by IOOS are hosted on the &lt;a href=&#34;https://marinemetadata.org/&#34;&gt;Marine Metadata Interoperability&lt;/a&gt; &lt;a href=&#34;http://mmisw.org/orr/&#34;&gt;Ontology Registry and Repository&lt;/a&gt; in the &lt;a href=&#34;http://mmisw.org/ont/ioos&#34;&gt;IOOS folder&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h1 id=&#34;toc_1&#34;&gt;Templates and Examples&lt;/h1&gt;
 
@@ -63,15 +70,17 @@ The &lt;a href=&#34;https://github.com/ioos/sos-guidelines&#34;&gt;GitHub reposi
 
 &lt;p&gt;The &lt;a href=&#34;http://catalog.ioos.us/&#34;&gt;IOOS Catalog&lt;/a&gt; is intended to be the web-based client for the Service Registry and to provide a view of the data published via the registered services. Currently, the Catalog provides information under 1000 registered SOS services and 4000 data sets.  The Catalog obtains all service URLs from the metadata managed by the IOOS Service Registry via OGC CS-W interface to the NGDC&amp;rsquo;s ESRI Geoportal Server. The &lt;a href=&#34;http://catalog.ioos.us/&#34;&gt;GitHub software repository&lt;/a&gt; contains the source code for generation of the IOOS Catalog web site.&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>IOOS SOS v1.0 WSDD</title>
-      <link>http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</link>
-      <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+        </item>
       
-      <guid>http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</guid>
-      <description>
+    
+      
+        <item>
+          <title>IOOS SOS v1.0 WSDD</title>
+          <link>http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</link>
+          <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+          <author></author>
+          <guid>http://ioos.github.io/sos-guidelines/doc/wsdd/sos_wsdd_github_notoc/</guid>
+          <description>
 
 &lt;p&gt;&lt;em&gt;This Web Service Description Document (WSDD) provides a description of a Sensor Observation Service (SOS) that has been developed by U.S. IOOS for deployment by NOAA data providers and IOOS Regional Associations (RAs). This service provides a service consumer with the capability to access ocean observations data products, such as time series and profiles, which have XML-based encodings and included in the SWE Common Data Model.&lt;/em&gt;&lt;/p&gt;
 
@@ -97,7 +106,7 @@ The &lt;a href=&#34;https://github.com/ioos/sos-guidelines&#34;&gt;GitHub reposi
 
 &lt;p&gt;As the SOS 2.0 standard has been approved as an official OGC standard while Milestone 1.0 has already been in development, the use of this new and updated version was postponed to the Milestone 2.0, and at present, the SOS v1.0.0 is used for operations.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image18.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/images/image18.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_1&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 1: Core Model Diagram for Observations and Measurements (O&amp;amp;M)&lt;/strong&gt;&lt;/p&gt;
@@ -208,7 +217,7 @@ The &lt;a href=&#34;https://github.com/ioos/sos-guidelines&#34;&gt;GitHub reposi
 
 &lt;p&gt;The Core Profile has been identified as relevant to IOOS DMAC; the implementation of the Core Profile operations within the Mileastone 1.0 framework is described hereinafter. The Core Profile operations are based on the stateless HTTP request/response model. A diagram illustrating the basic message sequence is shown in &lt;a href=&#34;#Fig_2&#34;&gt;&lt;strong&gt;Figure 2&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image00.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/images/image00.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_2&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 2: SOS Request/Response Pattern&lt;/strong&gt;&lt;/p&gt;
@@ -232,7 +241,7 @@ At the start of the interaction, a consumer issues a GetCapabilities request to
 
 &lt;p&gt;GetCapabilities request may be sent to the server as HTTP/GET or HTTP/POST. HTTP/GET request passes parameters to the server in the HTTP URL with a number of key-value pairs (KVP) of input parameters, and HTTP/POST request sends an XML document to the server, that may also be KVP-encoded. A request to perform GetCapabilities should follow the structure as depicted in the &lt;a href=&#34;#Fig_3&#34;&gt;&lt;strong&gt;Figure 3&lt;/strong&gt;&lt;/a&gt; and table below.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image19.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/images/image19.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_3&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 3: GetCapabilities request schema&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -318,7 +327,7 @@ service=&amp;quot;SOS&amp;quot; updateSequence=&amp;quot;&amp;quot;&amp;gt;
 
 &lt;p&gt;The response to a GetCapabilities request is an XML encoded document that conforms to the &lt;a href=&#34;http://portal.opengeospatial.org/files/?artifact_id=26667&#34;&gt;SOS 1.0.0 Implementation Specification [OGC 06-009r6]&lt;/a&gt;, and illustrates the characteristics of the SOS system by providing a comprehensive information about coordinate reference system (CRS), spatial or temporal filtering and other information about sensors, feature of interest, and response format. The OGC specification is constrained by the IOOS Convention that on one hand prescribes a certain way of use for some optional components, and on the other hand – facilitates the future acceptance of the SOS 2.0. At any rate, the IOOS Convention does not violate OGC specification’s requirements.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image20.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/images/image20.png&#34; alt=&#34;&#34; /&gt;
 
 &lt;a name=&#34;Fig_4&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 4: GetCapabilities response schema&lt;/strong&gt;&lt;/p&gt;
 
@@ -777,7 +786,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The UML diagram of the DescribeSensor request is presented in &lt;a href=&#34;#Fig_5&#34;&gt;&lt;strong&gt;Figure 5&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image21.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/images/image21.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_5&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 5: DescribeSensor request schema&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -852,7 +861,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The response to a DescribeSensor request is a &lt;a href=&#34;http://www.opengeospatial.org/standards/sensorml&#34;&gt;Sensor Model Language (SensorML&lt;/a&gt;) document that describes the sensor system. In some cases, a DescribeSensor response may be quite voluminous; for example, if description of the network has been requested, and the response returns the document that contains detailed information not just about the network itself, but all network platforms and all sensors installed on each platform. A UML diagram  of such an all-inclusive DescribeSensor document is depicted in &lt;a href=&#34;#Fig_6&#34;&gt;&lt;strong&gt;Figure 6&lt;/strong&gt;&lt;/a&gt; followed by the annotated outline of the document.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image22.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/images/image22.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_6&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 6: DescribeSensor response schema&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -1719,7 +1728,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The UML diagram of the GetObservation request is presented in &lt;a href=&#34;#Fig_7&#34;&gt;&lt;strong&gt;Figure 7&lt;/strong&gt;&lt;/a&gt;, and input parameters are elaborated in the following table.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image23.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/images/image23.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_7&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 7: GetObservation request schema&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -2114,7 +2123,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The static information for all stations and sensors in GetObservation response is encompassed within the field “stations” of the root DataRecord element. Each DataRecord’s field may recursively enclose an unlimited number of DataRecords, which makes the static data block a pretty complex structure of nested DataRecords in case of multiple stations and/or sensors, as shown in &lt;a href=&#34;#Fig_8&#34;&gt;&lt;strong&gt;Figure 8&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image99.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/images/image99.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_8&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 8: GetObservation static data block outline&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -2305,7 +2314,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The sensor’s orientation is reported in terms of the pitch, roll, and yaw angles using the CF Conventions standard names: platform_pitch_angle, platform_roll_angle, and platform_orientation for yaw angle; the &lt;a href=&#34;#Fig_9&#34;&gt;&lt;strong&gt;Figure 9&lt;/strong&gt;&lt;/a&gt; depicts a relation of the directional vectors and orientation angles.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./images/image28c.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/images/image28c.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_9&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 9: Directions, Yaw, Pitch and Roll Angles&lt;/strong&gt; &lt;em&gt;(copied from &lt;a href=&#34;http://en.wikipedia.org/wiki/Six_degrees_of_freedom&#34;&gt;Wikipedia&lt;/a&gt;)&lt;/em&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2731,7 +2740,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
                 &amp;lt;/swe2:DataChoice&amp;gt;
             &amp;lt;/swe2:field&amp;gt;
         &amp;lt;/swe2:DataRecord&amp;gt;
-    &amp;lt;/swe2:elementType&amp;gt;	
+    &amp;lt;/swe2:elementType&amp;gt; 
     
     &amp;lt;swe2:values&amp;gt;
         2009-05-23T00:00:00Z,a,wmo_41001_sensor1,15.4,T,a,r,2.0,280
@@ -3417,15 +3426,17 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;hr /&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>List of SOS Tests</title>
-      <link>http://ioos.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</link>
-      <pubDate>Mon, 04 Aug 2014 08:10:23 UTC</pubDate>
+        </item>
       
-      <guid>http://ioos.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</guid>
-      <description>
+    
+      
+        <item>
+          <title>List of SOS Tests</title>
+          <link>http://ioos.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</link>
+          <pubDate>Mon, 04 Aug 2014 08:10:23 UTC</pubDate>
+          <author></author>
+          <guid>http://ioos.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/</guid>
+          <description>
 
 &lt;p&gt;&lt;em&gt;This document describes a collection of tests that have to be run in order to ensure a required level of compliance with IOOS SOS Profile 1.0 (IOOS Convention), and official OGC SOS 1.0.0 specification.&lt;/em&gt;&lt;/p&gt;
 
@@ -4255,15 +4266,17 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;/tbody&gt;
 &lt;/table&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>IOOS SOS v1.0 GetCapabilities Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SOS-GetCapabilities/</link>
-      <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+        </item>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SOS-GetCapabilities/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) GetCapabilities response.&lt;/em&gt;&lt;/p&gt;
+    
+      
+        <item>
+          <title>IOOS SOS v1.0 GetCapabilities Template</title>
+          <link>http://ioos.github.io/sos-guidelines/template/SOS-GetCapabilities/</link>
+          <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+          <author></author>
+          <guid>http://ioos.github.io/sos-guidelines/template/SOS-GetCapabilities/</guid>
+          <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) GetCapabilities response.&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;!-- Template Document for a generic (independant of feature type) Get Capabilites --&amp;gt;
@@ -4460,15 +4473,17 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &amp;lt;/sos:Capabilities&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>IOOS SOS v1.0 SML DescribeSensor-Network Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Network/</link>
-      <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+        </item>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Network/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) SensorML DescribeSensor response for Network of Stations&lt;/em&gt;&lt;/p&gt;
+    
+      
+        <item>
+          <title>IOOS SOS v1.0 SML DescribeSensor-Network Template</title>
+          <link>http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Network/</link>
+          <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+          <author></author>
+          <guid>http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Network/</guid>
+          <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) SensorML DescribeSensor response for Network of Stations&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;!-- Template document for a generic (independant of feature type) Describe Sensor Network --&amp;gt;
@@ -4755,15 +4770,17 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &amp;lt;/sml:SensorML&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>IOOS SOS v1.0 SML DescribeSensor-Station Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Station/</link>
-      <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+        </item>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Station/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) SensorML DescribeSensor response for a single station&lt;/em&gt;&lt;/p&gt;
+    
+      
+        <item>
+          <title>IOOS SOS v1.0 SML DescribeSensor-Station Template</title>
+          <link>http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Station/</link>
+          <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+          <author></author>
+          <guid>http://ioos.github.io/sos-guidelines/template/SML-DescribeSensor-Station/</guid>
+          <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) SensorML DescribeSensor response for a single station&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;!-- Template document for a generic (independant of feature type) Describe Sensor Station --&amp;gt;
@@ -5120,15 +5137,17 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &amp;lt;/sml:SensorML&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>IOOS SOS v1.0 OM GetObservation Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/OM-GetObservation/</link>
-      <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+        </item>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/OM-GetObservation/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) GetObservation response. The result block in this template is empty; see SWE templates for guidance on the result block.&lt;/em&gt;&lt;/p&gt;
+    
+      
+        <item>
+          <title>IOOS SOS v1.0 OM GetObservation Template</title>
+          <link>http://ioos.github.io/sos-guidelines/template/OM-GetObservation/</link>
+          <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+          <author></author>
+          <guid>http://ioos.github.io/sos-guidelines/template/OM-GetObservation/</guid>
+          <description>&lt;p&gt;&lt;em&gt;Template for a generic (independent of feature type) GetObservation response. The result block in this template is empty; see SWE templates for guidance on the result block.&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;!-- Template Document for a generic (independent of feature type) Get Observation. --&amp;gt;
@@ -5307,15 +5326,17 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &amp;lt;/om:ObservationCollection&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>IOOS SOS v1.0 SWE-MultiStation-TimeSeries Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries/</link>
-      <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+        </item>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for multiple stations with multiple sensors&lt;/em&gt;&lt;/p&gt;
+    
+      
+        <item>
+          <title>IOOS SOS v1.0 SWE-MultiStation-TimeSeries Template</title>
+          <link>http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries/</link>
+          <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+          <author></author>
+          <guid>http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries/</guid>
+          <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for multiple stations with multiple sensors&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;!-- This template is an example of a SWE Data Record composed of static and dynamic fields for --&amp;gt;
@@ -5761,7 +5782,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
             &amp;lt;/swe2:DataChoice&amp;gt;
           &amp;lt;/swe2:field&amp;gt;
         &amp;lt;/swe2:DataRecord&amp;gt;
-      &amp;lt;/swe2:elementType&amp;gt;	
+      &amp;lt;/swe2:elementType&amp;gt;   
       
       &amp;lt;swe2:encoding&amp;gt;
         &amp;lt;!-- SWE encoding and data values --&amp;gt;
@@ -5772,7 +5793,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
         &amp;lt;!-- swe:TextEncoding specification. --&amp;gt;
         &amp;lt;!--  --&amp;gt;
         &amp;lt;!-- About DataChoice from SWE Common 2.0: --&amp;gt;
-        &amp;lt;!-- 9.2.5	Rules for DataChoice --&amp;gt;
+        &amp;lt;!-- 9.2.5  Rules for DataChoice --&amp;gt;
         &amp;lt;!-- A тАЬDataChoiceтАЭ is encoded with the text method by providing the name of the selected item --&amp;gt;
         &amp;lt;!-- before the item values themselves. The name used shall correspond to the тАЬnameтАЭ attribute --&amp;gt;
         &amp;lt;!-- of the тАЬitemтАЭ property element that describes the structure of the selected item. --&amp;gt;
@@ -5810,15 +5831,17 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &amp;lt;/swe2:DataRecord&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>IOOS SOS v1.0 SWE-MultiStation-TimeSeries-QC Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries_QC/</link>
-      <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+        </item>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries_QC/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for multiple stations with multiple sensors including quality elements for some quantities&lt;/em&gt;&lt;/p&gt;
+    
+      
+        <item>
+          <title>IOOS SOS v1.0 SWE-MultiStation-TimeSeries-QC Template</title>
+          <link>http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries_QC/</link>
+          <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+          <author></author>
+          <guid>http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries_QC/</guid>
+          <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for multiple stations with multiple sensors including quality elements for some quantities&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;!-- This template is an example of a SWE Data Record composed of static and dynamic fields for --&amp;gt;
@@ -6395,7 +6418,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
             &amp;lt;/swe2:DataChoice&amp;gt;
           &amp;lt;/swe2:field&amp;gt;
         &amp;lt;/swe2:DataRecord&amp;gt;
-      &amp;lt;/swe2:elementType&amp;gt;	
+      &amp;lt;/swe2:elementType&amp;gt;   
       
       &amp;lt;swe2:encoding&amp;gt;
         &amp;lt;!-- SWE encoding and data values --&amp;gt;
@@ -6406,7 +6429,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
         &amp;lt;!-- swe:TextEncoding specification. --&amp;gt;
         &amp;lt;!--  --&amp;gt;
         &amp;lt;!-- About DataChoice from SWE Common 2.0: --&amp;gt;
-        &amp;lt;!-- 9.2.5	Rules for DataChoice --&amp;gt;
+        &amp;lt;!-- 9.2.5  Rules for DataChoice --&amp;gt;
         &amp;lt;!-- A тАЬDataChoiceтАЭ is encoded with the text method by providing the name of the selected item --&amp;gt;
         &amp;lt;!-- before the item values themselves. The name used shall correspond to the тАЬnameтАЭ attribute --&amp;gt;
         &amp;lt;!-- of the тАЬitemтАЭ property element that describes the structure of the selected item. --&amp;gt;
@@ -6445,15 +6468,17 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &amp;lt;/swe2:DataRecord&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>IOOS SOS v1.0 SWE-SingleStation-SingleProperty-TimeSeries Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-SingleProperty-TimeSeries/</link>
-      <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+        </item>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-SingleProperty-TimeSeries/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for a single station with a single sensor&lt;/em&gt;&lt;/p&gt;
+    
+      
+        <item>
+          <title>IOOS SOS v1.0 SWE-SingleStation-SingleProperty-TimeSeries Template</title>
+          <link>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-SingleProperty-TimeSeries/</link>
+          <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+          <author></author>
+          <guid>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-SingleProperty-TimeSeries/</guid>
+          <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for a single station with a single sensor&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;!-- This template is an example of a SWE Data Record composed of static and dynamic fields for --&amp;gt;
@@ -6666,7 +6691,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
             &amp;lt;/swe2:DataChoice&amp;gt;
           &amp;lt;/swe2:field&amp;gt;
         &amp;lt;/swe2:DataRecord&amp;gt;
-      &amp;lt;/swe2:elementType&amp;gt;	
+      &amp;lt;/swe2:elementType&amp;gt;   
       
       &amp;lt;swe2:encoding&amp;gt;
         &amp;lt;!-- SWE encoding and data values --&amp;gt;
@@ -6677,7 +6702,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
         &amp;lt;!-- swe:TextEncoding specification. --&amp;gt;
         &amp;lt;!--  --&amp;gt;
         &amp;lt;!-- About DataChoice from SWE Common 2.0: --&amp;gt;
-        &amp;lt;!-- 9.2.5	Rules for DataChoice --&amp;gt;
+        &amp;lt;!-- 9.2.5  Rules for DataChoice --&amp;gt;
         &amp;lt;!-- A тАЬDataChoiceтАЭ is encoded with the text method by providing the name of the selected item --&amp;gt;
         &amp;lt;!-- before the item values themselves. The name used shall correspond to the тАЬnameтАЭ attribute --&amp;gt;
         &amp;lt;!-- of the тАЬitemтАЭ property element that describes the structure of the selected item. --&amp;gt;
@@ -6705,15 +6730,17 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &amp;lt;/swe2:DataRecord&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>IOOS SOS v1.0 SWE-SingleStation-TimeSeriesProfile Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile/</link>
-      <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+        </item>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for a station with profiling sensors&lt;/em&gt;&lt;/p&gt;
+    
+      
+        <item>
+          <title>IOOS SOS v1.0 SWE-SingleStation-TimeSeriesProfile Template</title>
+          <link>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile/</link>
+          <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+          <author></author>
+          <guid>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile/</guid>
+          <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for a station with profiling sensors&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;!-- This template is an example of a SWE Data Record composed of static and dynamic fields for --&amp;gt;
@@ -7227,15 +7254,17 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &amp;lt;/swe2:DataRecord&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>IOOS SOS v1.0 SWE-SingleStation-TimeSeriesProfile-QC Template</title>
-      <link>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile_QC/</link>
-      <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+        </item>
       
-      <guid>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile_QC/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for a station with profiling sensors including quality elements for some quantities&lt;/em&gt;&lt;/p&gt;
+    
+      
+        <item>
+          <title>IOOS SOS v1.0 SWE-SingleStation-TimeSeriesProfile-QC Template</title>
+          <link>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile_QC/</link>
+          <pubDate>Mon, 04 Aug 2014 08:09:56 UTC</pubDate>
+          <author></author>
+          <guid>http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile_QC/</guid>
+          <description>&lt;p&gt;&lt;em&gt;Template for a SWE Data Record&amp;rsquo;s static and dynamic fields for a station with profiling sensors including quality elements for some quantities&lt;/em&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
 &amp;lt;!-- This template is an example of a SWE Data Record composed of static and dynamic fields for --&amp;gt;
@@ -7826,7 +7855,9 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &amp;lt;/swe2:DataRecord&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-    </item>
+        </item>
+      
     
+
   </channel>
 </rss>
