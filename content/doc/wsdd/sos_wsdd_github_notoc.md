@@ -47,7 +47,7 @@ The Climate and Forecast (CF) Conventions introduce the standard ways for naming
 
 ### IOOS Convention and SOS Templates ###
 
-To facilitate the practical implementation of the OGC SOS, IOOS has started the development of a series of Templates that explicitly define the IOOS SOS operation responses for the CF feature types. Within Milestone 1.0 timeframe, the templates have only been developed for “point”, “timeSeries”, and “timeSeriesProfile” feature types ([https://code.google.com/p/ioostech/source/browse/#svn/trunk/templates/Milestone1.0](https://code.google.com/p/ioostech/source/browse/#svn/trunk/templates/Milestone1.0?state=open)); the templates for other feature types are planned for Milestone 2.0. The templates are intended as a mandatory guidance for all developers of IOOS-compliant SOS applications.
+To facilitate the practical implementation of the OGC SOS, IOOS has started the development of a series of Templates that explicitly define the IOOS SOS operation responses for the CF feature types. Within Milestone 1.0 timeframe, the [templates](http://ioos.github.io/sos-guidelines/template/) have only been developed for “point”, “timeSeries”, and “timeSeriesProfile” feature types; the templates for other feature types are planned for Milestone 2.0. The templates are intended as a mandatory guidance for all developers of IOOS-compliant SOS applications.
 
 The Milestone 1.0 templates fully conform to the OGC SOS 1.0.0 Implementation Standard; however, in some “grey areas” where the SOS 1.0.0 is vague and does not provide sufficient guidance, it has been refined with a special IOOS Convention. The IOOS Convention contains additional constraints, definitions, requirements and “best practice” sort of recommendations that SOS 1.0.0 lacks; for future transition, the Convention follows SOS 2.0 requirements and definitions wherever they have been considered applicable, and do not contradict the SOS 1.0.0 specification. The provisions of the IOOS Convention are captured in the IOOS SOS Templates, and described further in this document.
 
@@ -140,7 +140,7 @@ Following a successful GetCapabilties operation, a consumer optionally issues o
 
 Erroneous requests detected by the server result in a response containing an XML-based exception message rather than an SOS response.
 
-Examples of the consumer requests and SOS server responses are shown in subsequent sections. Unless something different is specified, the encoding samples have been taken from the set of [IOOS SOS Milestone 1.0 templates](https://code.google.com/p/ioostech/source/browse/trunk/templates/Milestone1.0?state=open).
+Examples of the consumer requests and SOS server responses are shown in subsequent sections. Unless something different is specified, the encoding samples have been taken from the set of [IOOS SOS Milestone 1.0 templates](http://ioos.github.io/sos-guidelines/template/).
 
 ### GetCapabilities ###
 
@@ -1380,13 +1380,13 @@ A **GetObservation** response returns a collection of observations. Each observa
 
 IOOS has developed a series of templates for **GetObservation** response. In general, IOOS considers GetObservation response as consisted of common generic metadata part and result block. The former contains generic, independent of feature type, metadata that describes features and observations, whereas the result block is a SWE Data Record construct that contains the values defined in the first part of the response.
 
-Since the common metadata parts of any GetObservation response are practically the same, IOOS has developed a single [OM-GetObservation](http://code.google.com/p/ioostech/source/browse/trunk/templates/Milestone1.0/OM-GetObservation.xml) template for that part of the response. However, the result block is noticeably different depending on the feature type, and therefore IOOS has developed five individual SWE-GetObservation templates for various combinations of Milestone 1.0 feature types (i.e. TimeSeries and TimeSeriesProfile), single and multiple stations, and availability of information about data quality (QC):
+Since the common metadata parts of any GetObservation response are practically the same, IOOS has developed a single [OM-GetObservation](http://ioos.github.io/sos-guidelines/template/OM-GetObservation/) template for that part of the response. However, the result block is noticeably different depending on the feature type, and therefore IOOS has developed five individual SWE-GetObservation templates for various combinations of Milestone 1.0 feature types (i.e. TimeSeries and TimeSeriesProfile), single and multiple stations, and availability of information about data quality (QC):
 
--   [SWE-MultiStation-TimeSeries](http://code.google.com/p/ioostech/source/browse/trunk/templates/Milestone1.0/SWE-MultiStation-TimeSeries.xml)
--   [SWE-MultiStation-TimeSeries\_QC](http://code.google.com/p/ioostech/source/browse/trunk/templates/Milestone1.0/SWE-MultiStation-TimeSeries_QC.xml)
--   [SWE-SingleStation-SingleProperty-TimeSeries](http://code.google.com/p/ioostech/source/browse/trunk/templates/Milestone1.0/SWE-SingleStation-SingleProperty-TimeSeries.xml)
--   [SWE-SingleStation-TimeSeriesProfile](http://code.google.com/p/ioostech/source/browse/trunk/templates/Milestone1.0/SWE-SingleStation-TimeSeriesProfile.xml)
--   [SWE-SingleStation-TimeSeriesProfile\_QC](http://code.google.com/p/ioostech/source/browse/trunk/templates/Milestone1.0/SWE-SingleStation-TimeSeriesProfile_QC.xml)
+-   [SWE-MultiStation-TimeSeries](http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries/)
+-   [SWE-MultiStation-TimeSeries\_QC](http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries_QC/)
+-   [SWE-SingleStation-SingleProperty-TimeSeries](http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-SingleProperty-TimeSeries/)
+-   [SWE-SingleStation-TimeSeriesProfile](http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile/)
+-   [SWE-SingleStation-TimeSeriesProfile\_QC](http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile_QC/)
 
 Only critical templates’ components are discussed hereinafter just in order to limit the size of the document; however, all necessary measures were taken to ensure that template description completeness has not suffered. At any rate, the templates are well commented, and can provide a lot of needed information themselves.
 
@@ -1492,7 +1492,7 @@ The “definition” attribute identifies the observed property that the data co
 -   [IOOS Vocabulary and Category Definitions](http://mmisw.org/orr/#http://mmisw.org/ont/ioos/definition) – an MMI vocabulary used for clarifying the meaning of roles, classifiers and other general terms used throughout the SOS web services;
 -   [IOOS SOS SWE Element Definitions Vocabulary](http://mmisw.org/orr/#http://mmisw.org/ont/ioos/swe_element_type) – a narrower MMI vocabulary of definitions that reflect the IOOS Convention for use in standard SOS SWE elements.
 
-The value of the “definition” attribute of the same type of element may vary depending on the observed property. The [IOOS SWE Templates for Milestone 1.0](http://code.google.com/p/ioostech/source/browse/#svn%2Ftrunk%2Ftemplates%2FMilestone1.0) along with the [MMI vocabularies](http://mmisw.org/orr/#http://mmisw.org/ont/ioos/swe_element_type) provide a comprehensive guidance for a use of definitions in IOOS SOS GetObservations document; some examples are shown below:
+The value of the “definition” attribute of the same type of element may vary depending on the observed property. The [IOOS SWE Templates for Milestone 1.0](http://ioos.github.io/sos-guidelines/template/) along with the [MMI vocabularies](http://mmisw.org/orr/#http://mmisw.org/ont/ioos/swe_element_type) provide a comprehensive guidance for a use of definitions in IOOS SOS GetObservations document; some examples are shown below:
 
 ```XML
 <swe2:DataRecord   definition="http://mmisw.org/ont/ioos/swe_element_type/stations">
