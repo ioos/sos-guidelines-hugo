@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title> </title>
-    <link>http://ioos.github.io/sos-guidelines/doc/index.xml/</link>
+    <link>http://ioos.github.io/sos-guidelines/doc/</link>
     <language>en-us</language>
     <author></author>
     <rights>(C) 2014</rights>
@@ -20,7 +20,7 @@
 
 &lt;p&gt;&lt;em&gt;This Web Service Description Document (WSDD) provides a description of a Sensor Observation Service (SOS) that has been developed by U.S. IOOS for deployment by NOAA data providers and IOOS Regional Associations (RAs). This service provides a service consumer with the capability to access ocean observations data products, such as time series and profiles, which have XML-based encodings and included in the SWE Common Data Model.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;toc_0&#34;&gt;SERVICE INTERFACES&lt;/h1&gt;
+&lt;h1 id=&#34;service-interfaces:638e0b263020c13a76a55332bd966dbe&#34;&gt;SERVICE INTERFACES&lt;/h1&gt;
 
 &lt;p&gt;The service interface is a collection of operations, messages, types and elements descriptions. It provides detail on how the SOS data requests and responses are constructed independent of the messaging transmission technology.&lt;/p&gt;
 
@@ -34,38 +34,38 @@
 
 &lt;p&gt;The interface is comprised of some operations, parameters and attributes, which are considered mandatory by the specifications and others which are not. This information, referred to as a Profile, includes information on specification extensions (operations, parameters and attributes not included in a specification) and exclusions (operations, parameters and attributes that are not implemented). The following sections describe the IOOS SOS Profile for Milestone 1.0 providing additional detail about parts of the OGC specifications supported by the Milestone 1.0 implementation and how they are used.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_1&#34;&gt;Conformance to Standards and Conventions&lt;/h2&gt;
+&lt;h2 id=&#34;conformance-to-standards-and-conventions:638e0b263020c13a76a55332bd966dbe&#34;&gt;Conformance to Standards and Conventions&lt;/h2&gt;
 
-&lt;h3 id=&#34;toc_2&#34;&gt;OGC SOS Implementation Standards&lt;/h3&gt;
+&lt;h3 id=&#34;ogc-sos-implementation-standards:638e0b263020c13a76a55332bd966dbe&#34;&gt;OGC SOS Implementation Standards&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&#34;#Fig_1&#34;&gt;&lt;strong&gt;Figure 1&lt;/strong&gt;&lt;/a&gt; depicts the Unified Modeling Language (UML) diagram for the OGC O&amp;amp;M core model, which specifies the core conformance classes, which are described within the SOS specification.&lt;/p&gt;
 
 &lt;p&gt;As the SOS 2.0 standard has been approved as an official OGC standard while Milestone 1.0 has already been in development, the use of this new and updated version was postponed to the Milestone 2.0, and at present, the SOS v1.0.0 is used for operations.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/images/image18.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image18.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_1&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 1: Core Model Diagram for Observations and Measurements (O&amp;amp;M)&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;The subsequent sections provide more detail on the service interfaces, including information on data types, messages, operations, and interface descriptions.&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_3&#34;&gt;NetCDF Climate and Forecast Metadata Convention&lt;/h3&gt;
+&lt;h3 id=&#34;netcdf-climate-and-forecast-metadata-convention:638e0b263020c13a76a55332bd966dbe&#34;&gt;NetCDF Climate and Forecast Metadata Convention&lt;/h3&gt;
 
 &lt;p&gt;The Climate and Forecast (CF) Conventions introduce the standard ways for naming and description of feature types, data components, dimensions, variables and attributes, coordinate systems definition, axis order, etc. The CF Conventions were originally framed as a standard for data written in netCDF format, with model-generated climate forecast data in mind. However, it turned out to be equally applicable to observational datasets presented in various other formats. The IOOS has adopted the CF 1.6 Conventions for both 52⁰North and ncSOS implementations in order to provide SWE encodings for the feature types that are relevant for the IOOS community. In IOOS SOS implementations, the CF Conventions are used for description of data quantities (such as CF standard names, physical descriptions, code spaces, UoMs, etc.) as well as data location in space and time.&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_4&#34;&gt;IOOS Convention and SOS Templates&lt;/h3&gt;
+&lt;h3 id=&#34;ioos-convention-and-sos-templates:638e0b263020c13a76a55332bd966dbe&#34;&gt;IOOS Convention and SOS Templates&lt;/h3&gt;
 
-&lt;p&gt;To facilitate the practical implementation of the OGC SOS, IOOS has started the development of a series of Templates that explicitly define the IOOS SOS operation responses for the CF feature types. Within Milestone 1.0 timeframe, the templates have only been developed for “point”, “timeSeries”, and “timeSeriesProfile” feature types (&lt;a href=&#34;https://code.google.com/p/ioostech/source/browse/#svn/trunk/templates/Milestone1.0?state=open&#34;&gt;https://code.google.com/p/ioostech/source/browse/#svn/trunk/templates/Milestone1.0&lt;/a&gt;); the templates for other feature types are planned for Milestone 2.0. The templates are intended as a mandatory guidance for all developers of IOOS-compliant SOS applications.&lt;/p&gt;
+&lt;p&gt;To facilitate the practical implementation of the OGC SOS, IOOS has started the development of a series of Templates that explicitly define the IOOS SOS operation responses for the CF feature types. Within Milestone 1.0 timeframe, the &lt;a href=&#34;http://ioos.github.io/sos-guidelines/template/&#34;&gt;templates&lt;/a&gt; have only been developed for “point”, “timeSeries”, and “timeSeriesProfile” feature types; the templates for other feature types are planned for Milestone 2.0. The templates are intended as a mandatory guidance for all developers of IOOS-compliant SOS applications.&lt;/p&gt;
 
 &lt;p&gt;The Milestone 1.0 templates fully conform to the OGC SOS 1.0.0 Implementation Standard; however, in some “grey areas” where the SOS 1.0.0 is vague and does not provide sufficient guidance, it has been refined with a special IOOS Convention. The IOOS Convention contains additional constraints, definitions, requirements and “best practice” sort of recommendations that SOS 1.0.0 lacks; for future transition, the Convention follows SOS 2.0 requirements and definitions wherever they have been considered applicable, and do not contradict the SOS 1.0.0 specification. The provisions of the IOOS Convention are captured in the IOOS SOS Templates, and described further in this document.&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_5&#34;&gt;Coordinate System Axis Order&lt;/h3&gt;
+&lt;h3 id=&#34;coordinate-system-axis-order:638e0b263020c13a76a55332bd966dbe&#34;&gt;Coordinate System Axis Order&lt;/h3&gt;
 
 &lt;p&gt;Historically, there was considerable confusion regarding axis order in GML documents, and coordinate reference systems. This confusion started with the introduction of the very first version of theOGC WMS, where axis “x” (longitude) preceeded axis “y” (latitude), while coordinate reference systems defined the opposite order of axis. After some discussion, it was agreed that if CRS is explicitly defined in the service interface or payload, then coordinate values shall be listed in the axis order specified by the referred CRS (&lt;a href=&#34;http://portal.opengeospatial.org/files/?artifact_id=17566&#34;&gt;OGC 06-135r1 “Specification best practices&lt;/a&gt;”).&lt;/p&gt;
 
 &lt;p&gt;For IOOS SOS implementations, the CRS reference procedure is defined in OGC 06-121r3 “OGC Web Services Common Specification”, and additionally specified by the IOOS Convention. As the EPSG::4326 CRS is required to identify a station horizontal coordinates, the axis order must match the EPSG::4326 definition, i.e. latitude must precede longitude. The vertical coordinate must always be listed after the horizontal ones, and explicitly follow the definition of the vertical CRS.&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_6&#34;&gt;Namespaces&lt;/h3&gt;
+&lt;h3 id=&#34;namespaces:638e0b263020c13a76a55332bd966dbe&#34;&gt;Namespaces&lt;/h3&gt;
 
 &lt;p&gt;The XML type references in the subsequent sections make use of XML namespace prefixes to fully qualify their namespaces. The map of prefixes to standardized namespaces is:&lt;/p&gt;
 
@@ -88,7 +88,7 @@
 &lt;li&gt;In both GetCapabilities and GetObservation, the &lt;code&gt;&amp;lt;gml:&amp;gt;&lt;/code&gt; prefix may omit reference to a version number, as shown above (just because GML 3.1.1 has been a default version for the O&amp;amp;M 1.0 schema).&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;toc_7&#34;&gt;Capitalization&lt;/h3&gt;
+&lt;h3 id=&#34;capitalization:638e0b263020c13a76a55332bd966dbe&#34;&gt;Capitalization&lt;/h3&gt;
 
 &lt;p&gt;The use of the upper and lower cases in SOS response documents and requests is defined by the OGC 06-121r9 “OGC Web Services Common Standard”, clauses 11.5.2 and 11.6.2. To extend and augment the OGC assertions, IOOS Convention require the following:&lt;/p&gt;
 
@@ -107,7 +107,7 @@
 &lt;li&gt;identifier values and terms from established vocabularies (e.g. &lt;a href=&#34;http://mmisw.org/ont/cf/parameter/air_temperature&#34;&gt;http://mmisw.org/ont/cf/parameter/air_temperature&lt;/a&gt; or &lt;code&gt;urn:ioos:station:RA_authority:station_name&lt;/code&gt;) keep their original (vocabulary) case.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;toc_8&#34;&gt;Use of URL in HTTP GET and POST Requests&lt;/h3&gt;
+&lt;h3 id=&#34;use-of-url-in-http-get-and-post-requests:638e0b263020c13a76a55332bd966dbe&#34;&gt;Use of URL in HTTP GET and POST Requests&lt;/h3&gt;
 
 &lt;p&gt;HTTP supports two request methods: GET and POST. In a GET method, request parameters are transmitted as part of the service URL, and in a POST method, request parameters are transmitted in the body of the POST message.&lt;/p&gt;
 
@@ -125,7 +125,7 @@
 
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;http://SERVERNAME:[PORT]/SOS-WEBAPP/sos&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_9&#34;&gt;Operations&lt;/h2&gt;
+&lt;h2 id=&#34;operations:638e0b263020c13a76a55332bd966dbe&#34;&gt;Operations&lt;/h2&gt;
 
 &lt;p&gt;The OGC SOS interface is based on the OGC Web Service Common specification, thus, it has shares structures and data types of service requests with the other OGC Web Services. In the case of SOS, the operation signature is constrained by the observation schema, as it defines the response model. The SOS v1.0 defines three operational profiles:&lt;/p&gt;
 
@@ -153,7 +153,7 @@
 
 &lt;p&gt;The Core Profile has been identified as relevant to IOOS DMAC; the implementation of the Core Profile operations within the Mileastone 1.0 framework is described hereinafter. The Core Profile operations are based on the stateless HTTP request/response model. A diagram illustrating the basic message sequence is shown in &lt;a href=&#34;#Fig_2&#34;&gt;&lt;strong&gt;Figure 2&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/images/image00.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image00.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_2&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 2: SOS Request/Response Pattern&lt;/strong&gt;&lt;/p&gt;
@@ -165,19 +165,19 @@ At the start of the interaction, a consumer issues a GetCapabilities request to
 
 &lt;p&gt;Erroneous requests detected by the server result in a response containing an XML-based exception message rather than an SOS response.&lt;/p&gt;
 
-&lt;p&gt;Examples of the consumer requests and SOS server responses are shown in subsequent sections. Unless something different is specified, the encoding samples have been taken from the set of &lt;a href=&#34;https://code.google.com/p/ioostech/source/browse/trunk/templates/Milestone1.0?state=open&#34;&gt;IOOS SOS Milestone 1.0 templates&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Examples of the consumer requests and SOS server responses are shown in subsequent sections. Unless something different is specified, the encoding samples have been taken from the set of &lt;a href=&#34;http://ioos.github.io/sos-guidelines/template/&#34;&gt;IOOS SOS Milestone 1.0 templates&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_10&#34;&gt;GetCapabilities&lt;/h3&gt;
+&lt;h3 id=&#34;getcapabilities:638e0b263020c13a76a55332bd966dbe&#34;&gt;GetCapabilities&lt;/h3&gt;
 
 &lt;p&gt;GetCapabilities operation provides the interface for any client to access metadata about a specific service, which in this case is SOS. This operation allows clients to retrieve service metadata about a specific service instance, including metadata about the tightly-coupled data served. In addition to more generic capabilities response elements such as filter options, the SOS GetCapabilities returns a list of so called Offerings, which are groupings of available observations described by their feature of interest, procedure, observed property, temporal coverage and the like. This allows the user application to clearly identify the types and quality of data that can be requested from this service.&lt;/p&gt;
 
 &lt;p&gt;Please note, that SOS in version 1.0 does not restrict creation of observation offerings. On the other hand, SOS 2.0 is more specific and defines that each observation offering is limited to be associated with exactly one procedure, which can be a network, station, or sensor. The U.S. IOOS has made a decision to imply that limitation starting at Milestone 1.0 with SOS v1.0; this not only solves the issue of the SOS 1.0 with ambiguous groupings of observations to offerings but also ensures the continuity of the Milestones.&lt;/p&gt;
 
-&lt;h4 id=&#34;toc_11&#34;&gt;GetCapabilities Request&lt;/h4&gt;
+&lt;h4 id=&#34;getcapabilities-request:638e0b263020c13a76a55332bd966dbe&#34;&gt;GetCapabilities Request&lt;/h4&gt;
 
 &lt;p&gt;GetCapabilities request may be sent to the server as HTTP/GET or HTTP/POST. HTTP/GET request passes parameters to the server in the HTTP URL with a number of key-value pairs (KVP) of input parameters, and HTTP/POST request sends an XML document to the server, that may also be KVP-encoded. A request to perform GetCapabilities should follow the structure as depicted in the &lt;a href=&#34;#Fig_3&#34;&gt;&lt;strong&gt;Figure 3&lt;/strong&gt;&lt;/a&gt; and table below.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/images/image19.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image19.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_3&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 3: GetCapabilities request schema&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -259,11 +259,11 @@ service=&amp;quot;SOS&amp;quot; updateSequence=&amp;quot;&amp;quot;&amp;gt;
 &amp;lt;/sos:GetCapabilities&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;toc_12&#34;&gt;GetCapabilities Response&lt;/h4&gt;
+&lt;h4 id=&#34;getcapabilities-response:638e0b263020c13a76a55332bd966dbe&#34;&gt;GetCapabilities Response&lt;/h4&gt;
 
 &lt;p&gt;The response to a GetCapabilities request is an XML encoded document that conforms to the &lt;a href=&#34;http://portal.opengeospatial.org/files/?artifact_id=26667&#34;&gt;SOS 1.0.0 Implementation Specification [OGC 06-009r6]&lt;/a&gt;, and illustrates the characteristics of the SOS system by providing a comprehensive information about coordinate reference system (CRS), spatial or temporal filtering and other information about sensors, feature of interest, and response format. The OGC specification is constrained by the IOOS Convention that on one hand prescribes a certain way of use for some optional components, and on the other hand – facilitates the future acceptance of the SOS 2.0. At any rate, the IOOS Convention does not violate OGC specification’s requirements.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/images/image20.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image20.png&#34; alt=&#34;&#34; /&gt;
 
 &lt;a name=&#34;Fig_4&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 4: GetCapabilities response schema&lt;/strong&gt;&lt;/p&gt;
 
@@ -292,7 +292,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The subsections are described in more details in the following chapters.&lt;/p&gt;
 
-&lt;h5 id=&#34;toc_13&#34;&gt;ServiceIdentification&lt;/h5&gt;
+&lt;h5 id=&#34;serviceidentification:638e0b263020c13a76a55332bd966dbe&#34;&gt;ServiceIdentification&lt;/h5&gt;
 
 &lt;p&gt;This section contains metadata about this specific server, including the title, abstract, keywords, service type, version, fees, and access constraints if any for using this server. No IOOS-specific guidelines and conventions are applicable to this section; it is fully defined by the SOS 1.0.0 standard.&lt;/p&gt;
 
@@ -310,7 +310,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
   &amp;lt;/ows:ServiceIdentification&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;toc_14&#34;&gt;ServiceProvider&lt;/h5&gt;
+&lt;h5 id=&#34;serviceprovider:638e0b263020c13a76a55332bd966dbe&#34;&gt;ServiceProvider&lt;/h5&gt;
 
 &lt;p&gt;This section contains metadata about the organization operating this server, including service provider name, site, address, contact information, etc. Similar to the previous section described above, this section does not require following any IOOS-specific conventions; it is fully defined by the SOS 1.0.0 standard.&lt;/p&gt;
 
@@ -337,7 +337,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
   &amp;lt;/ows:ServiceProvider&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;toc_15&#34;&gt;OperationsMetadata&lt;/h5&gt;
+&lt;h5 id=&#34;operationsmetadata:638e0b263020c13a76a55332bd966dbe&#34;&gt;OperationsMetadata&lt;/h5&gt;
 
 &lt;p&gt;This section contains metadata about the operations specified by this service and implemented by this server, including the URLs, parameters for operation requests. A corresponding section of the IOOS Milestone 1.0 GetCapabilities template is presented below; the template contains just the bare minimum of the required metadata that describes the server operations capability.&lt;/p&gt;
 
@@ -419,7 +419,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
   &amp;lt;/ows:OperationsMetadata&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;toc_16&#34;&gt;Contents&lt;/h5&gt;
+&lt;h5 id=&#34;contents:638e0b263020c13a76a55332bd966dbe&#34;&gt;Contents&lt;/h5&gt;
 
 &lt;p&gt;This section contains the list of all of the observation offerings available from the service, specifically the network offerings and offerings for all affiliated stations/platforms. Each of the &lt;code&gt;&amp;lt;sos:ObservationOffering&amp;gt;&lt;/code&gt; elements describes a collection of related sensor system observations. However, in order to restrain the response document size and mitigate scalability problems, the IOOS Convention requires that sensor offerings must not be included in a platform offering description, i.e none of the &lt;code&gt;&amp;lt;sos:ObservationOffering&amp;gt;&lt;/code&gt; elements may include a sensor procedure. In order to get a detailed description of the sensors installed on the platform, a DescribeSensor operation should be used.&lt;/p&gt;
 
@@ -708,7 +708,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
   &amp;lt;/sos:Contents&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;toc_17&#34;&gt;DescribeSensor&lt;/h3&gt;
+&lt;h3 id=&#34;describesensor:638e0b263020c13a76a55332bd966dbe&#34;&gt;DescribeSensor&lt;/h3&gt;
 
 &lt;p&gt;A &lt;strong&gt;DescribeSensor&lt;/strong&gt; is a simple core SOS operation that returns an XML Document associated with one or more sensors, platforms or networks. It provides metadata about sensors and the observation collected by these sensors. All the information of sensor characteristics is encoded into the SensorML standard.&lt;/p&gt;
 
@@ -716,13 +716,13 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The following sections illustrate DescribeSensor HTTP/GET and HTTP/POST requests, provides the list of the request parameters and description for the DescribeSensor operation response.&lt;/p&gt;
 
-&lt;h4 id=&#34;toc_18&#34;&gt;DescribeSensor Request&lt;/h4&gt;
+&lt;h4 id=&#34;describesensor-request:638e0b263020c13a76a55332bd966dbe&#34;&gt;DescribeSensor Request&lt;/h4&gt;
 
 &lt;p&gt;A DescribeSensor request may be sent to the server as HTTP/GET or HTTP/POST. While HTTP/POST request sends an XML document to the server, HTTP/GET request passes parameters to the server in the HTTP URL with a number of key-value pairs (KVP) of input parameters. A request to perform DescribeSensor operation should follow the structure that is described in this section.&lt;/p&gt;
 
 &lt;p&gt;The UML diagram of the DescribeSensor request is presented in &lt;a href=&#34;#Fig_5&#34;&gt;&lt;strong&gt;Figure 5&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/images/image21.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image21.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_5&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 5: DescribeSensor request schema&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -793,11 +793,11 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &amp;lt;/sos:DescribeSensor&amp;gt; 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;toc_19&#34;&gt;DescribeSensor Response&lt;/h4&gt;
+&lt;h4 id=&#34;describesensor-response:638e0b263020c13a76a55332bd966dbe&#34;&gt;DescribeSensor Response&lt;/h4&gt;
 
 &lt;p&gt;The response to a DescribeSensor request is a &lt;a href=&#34;http://www.opengeospatial.org/standards/sensorml&#34;&gt;Sensor Model Language (SensorML&lt;/a&gt;) document that describes the sensor system. In some cases, a DescribeSensor response may be quite voluminous; for example, if description of the network has been requested, and the response returns the document that contains detailed information not just about the network itself, but all network platforms and all sensors installed on each platform. A UML diagram  of such an all-inclusive DescribeSensor document is depicted in &lt;a href=&#34;#Fig_6&#34;&gt;&lt;strong&gt;Figure 6&lt;/strong&gt;&lt;/a&gt; followed by the annotated outline of the document.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/images/image22.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image22.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_6&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 6: DescribeSensor response schema&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -909,7 +909,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;In order to decrease the size of the DescribeSensor document, and limit the volume of the detailed information returned, IOOS recognizes 3 separate types of the DescribeSensor documents. For Milestone 1.0, the IOOS SOS is required to provide documents describing network and individual platform, while the description of individual sensor is optional.&lt;/p&gt;
 
-&lt;h5 id=&#34;toc_20&#34;&gt;Network of platforms/stations&lt;/h5&gt;
+&lt;h5 id=&#34;network-of-platforms-stations:638e0b263020c13a76a55332bd966dbe&#34;&gt;Network of platforms/stations&lt;/h5&gt;
 
 &lt;p&gt;A mandatory DescribeSensor response for a network of platforms/stations shall return:&lt;/p&gt;
 
@@ -1158,7 +1158,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h5 id=&#34;toc_21&#34;&gt;Platform/Station&lt;/h5&gt;
+&lt;h5 id=&#34;platform-station:638e0b263020c13a76a55332bd966dbe&#34;&gt;Platform/Station&lt;/h5&gt;
 
 &lt;p&gt;A mandatory &lt;strong&gt;DescribeSensor&lt;/strong&gt; response for a specific platform/station shall return:&lt;/p&gt;
 
@@ -1559,7 +1559,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h5 id=&#34;toc_22&#34;&gt;Sensor&lt;/h5&gt;
+&lt;h5 id=&#34;sensor:638e0b263020c13a76a55332bd966dbe&#34;&gt;Sensor&lt;/h5&gt;
 
 &lt;p&gt;The IOOS SOS Milestone 1.0 does not require a provision of DescribeSensor documents for individual sensors. However, if an SOS server offers these documents nevertheless, the corresponding DescribeSensor response should return:&lt;/p&gt;
 
@@ -1654,17 +1654,17 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h3 id=&#34;toc_23&#34;&gt;GetObservation&lt;/h3&gt;
+&lt;h3 id=&#34;getobservation:638e0b263020c13a76a55332bd966dbe&#34;&gt;GetObservation&lt;/h3&gt;
 
 &lt;p&gt;A &lt;strong&gt;GetObservation&lt;/strong&gt; operation queries SOS to retrieve observation data structured according to the Observation and Measurement specification. Upon receiving a GetObservation request, a SOS shall either satisfy the request or return an exception report. The GetObservation operations provides observations based on the setting of filters that includes timing, processes, phenomena, feature of interest, and other parameters of the O&amp;amp;M model.&lt;/p&gt;
 
-&lt;h4 id=&#34;toc_24&#34;&gt;GetObservation Request&lt;/h4&gt;
+&lt;h4 id=&#34;getobservation-request:638e0b263020c13a76a55332bd966dbe&#34;&gt;GetObservation Request&lt;/h4&gt;
 
 &lt;p&gt;A &lt;strong&gt;GetObservation&lt;/strong&gt; request contains one or more elements that constrain the observations to be retrieved from a Sensor Observation Service. Each GetObservation query element has mandatory attributes of service and version. The mandatory version element attribute must correspond to the specific service interface version negotiated between the service and client during the service binding process. The required service attribute explicitly must be “SOS”.&lt;/p&gt;
 
 &lt;p&gt;The UML diagram of the GetObservation request is presented in &lt;a href=&#34;#Fig_7&#34;&gt;&lt;strong&gt;Figure 7&lt;/strong&gt;&lt;/a&gt;, and input parameters are elaborated in the following table.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/images/image23.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image23.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_7&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 7: GetObservation request schema&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -1836,25 +1836,25 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &amp;lt;/sos:GetObservation&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;toc_25&#34;&gt;GetObservation Response&lt;/h4&gt;
+&lt;h4 id=&#34;getobservation-response:638e0b263020c13a76a55332bd966dbe&#34;&gt;GetObservation Response&lt;/h4&gt;
 
 &lt;p&gt;A &lt;strong&gt;GetObservation&lt;/strong&gt; response returns a collection of observations. Each observation is composed of metadata, description of the phenomena being returned (parameter names, units of measure, reference systems) and values.&lt;/p&gt;
 
 &lt;p&gt;IOOS has developed a series of templates for &lt;strong&gt;GetObservation&lt;/strong&gt; response. In general, IOOS considers GetObservation response as consisted of common generic metadata part and result block. The former contains generic, independent of feature type, metadata that describes features and observations, whereas the result block is a SWE Data Record construct that contains the values defined in the first part of the response.&lt;/p&gt;
 
-&lt;p&gt;Since the common metadata parts of any GetObservation response are practically the same, IOOS has developed a single &lt;a href=&#34;http://code.google.com/p/ioostech/source/browse/trunk/templates/Milestone1.0/OM-GetObservation.xml&#34;&gt;OM-GetObservation&lt;/a&gt; template for that part of the response. However, the result block is noticeably different depending on the feature type, and therefore IOOS has developed five individual SWE-GetObservation templates for various combinations of Milestone 1.0 feature types (i.e. TimeSeries and TimeSeriesProfile), single and multiple stations, and availability of information about data quality (QC):&lt;/p&gt;
+&lt;p&gt;Since the common metadata parts of any GetObservation response are practically the same, IOOS has developed a single &lt;a href=&#34;http://ioos.github.io/sos-guidelines/template/OM-GetObservation/&#34;&gt;OM-GetObservation&lt;/a&gt; template for that part of the response. However, the result block is noticeably different depending on the feature type, and therefore IOOS has developed five individual SWE-GetObservation templates for various combinations of Milestone 1.0 feature types (i.e. TimeSeries and TimeSeriesProfile), single and multiple stations, and availability of information about data quality (QC):&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://code.google.com/p/ioostech/source/browse/trunk/templates/Milestone1.0/SWE-MultiStation-TimeSeries.xml&#34;&gt;SWE-MultiStation-TimeSeries&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://code.google.com/p/ioostech/source/browse/trunk/templates/Milestone1.0/SWE-MultiStation-TimeSeries_QC.xml&#34;&gt;SWE-MultiStation-TimeSeries_QC&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://code.google.com/p/ioostech/source/browse/trunk/templates/Milestone1.0/SWE-SingleStation-SingleProperty-TimeSeries.xml&#34;&gt;SWE-SingleStation-SingleProperty-TimeSeries&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://code.google.com/p/ioostech/source/browse/trunk/templates/Milestone1.0/SWE-SingleStation-TimeSeriesProfile.xml&#34;&gt;SWE-SingleStation-TimeSeriesProfile&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://code.google.com/p/ioostech/source/browse/trunk/templates/Milestone1.0/SWE-SingleStation-TimeSeriesProfile_QC.xml&#34;&gt;SWE-SingleStation-TimeSeriesProfile_QC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries/&#34;&gt;SWE-MultiStation-TimeSeries&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ioos.github.io/sos-guidelines/template/SWE-MultiStation-TimeSeries_QC/&#34;&gt;SWE-MultiStation-TimeSeries_QC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-SingleProperty-TimeSeries/&#34;&gt;SWE-SingleStation-SingleProperty-TimeSeries&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile/&#34;&gt;SWE-SingleStation-TimeSeriesProfile&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ioos.github.io/sos-guidelines/template/SWE-SingleStation-TimeSeriesProfile_QC/&#34;&gt;SWE-SingleStation-TimeSeriesProfile_QC&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Only critical templates’ components are discussed hereinafter just in order to limit the size of the document; however, all necessary measures were taken to ensure that template description completeness has not suffered. At any rate, the templates are well commented, and can provide a lot of needed information themselves.&lt;/p&gt;
 
-&lt;h5 id=&#34;toc_26&#34;&gt;OM-GetObservation Template&lt;/h5&gt;
+&lt;h5 id=&#34;om-getobservation-template:638e0b263020c13a76a55332bd966dbe&#34;&gt;OM-GetObservation Template&lt;/h5&gt;
 
 &lt;p&gt;The outline of the OM-GetObservation template is presented below:&lt;/p&gt;
 
@@ -1988,7 +1988,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h5 id=&#34;toc_27&#34;&gt;SWE-GetObservation Template&lt;/h5&gt;
+&lt;h5 id=&#34;swe-getobservation-template:638e0b263020c13a76a55332bd966dbe&#34;&gt;SWE-GetObservation Template&lt;/h5&gt;
 
 &lt;p&gt;The OGC SWE Common Data Model Encoding Standard v2.0 allows data components to be used as a data container as well as a data descriptor, where container defines metadata of a data set and includes the actual property values (“inline” values), while data descriptor defines metadata of a data set but does not include the actual data values. However, the Standard prohibits mixing of both guises in a single data component entity. For example, a single DataArray cannot contain both inline values and block-encoded values. Therefore, the IOOS Convention requires a Result block to include a root DataRecord composed of two basic fields – “stations” and “observationData”. The field &amp;ldquo;stations&amp;rdquo; forms a “static” part of the GetObservation response Result block that encompasses all invariable data for all stations and sensors, whereas the field “observationData” draws up a “dynamic” part that encloses observation values varying from sensor to sensor. All data components in the static block must be used as data containers and encoded inline, while the data components in the dynamic block must be used only as data descriptors, and contain a DataArray with block-encoded values:&lt;/p&gt;
 
@@ -2027,7 +2027,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;li&gt;&lt;a href=&#34;http://mmisw.org/orr/#http://mmisw.org/ont/ioos/swe_element_type&#34;&gt;IOOS SOS SWE Element Definitions Vocabulary&lt;/a&gt; – a narrower MMI vocabulary of definitions that reflect the IOOS Convention for use in standard SOS SWE elements.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The value of the “definition” attribute of the same type of element may vary depending on the observed property. The &lt;a href=&#34;http://code.google.com/p/ioostech/source/browse/#svn%2Ftrunk%2Ftemplates%2FMilestone1.0&#34;&gt;IOOS SWE Templates for Milestone 1.0&lt;/a&gt; along with the &lt;a href=&#34;http://mmisw.org/orr/#http://mmisw.org/ont/ioos/swe_element_type&#34;&gt;MMI vocabularies&lt;/a&gt; provide a comprehensive guidance for a use of definitions in IOOS SOS GetObservations document; some examples are shown below:&lt;/p&gt;
+&lt;p&gt;The value of the “definition” attribute of the same type of element may vary depending on the observed property. The &lt;a href=&#34;http://ioos.github.io/sos-guidelines/template/&#34;&gt;IOOS SWE Templates for Milestone 1.0&lt;/a&gt; along with the &lt;a href=&#34;http://mmisw.org/orr/#http://mmisw.org/ont/ioos/swe_element_type&#34;&gt;MMI vocabularies&lt;/a&gt; provide a comprehensive guidance for a use of definitions in IOOS SOS GetObservations document; some examples are shown below:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-XML&#34;&gt;&amp;lt;swe2:DataRecord   definition=&amp;quot;http://mmisw.org/ont/ioos/swe_element_type/stations&amp;quot;&amp;gt;
 &amp;lt;swe2:DataRecord   id=&amp;quot;stationID&amp;quot;   definition=&amp;quot;http://mmisw.org/ont/ioos/swe_element_type/station&amp;quot;&amp;gt;
@@ -2055,11 +2055,11 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h6 id=&#34;toc_28&#34;&gt;Static Data Block&lt;/h6&gt;
+&lt;h6 id=&#34;static-data-block:638e0b263020c13a76a55332bd966dbe&#34;&gt;Static Data Block&lt;/h6&gt;
 
 &lt;p&gt;The static information for all stations and sensors in GetObservation response is encompassed within the field “stations” of the root DataRecord element. Each DataRecord’s field may recursively enclose an unlimited number of DataRecords, which makes the static data block a pretty complex structure of nested DataRecords in case of multiple stations and/or sensors, as shown in &lt;a href=&#34;#Fig_8&#34;&gt;&lt;strong&gt;Figure 8&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/images/image99.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image99.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_8&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 8: GetObservation static data block outline&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -2184,7 +2184,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h6 id=&#34;toc_29&#34;&gt;&lt;em&gt;Common QA/QC information&lt;/em&gt;&lt;/h6&gt;
+&lt;h6 id=&#34;common-qa-qc-information:638e0b263020c13a76a55332bd966dbe&#34;&gt;&lt;em&gt;Common QA/QC information&lt;/em&gt;&lt;/h6&gt;
 
 &lt;p&gt;It has been a long-standing IOOS’ goal to implement the principles of Quality Assurance of Real Time Ocean Data (QARTOD) in the IOOS SOS, and the IOOS Convention has taken a first step in that direction by providing a guidance (based on the best practices of the IOOS data providers like NDBC) of reporting QA/QC information in the Milestone 1.0 templates. However, since the QARTOD has yet to develop the authoritative QA/QC procedures for all IOOS observed properties and feature types, the IOOS Convention provisions are not mandatory at the moment, and Milestone 1.0 templates should be considered as sort of “best practices” recommendations, mostly based on the NDBC’s system of pre-defined QA/QC flags (tockens).&lt;/p&gt;
 
@@ -2216,7 +2216,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h6 id=&#34;toc_30&#34;&gt;&lt;em&gt;Profiling sensor specifics&lt;/em&gt;&lt;/h6&gt;
+&lt;h6 id=&#34;profiling-sensor-specifics:638e0b263020c13a76a55332bd966dbe&#34;&gt;&lt;em&gt;Profiling sensor specifics&lt;/em&gt;&lt;/h6&gt;
 
 &lt;p&gt;For profiling sensor, just the indication of the sensor’s upward or downward shift relative to the platform position is not sufficient, and the IOOS Convention provides for more precise description of sensor’s position and orientation, including description of bins and depths for binned profile sensors. Although the Convention does not require a full description of a sensor’s orientation, the Convention strongly encourages the indication of this information for all vertical profiling sensors (e.g. ADCP).&lt;/p&gt;
 
@@ -2250,7 +2250,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The sensor’s orientation is reported in terms of the pitch, roll, and yaw angles using the CF Conventions standard names: platform_pitch_angle, platform_roll_angle, and platform_orientation for yaw angle; the &lt;a href=&#34;#Fig_9&#34;&gt;&lt;strong&gt;Figure 9&lt;/strong&gt;&lt;/a&gt; depicts a relation of the directional vectors and orientation angles.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/images/image28c.png&#34; alt=&#34;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image28c.png&#34; alt=&#34;&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_9&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 9: Directions, Yaw, Pitch and Roll Angles&lt;/strong&gt; &lt;em&gt;(copied from &lt;a href=&#34;http://en.wikipedia.org/wiki/Six_degrees_of_freedom&#34;&gt;Wikipedia&lt;/a&gt;)&lt;/em&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
@@ -2367,7 +2367,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &amp;lt;/swe2:field&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h6 id=&#34;toc_31&#34;&gt;Dynamic Data Block (Sensor Observations)&lt;/h6&gt;
+&lt;h6 id=&#34;dynamic-data-block-sensor-observations:638e0b263020c13a76a55332bd966dbe&#34;&gt;Dynamic Data Block (Sensor Observations)&lt;/h6&gt;
 
 &lt;p&gt;The dynamic data block contains all measurements made by sensors and any other dynamic data (e.g. location for mobile sensors) from each sensor requested in GetObservation operation. In conformity with the OGC SWE Common Data Model Encoding Standard v2.0, the dynamic block must not contain any inline encoded data.&lt;/p&gt;
 
@@ -2563,7 +2563,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &amp;lt;/swe2:values&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h6 id=&#34;toc_32&#34;&gt;&lt;em&gt;Observation-specific QA/QC information&lt;/em&gt;&lt;/h6&gt;
+&lt;h6 id=&#34;observation-specific-qa-qc-information:638e0b263020c13a76a55332bd966dbe&#34;&gt;&lt;em&gt;Observation-specific QA/QC information&lt;/em&gt;&lt;/h6&gt;
 
 &lt;p&gt;The dynamic data block of GetObservation response may contain observation specific QA/QC information, encoded in the same &lt;strong&gt;DataArray&lt;/strong&gt; with other observation values.&lt;/p&gt;
 
@@ -2696,7 +2696,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &amp;lt;/swe2:DataArray&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h6 id=&#34;toc_33&#34;&gt;&lt;em&gt;Profiling sensor observation-specific report&lt;/em&gt;&lt;/h6&gt;
+&lt;h6 id=&#34;profiling-sensor-observation-specific-report:638e0b263020c13a76a55332bd966dbe&#34;&gt;&lt;em&gt;Profiling sensor observation-specific report&lt;/em&gt;&lt;/h6&gt;
 
 &lt;p&gt;The dynamic data block for profiling sensor has several important specifics that are stipulated by the ability of the sensor to perform a number of simultaneous observations at multiple points of the vertical axis. In order to provide for encoding of multiple simultaneous observations in one record, the IOOS Convention requires the use of a nested &lt;strong&gt;DataArray&lt;/strong&gt; for each profiling sensor description in a &lt;strong&gt;DataChoice&lt;/strong&gt; structure.&lt;/p&gt;
 
@@ -2786,7 +2786,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;hr /&gt;
 
-&lt;h1 id=&#34;toc_34&#34;&gt;GLOSSARY&lt;/h1&gt;
+&lt;h1 id=&#34;glossary:638e0b263020c13a76a55332bd966dbe&#34;&gt;GLOSSARY&lt;/h1&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -2869,7 +2869,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h1 id=&#34;toc_35&#34;&gt;ACRONYMS&lt;/h1&gt;
+&lt;h1 id=&#34;acronyms:638e0b263020c13a76a55332bd966dbe&#34;&gt;ACRONYMS&lt;/h1&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -3282,7 +3282,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h1 id=&#34;toc_36&#34;&gt;APPLICABLE DOCUMENTS&lt;/h1&gt;
+&lt;h1 id=&#34;applicable-documents:638e0b263020c13a76a55332bd966dbe&#34;&gt;APPLICABLE DOCUMENTS&lt;/h1&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -3384,9 +3384,9 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The IOOS SOS Profile tests have originated from the official OGC CITE test set for SOS 1.0.0, and adapted for IOOS-specific requirements. The goal of these tests is to validate that a service response is syntactically and semantically valid. The response is considered syntactically valid if it contains the expected elements and attributes in the order prescribed by the IOOS Profile Templates v1.0. The response is recognized as semantically valid if its semantic conforms to the IOOS SOS Convention, i.e. the meaning of variables, elements, attributes, etc. matches the CF Conventions v1.6, IOOS SOS WSDD, and IOOS Controlled Vocabularies.&lt;/p&gt;
 
-&lt;h2 id=&#34;toc_0&#34;&gt;OWS Common Tests&lt;/h2&gt;
+&lt;h2 id=&#34;ows-common-tests:dba0d08dbb5b19236f27ae67899bda13&#34;&gt;OWS Common Tests&lt;/h2&gt;
 
-&lt;h3 id=&#34;toc_1&#34;&gt;owsTests:ows-main&lt;/h3&gt;
+&lt;h3 id=&#34;owstests-ows-main:dba0d08dbb5b19236f27ae67899bda13&#34;&gt;owsTests:ows-main&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;(&lt;em&gt;Run test group for GetCapabilities requests using the GET method.&lt;/em&gt;)&lt;/strong&gt;&lt;/p&gt;
 
@@ -3480,7 +3480,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h2 id=&#34;toc_2&#34;&gt;General SOS Tests&lt;/h2&gt;
+&lt;h2 id=&#34;general-sos-tests:dba0d08dbb5b19236f27ae67899bda13&#34;&gt;General SOS Tests&lt;/h2&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -3506,13 +3506,13 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h2 id=&#34;toc_3&#34;&gt;Core SOS Tests&lt;/h2&gt;
+&lt;h2 id=&#34;core-sos-tests:dba0d08dbb5b19236f27ae67899bda13&#34;&gt;Core SOS Tests&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;A request for a valid capabilities document is made with the optional “acceptversions” parameter omitted, and a response is validated with the schema. Further tests are performed on the GetCapabilities response only if the response passes schema validation.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;toc_4&#34;&gt;GetCapabilities Tests&lt;/h3&gt;
+&lt;h3 id=&#34;getcapabilities-tests:dba0d08dbb5b19236f27ae67899bda13&#34;&gt;GetCapabilities Tests&lt;/h3&gt;
 
-&lt;h4 id=&#34;toc_5&#34;&gt;OGC General Tests&lt;/h4&gt;
+&lt;h4 id=&#34;ogc-general-tests:dba0d08dbb5b19236f27ae67899bda13&#34;&gt;OGC General Tests&lt;/h4&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -3598,7 +3598,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h4 id=&#34;toc_6&#34;&gt;IOOS-specific Tests&lt;/h4&gt;
+&lt;h4 id=&#34;ioos-specific-tests:dba0d08dbb5b19236f27ae67899bda13&#34;&gt;IOOS-specific Tests&lt;/h4&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -3708,9 +3708,9 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h3 id=&#34;toc_7&#34;&gt;DescribeSensor Tests&lt;/h3&gt;
+&lt;h3 id=&#34;describesensor-tests:dba0d08dbb5b19236f27ae67899bda13&#34;&gt;DescribeSensor Tests&lt;/h3&gt;
 
-&lt;h4 id=&#34;toc_8&#34;&gt;OGC General Tests&lt;/h4&gt;
+&lt;h4 id=&#34;ogc-general-tests-1:dba0d08dbb5b19236f27ae67899bda13&#34;&gt;OGC General Tests&lt;/h4&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -3754,7 +3754,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h4 id=&#34;toc_9&#34;&gt;IOOS-specific Tests&lt;/h4&gt;
+&lt;h4 id=&#34;ioos-specific-tests-1:dba0d08dbb5b19236f27ae67899bda13&#34;&gt;IOOS-specific Tests&lt;/h4&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -3870,11 +3870,11 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h3 id=&#34;toc_10&#34;&gt;GetObservation Tests&lt;/h3&gt;
+&lt;h3 id=&#34;getobservation-tests:dba0d08dbb5b19236f27ae67899bda13&#34;&gt;GetObservation Tests&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;All GetObservation tests use “POST” method, and URL obtained from the GetCapabilities response.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;toc_11&#34;&gt;OGC General Tests&lt;/h4&gt;
+&lt;h4 id=&#34;ogc-general-tests-2:dba0d08dbb5b19236f27ae67899bda13&#34;&gt;OGC General Tests&lt;/h4&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -4002,7 +4002,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h4 id=&#34;toc_12&#34;&gt;IOOS-specific Tests&lt;/h4&gt;
+&lt;h4 id=&#34;ioos-specific-tests-2:dba0d08dbb5b19236f27ae67899bda13&#34;&gt;IOOS-specific Tests&lt;/h4&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
