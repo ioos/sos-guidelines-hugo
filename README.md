@@ -72,5 +72,4 @@ The documentation in the [sos-guidelines](https://github.com/ioos/sos-guidelines
     |          └── SWE-SingleStation-TimeSeriesProfile_QC.xml
     └── README.md
 ```      
-
-The rest of repository content is placed there only for website deployment with the _**Hugo**_ static page generator. The deployment workflow is described in the [_**Website Deployment Workflow**_](Website_Deployment_Workflow.md) document located in the root directory next to this _README_.  The URL of the web page for this documentation is [ioos.github.io/sos-guidelines](ioos.github.io/sos-guidelines)
+The rest of repository content is placed there only for website deployment with the [_**Hugo**_](http://hugo.spf13.com/) static page generator. The [_**Hosting on IOOS GitHub Pages Workflow**_](http://ioos.github.io/website_deployment_workflow_updated) located on the [IOOS GitHub top webpage](http://ioos.github.io/) describes the deployment workflow in more details.
