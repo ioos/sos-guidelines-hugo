@@ -36,7 +36,7 @@ In 2015-2016 IOOS is planning to move to IOOS SOS v2.0. A new Application Profil
 # Reference Implementations and Current Deployments
 
 1. [i52N](https://github.com/ioos/i52n-sos) for RDBMS observation data store (IOOS custom version of the [52°North Sensor Observation Service](https://github.com/52North/SOS), and 
-2. [ncSOS](https://github.com/asascience-open/ncsos) that adds an SOS service to any of the CF Discrete Sampling Geometries datasets in the existing [THREDDS server](http://www.unidata.ucar.edu/projects/THREDDS/). 
+2. [ncSOS](https://github.com/asascience-open/ncsos) that adds an SOS service to any of the CF Discrete Sampling Geometries datasets in the existing [THREDDS server](http://www.unidata.ucar.edu/software/thredds/current/tds/). 
 
 ## Conformance Testing
 Similar to OGC Compliance & Interoperability Testing & Evaluation (CITE) program, IOOS has developed a set of formal tests to ensure that IOOS SOS implementations are providing a product compliant with the IOOS AP v1. The [IOOS AP v1 Compliance Test List](http://ioos.github.io/sos-guidelines/doc/testing/sos_test_list_github_notoc_summary/) describes tests for SOS v1.0.0 developed by IOOS, and indicates optional some OGC CITE tests that are considered non-critical for the current state of IOOS SOS implementation.
