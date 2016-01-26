@@ -1333,7 +1333,7 @@ The OGC SOS v1.0.0 Implementation Standard defines a number of other parameters 
 | :--- | :---: | :--- |
 | procedure | 0…* | Specifies the sensor system(s) for which observations are requested; defines a filter for the procedure property of the observations. The type is “anyURI”, and it must match the value of the “xlink:href=” attribute in an \<sos:procedure\> element advertized in GetCapabilities response . <br /><br />Examples:<ul><li>Network<br />`urn:ioos:network:test:all`</li><li>Station/Platform<br />`urn:ioos:station:test:station_name`</li><li>Sensor<br />`urn:ioos:sensor:test:station_name:sensor_name` |
 |eventTime | 0…1 | Specifies the time period(s) for which observations are requested. <br /><br />The time should conform to ISO format: YYYY-MM-DDTHH:mm:ss±HH. Time instance is given as one time value. Periods of time (start and end) are separated by "/". For example: 2009-06-26T10:00:00+01/2009-06-26T11:00:00+01.<br />Although SOS v1.0 specification allows requests with no temporal boundaries, the SOS v1.0 fails to properly describe the server response to such request. For that specific case, the IOOS Convention requires SOS server to follow the SOS v2.0 specification, and return all records matching a user’s request. However, as a result limit may be employed by the SOS server, a ResponseExceedsSizeLimit exception code will be returned instead if that limit is exceeded. |
-| featureOfInterest | 0…* | Specifies the feature for which observations are requested. This should be presented in a form of comma-separated URIs advertised in the GetCapabilities document or a bounding box for requested data, i.e. featureOfInterest=BBOX:min_lon,min_lat,max_lon,max_lat |
+| featureOfInterest | 0…* | Specifies the feature for which observations are requested. This should be presented in a form of comma-separated URIs advertised in the GetCapabilities document or a bounding box for requested data. Until v1.0.1, the IOOS SOS did not support GetObservation KVP GET request with a BBOX constraint, i.e. `featureOfInterest=BBOX:min_lon,min_lat,max_lon,max_lat` in the request was not allowed, and BBOX could be specified only in the POST request. Starting with v1.0.1, IOOS SOS supports two ways of BBOX constraint in the GET request. For details, see examples below. |
 | resultModel | 0…* | Specifies the name of the root element of a GetObservation response. The IOOS Convention requires resultModel to be “om:ObservationCollection”. 
 | srsName | 0…1 | Attribute that defines the spatial reference system that should be used for any geometry that is returned in the response. <br />If present, it must be one of the advertised CRS values specified in \<gml:srsName\> element or “srsName” attribute of the \<gml:boundedBy/gml:Envelope\> element in the GetCapabilities document.<br />If omitted, it is assumed that the CRS is WGS 84 identified as urn:ogc:def:crs:EPSG::4326 “ |
 | result | 0…1 | Instructs the SOS to only return observations where the result matches the expression or value. For example, CO-OPS supports a long list of constraints such as IGLD (`urn:ioos:def:datum:noaa::IGLD`), MHHW (`urn:ioos:def:datum:noaa::MHHW`), NAVD (`urn:ogc:def:datum:epsg::5103`), and so forth. |
@@ -1352,27 +1352,79 @@ In addition to the standard set of parameters, some of the IOOS data providers h
 
 The following examples illustrate HTTP/GET and HTTP/POST GetObservation requests. Note that in HTTP/GET (KVP) request, the parameter names are case insensitive. The following example shows equivalent terms for a parameter “outputFormat”: outputFormat, outputformat, OUTPUTFORMAT, or OUTPUTfORMAT. As a guideline, it is suggested that lowercase names be used for ease-of-reading and consistency. On the contrary, it is recommended to use the UpperCamelCase for the parameter values like GetCapabilities or DescribeSensor, as they are case sensitive:
 
--   HTTP/GET:
+ - HTTP/GET without spatial or temporal constraint:
 
-```HTML
+```
 http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&version=1.0.0&request=GetObservation&offering=urn:ioos:network:test:all&observedProperty=http://mmisw.org/ont/cf/parameter/wind_speed&procedure=urn:ioos:station:test:blighreef&responseFormat= text/xml; subtype="om/1.0.0/profiles/ioos_sos/1.0"
+
 ````
 
--   HTTP/POST:
+ - HTTP/GET with both spatial and temporal constraints (simple BBOX):
 
-```XML
+```
+http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&version=1.0.0&request=GetObservation&offering=urn:ioos:station:wmo:46028&observedProperty=http://mmisw.org/ont/cf/parameter/sea_water_temperature&procedure=urn:ioos:station:wmo:46028&featureOfInterest=BBOX:-122.1,47.7,-120.3,47.9&eventtime=2015-11-01T00:00:00/2015-11-01T06:00:00&responseFormat= text/xml; subtype="om/1.0.0/profiles/ioos_sos/1.0"
+
+````
+
+ - HTTP/GET with both spatial and temporal constraints (SOS 2.0 spatial and temporal filtering):
+
+```
+http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&version=1.0.0&request=GetObservation&offering=urn%3Aioos%3Astation%3Awmo%3A46028&observedProperty=http://mmisw.org/ont/cf/parameter/sea_water_temperature&procedure=urn:ioos:station:wmo:46028&featureOfInterest=om:featureOfInterest/*/sams:shape,47.7,-122.1,47.9,-120.3,http://www.opengis.net/def/crs/EPSG/0/4326&eventtime=om:phenomenonTime,2015-11-01T00:00:00/2015-11-01T06:00:00&responseFormat= text/xml; subtype="om/1.0.0/profiles/ioos_sos/1.0"
+
+````
+
+ - HTTP/POST without spatial or temporal constraint:
+
+```
 <sos:GetObservation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosAll.xsd"
     xmlns:sos="http://www.opengis.net/sos/1.0" 
     xmlns:om="http://www.opengis.net/om/1.0"
     service="SOS" version="1.0.0" srsName="EPSG:4326">
-    <sos:offering>urn:ioos:network:test:all</sos:offering>
+    <sos:procedure>urn:ioos:network:test:all</sos:procedure>
     <sos:observedProperty>http://mmisw.org/ont/cf/parameter/wind_speed</sos:observedProperty>
     <sos:responseFormat> text/xml; subtype="om/1.0.0/profiles/ioos_sos/1.0"</sos:responseFormat>
     <sos:resultModel>om:Observation</sos:resultModel>
     <sos:responseMode>inline</sos:responseMode>
 </sos:GetObservation>
+
 ```
+
+ - HTTP/POST with both spatial and temporal constraints:
+
+```
+<sos:GetObservation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosAll.xsd"
+    xmlns:sos="http://www.opengis.net/sos/1.0" 
+    xmlns:om="http://www.opengis.net/om/1.0"
+    service="SOS" version="1.0.0" srsName="EPSG:4326">
+    <sos:eventTime>
+       <ogc:TM_During>
+          <ogc:PropertyName>urn:ogc:data:time:iso8601</ogc:PropertyName>
+          <gml:TimePeriod>
+             <gml:beginPosition>2008-03-01T17:44:15+00</gml:beginPosition>
+             <gml:endPosition>2008-05-01T17:44:15+00</gml:endPosition>
+          </gml:TimePeriod>
+       </ogc:TM_During>
+    </sos:eventTime>
+    <sos:procedure>urn:ioos:network:test:all</sos:procedure>
+    <sos:observedProperty>http://mmisw.org/ont/cf/parameter/wind_speed</sos:observedProperty>
+    <sos:featureOfInterest>
+        <ogc:BBOX>
+            <ogc:PropertyName>urn:ogc:data:location</ogc:PropertyName>
+            <gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                <gml:lowerCorner>43.0 -127.0</gml:lowerCorner>
+                <gml:upperCorner>48.0 -123.75</gml:upperCorner>
+            </gml:Envelope>
+        </ogc:BBOX>
+    </sos:featureOfInterest>
+    <sos:responseFormat> text/xml; subtype="om/1.0.0/profiles/ioos_sos/1.0"</sos:responseFormat>
+    <sos:resultModel>om:Observation</sos:resultModel>
+    <sos:responseMode>inline</sos:responseMode>
+</sos:GetObservation>
+
+```
+<br>
 
 #### GetObservation Response ####
 
