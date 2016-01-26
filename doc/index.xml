@@ -1819,19 +1819,21 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;pre&gt;&lt;code&gt;http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&amp;amp;version=1.0.0&amp;amp;request=GetObservation&amp;amp;offering=urn:ioos:network:test:all&amp;amp;observedProperty=http://mmisw.org/ont/cf/parameter/wind_speed&amp;amp;procedure=urn:ioos:station:test:blighreef&amp;amp;responseFormat= text/xml; subtype=&amp;quot;om/1.0.0/profiles/ioos_sos/1.0&amp;quot;
 
-````
+&lt;/code&gt;&lt;/pre&gt;
 
- - HTTP/GET with both spatial and temporal constraints (simple BBOX):
+&lt;ul&gt;
+&lt;li&gt;HTTP/GET with both spatial and temporal constraints (simple BBOX):&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&amp;amp;version=1.0.0&amp;amp;request=GetObservation&amp;amp;offering=urn:ioos:station:wmo:46028&amp;amp;observedProperty=http://mmisw.org/ont/cf/parameter/sea_water_temperature&amp;amp;procedure=urn:ioos:station:wmo:46028&amp;amp;featureOfInterest=BBOX:-122.1,47.7,-120.3,47.9&amp;amp;eventtime=2015-11-01T00:00:00/2015-11-01T06:00:00&amp;amp;responseFormat= text/xml; subtype=&amp;quot;om/1.0.0/profiles/ioos_sos/1.0&amp;quot;
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&amp;amp;version=1.0.0&amp;amp;request=GetObservation&amp;amp;offering=urn:ioos:station:wmo:46028&amp;amp;observedProperty=http://mmisw.org/ont/cf/parameter/sea_water_temperature&amp;amp;procedure=urn:ioos:station:wmo:46028&amp;amp;featureOfInterest=BBOX:-122.1,47.7,-120.3,47.9&amp;amp;eventtime=2015-11-01T00:00:00/2015-11-01T06:00:00&amp;amp;responseFormat=&#34;&gt;http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&amp;amp;version=1.0.0&amp;amp;request=GetObservation&amp;amp;offering=urn:ioos:station:wmo:46028&amp;amp;observedProperty=http://mmisw.org/ont/cf/parameter/sea_water_temperature&amp;amp;procedure=urn:ioos:station:wmo:46028&amp;amp;featureOfInterest=BBOX:-122.1,47.7,-120.3,47.9&amp;amp;eventtime=2015-11-01T00:00:00/2015-11-01T06:00:00&amp;amp;responseFormat=&lt;/a&gt; text/xml; subtype=&amp;ldquo;om/1.0.0/profiles/ioos_sos/1.0&amp;rdquo;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HTTP/GET with both spatial and temporal constraints (SOS 2.0 spatial and temporal filtering):&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;pre&gt;&lt;code&gt;
- - HTTP/GET with both spatial and temporal constraints (SOS 2.0 spatial and temporal filtering):
-
-```
-http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&amp;amp;version=1.0.0&amp;amp;request=GetObservation&amp;amp;offering=urn%3Aioos%3Astation%3Awmo%3A46028&amp;amp;observedProperty=http://mmisw.org/ont/cf/parameter/sea_water_temperature&amp;amp;procedure=urn:ioos:station:wmo:46028&amp;amp;featureOfInterest=om:featureOfInterest/*/sams:shape,47.7,-122.1,47.9,-120.3,http://www.opengis.net/def/crs/EPSG/0/4326&amp;amp;eventtime=om:phenomenonTime,2015-11-01T00:00:00/2015-11-01T06:00:00&amp;amp;responseFormat= text/xml; subtype=&amp;quot;om/1.0.0/profiles/ioos_sos/1.0&amp;quot;
+&lt;pre&gt;&lt;code&gt;http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&amp;amp;version=1.0.0&amp;amp;request=GetObservation&amp;amp;offering=urn%3Aioos%3Astation%3Awmo%3A46028&amp;amp;observedProperty=http://mmisw.org/ont/cf/parameter/sea_water_temperature&amp;amp;procedure=urn:ioos:station:wmo:46028&amp;amp;featureOfInterest=om:featureOfInterest/*/sams:shape,47.7,-122.1,47.9,-120.3,http://www.opengis.net/def/crs/EPSG/0/4326&amp;amp;eventtime=om:phenomenonTime,2015-11-01T00:00:00/2015-11-01T06:00:00&amp;amp;responseFormat= text/xml; subtype=&amp;quot;om/1.0.0/profiles/ioos_sos/1.0&amp;quot;
 
 &lt;/code&gt;&lt;/pre&gt;
 

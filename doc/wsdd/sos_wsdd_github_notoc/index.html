@@ -1999,19 +1999,21 @@ xmlns:ows=&quot;http://www.opengis.net/ows/1.1&quot; xmlns:xlink=&quot;http://ww
 
 <pre><code>http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&amp;version=1.0.0&amp;request=GetObservation&amp;offering=urn:ioos:network:test:all&amp;observedProperty=http://mmisw.org/ont/cf/parameter/wind_speed&amp;procedure=urn:ioos:station:test:blighreef&amp;responseFormat= text/xml; subtype=&quot;om/1.0.0/profiles/ioos_sos/1.0&quot;
 
-````
+</code></pre>
 
- - HTTP/GET with both spatial and temporal constraints (simple BBOX):
+<ul>
+<li>HTTP/GET with both spatial and temporal constraints (simple BBOX):</li>
+</ul>
+
+<pre><code>http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&amp;version=1.0.0&amp;request=GetObservation&amp;offering=urn:ioos:station:wmo:46028&amp;observedProperty=http://mmisw.org/ont/cf/parameter/sea_water_temperature&amp;procedure=urn:ioos:station:wmo:46028&amp;featureOfInterest=BBOX:-122.1,47.7,-120.3,47.9&amp;eventtime=2015-11-01T00:00:00/2015-11-01T06:00:00&amp;responseFormat= text/xml; subtype=&quot;om/1.0.0/profiles/ioos_sos/1.0&quot;
 
 </code></pre>
 
-<p><a href="http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&amp;version=1.0.0&amp;request=GetObservation&amp;offering=urn:ioos:station:wmo:46028&amp;observedProperty=http://mmisw.org/ont/cf/parameter/sea_water_temperature&amp;procedure=urn:ioos:station:wmo:46028&amp;featureOfInterest=BBOX:-122.1,47.7,-120.3,47.9&amp;eventtime=2015-11-01T00:00:00/2015-11-01T06:00:00&amp;responseFormat=">http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&amp;version=1.0.0&amp;request=GetObservation&amp;offering=urn:ioos:station:wmo:46028&amp;observedProperty=http://mmisw.org/ont/cf/parameter/sea_water_temperature&amp;procedure=urn:ioos:station:wmo:46028&amp;featureOfInterest=BBOX:-122.1,47.7,-120.3,47.9&amp;eventtime=2015-11-01T00:00:00/2015-11-01T06:00:00&amp;responseFormat=</a> text/xml; subtype=&ldquo;om/1.0.0/profiles/ioos_sos/1.0&rdquo;</p>
+<ul>
+<li>HTTP/GET with both spatial and temporal constraints (SOS 2.0 spatial and temporal filtering):</li>
+</ul>
 
-<pre><code>
- - HTTP/GET with both spatial and temporal constraints (SOS 2.0 spatial and temporal filtering):
-
-```
-http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&amp;version=1.0.0&amp;request=GetObservation&amp;offering=urn%3Aioos%3Astation%3Awmo%3A46028&amp;observedProperty=http://mmisw.org/ont/cf/parameter/sea_water_temperature&amp;procedure=urn:ioos:station:wmo:46028&amp;featureOfInterest=om:featureOfInterest/*/sams:shape,47.7,-122.1,47.9,-120.3,http://www.opengis.net/def/crs/EPSG/0/4326&amp;eventtime=om:phenomenonTime,2015-11-01T00:00:00/2015-11-01T06:00:00&amp;responseFormat= text/xml; subtype=&quot;om/1.0.0/profiles/ioos_sos/1.0&quot;
+<pre><code>http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&amp;version=1.0.0&amp;request=GetObservation&amp;offering=urn%3Aioos%3Astation%3Awmo%3A46028&amp;observedProperty=http://mmisw.org/ont/cf/parameter/sea_water_temperature&amp;procedure=urn:ioos:station:wmo:46028&amp;featureOfInterest=om:featureOfInterest/*/sams:shape,47.7,-122.1,47.9,-120.3,http://www.opengis.net/def/crs/EPSG/0/4326&amp;eventtime=om:phenomenonTime,2015-11-01T00:00:00/2015-11-01T06:00:00&amp;responseFormat= text/xml; subtype=&quot;om/1.0.0/profiles/ioos_sos/1.0&quot;
 
 </code></pre>
 
