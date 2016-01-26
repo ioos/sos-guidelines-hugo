@@ -1357,21 +1357,21 @@ The following examples illustrate HTTP/GET and HTTP/POST GetObservation requests
 ```
 http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&version=1.0.0&request=GetObservation&offering=urn:ioos:network:test:all&observedProperty=http://mmisw.org/ont/cf/parameter/wind_speed&procedure=urn:ioos:station:test:blighreef&responseFormat= text/xml; subtype="om/1.0.0/profiles/ioos_sos/1.0"
 
-````
+```
 
  - HTTP/GET with both spatial and temporal constraints (simple BBOX):
 
 ```
 http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&version=1.0.0&request=GetObservation&offering=urn:ioos:station:wmo:46028&observedProperty=http://mmisw.org/ont/cf/parameter/sea_water_temperature&procedure=urn:ioos:station:wmo:46028&featureOfInterest=BBOX:-122.1,47.7,-120.3,47.9&eventtime=2015-11-01T00:00:00/2015-11-01T06:00:00&responseFormat= text/xml; subtype="om/1.0.0/profiles/ioos_sos/1.0"
 
-````
+```
 
  - HTTP/GET with both spatial and temporal constraints (SOS 2.0 spatial and temporal filtering):
 
 ```
 http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&version=1.0.0&request=GetObservation&offering=urn%3Aioos%3Astation%3Awmo%3A46028&observedProperty=http://mmisw.org/ont/cf/parameter/sea_water_temperature&procedure=urn:ioos:station:wmo:46028&featureOfInterest=om:featureOfInterest/*/sams:shape,47.7,-122.1,47.9,-120.3,http://www.opengis.net/def/crs/EPSG/0/4326&eventtime=om:phenomenonTime,2015-11-01T00:00:00/2015-11-01T06:00:00&responseFormat= text/xml; subtype="om/1.0.0/profiles/ioos_sos/1.0"
 
-````
+```
 
  - HTTP/POST without spatial or temporal constraint:
 
