@@ -1744,7 +1744,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;featureOfInterest&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;0…*&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Specifies the feature for which observations are requested. This should be presented in a form of comma-separated URIs advertised in the GetCapabilities document or a bounding box for requested data, i.e. featureOfInterest=BBOX:min_lon,min_lat,max_lon,max_lat&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Specifies the feature for which observations are requested. This should be presented in a form of comma-separated URIs advertised in the GetCapabilities document or a bounding box for requested data. Until v1.0.1, the IOOS SOS did not support GetObservation KVP GET request with a BBOX constraint, i.e. &lt;code&gt;featureOfInterest=BBOX:min_lon,min_lat,max_lon,max_lat&lt;/code&gt; in the request was not allowed, and BBOX could be specified only in the POST request. Starting with v1.0.1, IOOS SOS supports two ways of BBOX constraint in the GET request. For details, see examples below.&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -1814,27 +1814,82 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;p&gt;The following examples illustrate HTTP/GET and HTTP/POST GetObservation requests. Note that in HTTP/GET (KVP) request, the parameter names are case insensitive. The following example shows equivalent terms for a parameter “outputFormat”: outputFormat, outputformat, OUTPUTFORMAT, or OUTPUTfORMAT. As a guideline, it is suggested that lowercase names be used for ease-of-reading and consistency. On the contrary, it is recommended to use the UpperCamelCase for the parameter values like GetCapabilities or DescribeSensor, as they are case sensitive:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;HTTP/GET:&lt;/li&gt;
+&lt;li&gt;HTTP/GET without spatial or temporal constraint:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-HTML&#34;&gt;http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&amp;amp;version=1.0.0&amp;amp;request=GetObservation&amp;amp;offering=urn:ioos:network:test:all&amp;amp;observedProperty=http://mmisw.org/ont/cf/parameter/wind_speed&amp;amp;procedure=urn:ioos:station:test:blighreef&amp;amp;responseFormat= text/xml; subtype=&amp;quot;om/1.0.0/profiles/ioos_sos/1.0&amp;quot;
+&lt;pre&gt;&lt;code&gt;http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&amp;amp;version=1.0.0&amp;amp;request=GetObservation&amp;amp;offering=urn:ioos:network:test:all&amp;amp;observedProperty=http://mmisw.org/ont/cf/parameter/wind_speed&amp;amp;procedure=urn:ioos:station:test:blighreef&amp;amp;responseFormat= text/xml; subtype=&amp;quot;om/1.0.0/profiles/ioos_sos/1.0&amp;quot;
+
 ````
 
--   HTTP/POST:
+ - HTTP/GET with both spatial and temporal constraints (simple BBOX):
 
-```XML
-&amp;lt;sos:GetObservation xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&amp;amp;version=1.0.0&amp;amp;request=GetObservation&amp;amp;offering=urn:ioos:station:wmo:46028&amp;amp;observedProperty=http://mmisw.org/ont/cf/parameter/sea_water_temperature&amp;amp;procedure=urn:ioos:station:wmo:46028&amp;amp;featureOfInterest=BBOX:-122.1,47.7,-120.3,47.9&amp;amp;eventtime=2015-11-01T00:00:00/2015-11-01T06:00:00&amp;amp;responseFormat=&#34;&gt;http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&amp;amp;version=1.0.0&amp;amp;request=GetObservation&amp;amp;offering=urn:ioos:station:wmo:46028&amp;amp;observedProperty=http://mmisw.org/ont/cf/parameter/sea_water_temperature&amp;amp;procedure=urn:ioos:station:wmo:46028&amp;amp;featureOfInterest=BBOX:-122.1,47.7,-120.3,47.9&amp;amp;eventtime=2015-11-01T00:00:00/2015-11-01T06:00:00&amp;amp;responseFormat=&lt;/a&gt; text/xml; subtype=&amp;ldquo;om/1.0.0/profiles/ioos_sos/1.0&amp;rdquo;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+ - HTTP/GET with both spatial and temporal constraints (SOS 2.0 spatial and temporal filtering):
+
+```
+http://SERVERNAME:PORT/SOS_WEBAPP_NAME/sos?service=SOS&amp;amp;version=1.0.0&amp;amp;request=GetObservation&amp;amp;offering=urn%3Aioos%3Astation%3Awmo%3A46028&amp;amp;observedProperty=http://mmisw.org/ont/cf/parameter/sea_water_temperature&amp;amp;procedure=urn:ioos:station:wmo:46028&amp;amp;featureOfInterest=om:featureOfInterest/*/sams:shape,47.7,-122.1,47.9,-120.3,http://www.opengis.net/def/crs/EPSG/0/4326&amp;amp;eventtime=om:phenomenonTime,2015-11-01T00:00:00/2015-11-01T06:00:00&amp;amp;responseFormat= text/xml; subtype=&amp;quot;om/1.0.0/profiles/ioos_sos/1.0&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HTTP/POST without spatial or temporal constraint:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;sos:GetObservation xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;
     xsi:schemaLocation=&amp;quot;http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosAll.xsd&amp;quot;
     xmlns:sos=&amp;quot;http://www.opengis.net/sos/1.0&amp;quot; 
     xmlns:om=&amp;quot;http://www.opengis.net/om/1.0&amp;quot;
     service=&amp;quot;SOS&amp;quot; version=&amp;quot;1.0.0&amp;quot; srsName=&amp;quot;EPSG:4326&amp;quot;&amp;gt;
-    &amp;lt;sos:offering&amp;gt;urn:ioos:network:test:all&amp;lt;/sos:offering&amp;gt;
+    &amp;lt;sos:procedure&amp;gt;urn:ioos:network:test:all&amp;lt;/sos:procedure&amp;gt;
     &amp;lt;sos:observedProperty&amp;gt;http://mmisw.org/ont/cf/parameter/wind_speed&amp;lt;/sos:observedProperty&amp;gt;
     &amp;lt;sos:responseFormat&amp;gt; text/xml; subtype=&amp;quot;om/1.0.0/profiles/ioos_sos/1.0&amp;quot;&amp;lt;/sos:responseFormat&amp;gt;
     &amp;lt;sos:resultModel&amp;gt;om:Observation&amp;lt;/sos:resultModel&amp;gt;
     &amp;lt;sos:responseMode&amp;gt;inline&amp;lt;/sos:responseMode&amp;gt;
 &amp;lt;/sos:GetObservation&amp;gt;
+
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HTTP/POST with both spatial and temporal constraints:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;sos:GetObservation xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;
+    xsi:schemaLocation=&amp;quot;http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosAll.xsd&amp;quot;
+    xmlns:sos=&amp;quot;http://www.opengis.net/sos/1.0&amp;quot; 
+    xmlns:om=&amp;quot;http://www.opengis.net/om/1.0&amp;quot;
+    service=&amp;quot;SOS&amp;quot; version=&amp;quot;1.0.0&amp;quot; srsName=&amp;quot;EPSG:4326&amp;quot;&amp;gt;
+    &amp;lt;sos:eventTime&amp;gt;
+       &amp;lt;ogc:TM_During&amp;gt;
+          &amp;lt;ogc:PropertyName&amp;gt;urn:ogc:data:time:iso8601&amp;lt;/ogc:PropertyName&amp;gt;
+          &amp;lt;gml:TimePeriod&amp;gt;
+             &amp;lt;gml:beginPosition&amp;gt;2008-03-01T17:44:15+00&amp;lt;/gml:beginPosition&amp;gt;
+             &amp;lt;gml:endPosition&amp;gt;2008-05-01T17:44:15+00&amp;lt;/gml:endPosition&amp;gt;
+          &amp;lt;/gml:TimePeriod&amp;gt;
+       &amp;lt;/ogc:TM_During&amp;gt;
+    &amp;lt;/sos:eventTime&amp;gt;
+    &amp;lt;sos:procedure&amp;gt;urn:ioos:network:test:all&amp;lt;/sos:procedure&amp;gt;
+    &amp;lt;sos:observedProperty&amp;gt;http://mmisw.org/ont/cf/parameter/wind_speed&amp;lt;/sos:observedProperty&amp;gt;
+    &amp;lt;sos:featureOfInterest&amp;gt;
+        &amp;lt;ogc:BBOX&amp;gt;
+            &amp;lt;ogc:PropertyName&amp;gt;urn:ogc:data:location&amp;lt;/ogc:PropertyName&amp;gt;
+            &amp;lt;gml:Envelope srsName=&amp;quot;http://www.opengis.net/def/crs/EPSG/0/4326&amp;quot;&amp;gt;
+                &amp;lt;gml:lowerCorner&amp;gt;43.0 -127.0&amp;lt;/gml:lowerCorner&amp;gt;
+                &amp;lt;gml:upperCorner&amp;gt;48.0 -123.75&amp;lt;/gml:upperCorner&amp;gt;
+            &amp;lt;/gml:Envelope&amp;gt;
+        &amp;lt;/ogc:BBOX&amp;gt;
+    &amp;lt;/sos:featureOfInterest&amp;gt;
+    &amp;lt;sos:responseFormat&amp;gt; text/xml; subtype=&amp;quot;om/1.0.0/profiles/ioos_sos/1.0&amp;quot;&amp;lt;/sos:responseFormat&amp;gt;
+    &amp;lt;sos:resultModel&amp;gt;om:Observation&amp;lt;/sos:resultModel&amp;gt;
+    &amp;lt;sos:responseMode&amp;gt;inline&amp;lt;/sos:responseMode&amp;gt;
+&amp;lt;/sos:GetObservation&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;getobservation-response:638e0b263020c13a76a55332bd966dbe&#34;&gt;GetObservation Response&lt;/h4&gt;
 
