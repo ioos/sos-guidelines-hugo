@@ -42,8 +42,7 @@
 
 &lt;p&gt;As the SOS 2.0 standard has been approved as an official OGC standard while Milestone 1.0 has already been in development, the use of this new and updated version was postponed to the Milestone 2.0, and at present, the SOS v1.0.0 is used for operations.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image18.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image18.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_1&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 1: Core Model Diagram for Observations and Measurements (O&amp;amp;M)&lt;/strong&gt;&lt;/p&gt;
 
@@ -153,8 +152,7 @@
 
 &lt;p&gt;The Core Profile has been identified as relevant to IOOS DMAC; the implementation of the Core Profile operations within the Mileastone 1.0 framework is described hereinafter. The Core Profile operations are based on the stateless HTTP request/response model. A diagram illustrating the basic message sequence is shown in &lt;a href=&#34;#Fig_2&#34;&gt;&lt;strong&gt;Figure 2&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image00.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image00.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_2&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 2: SOS Request/Response Pattern&lt;/strong&gt;&lt;/p&gt;
 
@@ -177,8 +175,7 @@ At the start of the interaction, a consumer issues a GetCapabilities request to
 
 &lt;p&gt;GetCapabilities request may be sent to the server as HTTP/GET or HTTP/POST. HTTP/GET request passes parameters to the server in the HTTP URL with a number of key-value pairs (KVP) of input parameters, and HTTP/POST request sends an XML document to the server, that may also be KVP-encoded. A request to perform GetCapabilities should follow the structure as depicted in the &lt;a href=&#34;#Fig_3&#34;&gt;&lt;strong&gt;Figure 3&lt;/strong&gt;&lt;/a&gt; and table below.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image19.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image19.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_3&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 3: GetCapabilities request schema&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -264,7 +261,6 @@ service=&amp;quot;SOS&amp;quot; updateSequence=&amp;quot;&amp;quot;&amp;gt;
 &lt;p&gt;The response to a GetCapabilities request is an XML encoded document that conforms to the &lt;a href=&#34;http://portal.opengeospatial.org/files/?artifact_id=26667&#34;&gt;SOS 1.0.0 Implementation Specification [OGC 06-009r6]&lt;/a&gt;, and illustrates the characteristics of the SOS system by providing a comprehensive information about coordinate reference system (CRS), spatial or temporal filtering and other information about sensors, feature of interest, and response format. The OGC specification is constrained by the IOOS Convention that on one hand prescribes a certain way of use for some optional components, and on the other hand – facilitates the future acceptance of the SOS 2.0. At any rate, the IOOS Convention does not violate OGC specification’s requirements.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image20.png&#34; alt=&#34;&#34; /&gt;
-
 &lt;a name=&#34;Fig_4&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 4: GetCapabilities response schema&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;The example below shows all five sections depicted in the figure above, and assumes that a GetCapabilities request with no specified subsections was issued, resulting in a response containing all SOS Capabilities metadata:&lt;/p&gt;
@@ -488,7 +484,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;sos:observedProperty&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;1…*&lt;/td&gt;
-&lt;td&gt;This element advertizes one or more quantities observed by a specific offering.&lt;br /&gt;The element’s value must be a URL corresponding to a Climate and Forecast (CF) Standard Name of the record in one of the IOOS Vocabularies that are currently hosted by the Marine Metadata Interoperability (MMI) project (e.g. &lt;a href=&#34;http://mmisw.org/ont/ioos/parameter&#34;&gt;http://mmisw.org/ont/ioos/parameter&lt;/a&gt;).&lt;br /&gt;The IOOS convention only requires support of fully qualified &lt;code&gt;&amp;lt;sos:observedProperty&amp;gt;&lt;/code&gt; element values (URLs); support of unqualified values is optional.&lt;br /&gt;Along with simple observed phenomenon defined in the CF standard names parameter vocabulary (CF phenomenon), e.g. &lt;a href=&#34;http://mmisw.org/ont/cf/parameter&#34;&gt;http://mmisw.org/ont/cf/parameter&lt;/a&gt; , the IOOS Convention allows complex composite phenomenon, that consists of a number of the CF phenomena. That composite phenomenon may be either vector variable (i.e wind, current, or wave) comprised by its scalar components (e.g. “wind&lt;em&gt;from_direction”, “wind_speed_of_gust”, etc.), or an arbitrary set of CF phenomena (e.g. wind components aggregated with “air_temperature”, “dissolved_oxygen”, etc.). At any rate, the IOOS Convention requires that composite phenomenon to be defined in one of the IOOS controlled vocabularies (e.g. IOOS Parameter Vocabulary).&lt;br /&gt;The advertised value of the &lt;code&gt;&amp;lt;sos:observedProperty&amp;gt;&lt;/code&gt; shall be used in GetObservation operation to obtain the actual data. A description of &lt;code&gt;&amp;lt;om:observedProperty&amp;gt;&lt;/code&gt; in OM-GetObservation section of this document explicitly describes the IOOS Convention’s requirements for the provision of the composite phenomenon’s observed values.&lt;br /&gt;&lt;br /&gt;&lt;/em&gt;&lt;strong&gt;Examples of &lt;code&gt;observedProperty&lt;/code&gt; advertisement:&lt;/strong&gt;&lt;br /&gt;&lt;code&gt;observedProperty xlink:href=http://mmisw.org/ont/cf/parameter/VALUE&lt;/code&gt;&lt;br /&gt;&lt;code&gt;observedProperty xlink:href=&amp;quot;http://mmisw.org/ont/cf/parameter/ COMPOSITE_VALUE&amp;quot;&lt;/code&gt;_&lt;/td&gt;
+&lt;td&gt;This element advertizes one or more quantities observed by a specific offering.&lt;br /&gt;The element’s value must be a URL corresponding to a Climate and Forecast (CF) Standard Name of the record in one of the IOOS Vocabularies that are currently hosted by the Marine Metadata Interoperability (MMI) project (e.g. &lt;a href=&#34;http://mmisw.org/ont/ioos/parameter&#34;&gt;http://mmisw.org/ont/ioos/parameter&lt;/a&gt;).&lt;br /&gt;The IOOS convention only requires support of fully qualified &lt;code&gt;&amp;lt;sos:observedProperty&amp;gt;&lt;/code&gt; element values (URLs); support of unqualified values is optional.&lt;br /&gt;Along with simple observed phenomenon defined in the CF standard names parameter vocabulary (CF phenomenon), e.g. &lt;a href=&#34;http://mmisw.org/ont/cf/parameter&#34;&gt;http://mmisw.org/ont/cf/parameter&lt;/a&gt; , the IOOS Convention allows complex composite phenomenon, that consists of a number of the CF phenomena. That composite phenomenon may be either vector variable (i.e wind, current, or wave) comprised by its scalar components (e.g. “wind_from_direction”, “wind_speed_of_gust”, etc.), or an arbitrary set of CF phenomena (e.g. wind components aggregated with “air_temperature”, “dissolved&lt;em&gt;oxygen”, etc.). At any rate, the IOOS Convention requires that composite phenomenon to be defined in one of the IOOS controlled vocabularies (e.g. IOOS Parameter Vocabulary).&lt;br /&gt;The advertised value of the &lt;code&gt;&amp;lt;sos:observedProperty&amp;gt;&lt;/code&gt; shall be used in GetObservation operation to obtain the actual data. A description of &lt;code&gt;&amp;lt;om:observedProperty&amp;gt;&lt;/code&gt; in OM-GetObservation section of this document explicitly describes the IOOS Convention’s requirements for the provision of the composite phenomenon’s observed values.&lt;br /&gt;&lt;br /&gt;&lt;/em&gt;&lt;strong&gt;Examples of &lt;code&gt;observedProperty&lt;/code&gt; advertisement:&lt;/strong&gt;&lt;br /&gt;&lt;code&gt;observedProperty xlink:href=http://mmisw.org/ont/cf/parameter/VALUE&lt;/code&gt;&lt;br /&gt;&lt;code&gt;observedProperty xlink:href=&amp;quot;http://mmisw.org/ont/cf/parameter/ COMPOSITE_VALUE&amp;quot;&lt;/code&gt;_&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -722,8 +718,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The UML diagram of the DescribeSensor request is presented in &lt;a href=&#34;#Fig_5&#34;&gt;&lt;strong&gt;Figure 5&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image21.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image21.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_5&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 5: DescribeSensor request schema&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -797,8 +792,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The response to a DescribeSensor request is a &lt;a href=&#34;http://www.opengeospatial.org/standards/sensorml&#34;&gt;Sensor Model Language (SensorML&lt;/a&gt;) document that describes the sensor system. In some cases, a DescribeSensor response may be quite voluminous; for example, if description of the network has been requested, and the response returns the document that contains detailed information not just about the network itself, but all network platforms and all sensors installed on each platform. A UML diagram  of such an all-inclusive DescribeSensor document is depicted in &lt;a href=&#34;#Fig_6&#34;&gt;&lt;strong&gt;Figure 6&lt;/strong&gt;&lt;/a&gt; followed by the annotated outline of the document.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image22.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image22.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_6&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 6: DescribeSensor response schema&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -1664,8 +1658,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The UML diagram of the GetObservation request is presented in &lt;a href=&#34;#Fig_7&#34;&gt;&lt;strong&gt;Figure 7&lt;/strong&gt;&lt;/a&gt;, and input parameters are elaborated in the following table.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image23.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image23.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_7&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 7: GetObservation request schema&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -1744,7 +1737,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;featureOfInterest&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;0…*&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Specifies the feature for which observations are requested. This should be presented in a form of comma-separated URIs advertised in the GetCapabilities document or a bounding box for requested data. Until v1.0.1, the IOOS SOS did not support GetObservation KVP GET request with a BBOX constraint, i.e. &lt;code&gt;featureOfInterest=BBOX:min_lon,min_lat,max_lon,max_lat&lt;/code&gt; in the request was not allowed, and BBOX could be specified only in the POST request. Starting with v1.0.1, IOOS SOS supports two ways of BBOX constraint in the GET request. For details, see examples below.&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Specifies the feature for which observations are requested. This should be presented in a form of comma-separated URIs advertised in the GetCapabilities document or a simple bounding box for requested data.  &lt;br&gt;&lt;br&gt;Since SOS v1.0 does not specify the exact format for spatial filtering, the IOOS Convention follows the early Ocean Science Interoperability Best Practice recommendation: &lt;code&gt;featureOfInterest=BBOX:min_lon,min_lat,max_lon,max_lat&lt;/code&gt;. &lt;br&gt;&lt;br&gt;SOS v2.0 specifies different spatial filtering format: &lt;code&gt;featureOfInterest=om:featureOfInterest/*/sams:shape,min_lat,min_lon,max_lat,max_lon,http://www.opengis.net/def/crs/EPSG/0/4326&lt;/code&gt;. &lt;br&gt;&lt;br&gt;Early versions of i52N IOOS SOS servers supported only SOS v2.0 format; starting with i52N v1.0.1 both formats are supported. See GetObservation request examples below for details.&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -2116,8 +2109,7 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The static information for all stations and sensors in GetObservation response is encompassed within the field “stations” of the root DataRecord element. Each DataRecord’s field may recursively enclose an unlimited number of DataRecords, which makes the static data block a pretty complex structure of nested DataRecords in case of multiple stations and/or sensors, as shown in &lt;a href=&#34;#Fig_8&#34;&gt;&lt;strong&gt;Figure 8&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image99.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image99.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&#34;Fig_8&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 8: GetObservation static data block outline&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -2307,10 +2299,9 @@ xmlns:ows=&amp;quot;http://www.opengis.net/ows/1.1&amp;quot; xmlns:xlink=&amp;qu
 
 &lt;p&gt;The sensor’s orientation is reported in terms of the pitch, roll, and yaw angles using the CF Conventions standard names: platform_pitch_angle, platform_roll_angle, and platform_orientation for yaw angle; the &lt;a href=&#34;#Fig_9&#34;&gt;&lt;strong&gt;Figure 9&lt;/strong&gt;&lt;/a&gt; depicts a relation of the directional vectors and orientation angles.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image28c.png&#34; alt=&#34;&#34; /&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://ioos.github.io/sos-guidelines/images/image28c.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a name=&#34;Fig_9&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 9: Directions, Yaw, Pitch and Roll Angles&lt;/strong&gt; &lt;em&gt;(copied from &lt;a href=&#34;http://en.wikipedia.org/wiki/Six_degrees_of_freedom&#34;&gt;Wikipedia&lt;/a&gt;)&lt;/em&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a name=&#34;Fig_9&#34;&gt;&lt;/a&gt; &lt;strong&gt;Figure 9: Directions, Yaw, Pitch and Roll Angles&lt;/strong&gt; _(copied from &lt;a href=&#34;http://en.wikipedia.org/wiki/Six_degrees_of_freedom&#34;&gt;Wikipedia&lt;/a&gt;)_&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;The following fragment of the IOOS Milestone 1.0 GetObservation Template for timeSeriesProfile provides more detailed guidance for the sensor orientation description:&lt;/p&gt;
 
